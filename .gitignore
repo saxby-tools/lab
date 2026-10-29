@@ -2,5 +2,8 @@
 work/
 node_modules/
 
+# Built by Eleventy
+_site/
+
 # macOS
 .DS_Store

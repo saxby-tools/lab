@@ -1,0 +1,19 @@
+<figure class="lab-chart">
+<% if (title) { -%>
+  <figcaption class="lab-chart__title"><%= title %></figcaption>
+<% } -%>
+  <ol class="lab-chart__bars">
+<% for (const row of rows) { -%>
+    <li class="lab-chart__row">
+      <span class="lab-chart__name"><%= row.name %></span>
+      <span class="lab-chart__track"><span class="lab-chart__fill"
+        style="--w: <%= row.percent %>%"></span></span>
+      <span class="lab-chart__value"><%= row.text %></span>
+    </li>
+<% } -%>
+  </ol>
+  <details class="lab-chart__data">
+    <summary>The numbers as a table</summary>
+<%- html -%>
+  </details>
+</figure>

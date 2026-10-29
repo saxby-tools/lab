@@ -57,3 +57,10 @@ tasks. Reports, docs and recorded data are CC BY-SA 4.0
 ([LICENSE-DATA](LICENSE-DATA)), which says exactly which files that
 covers. GitHub's "Cite this repository" button reads
 [CITATION.cff](CITATION.cff).
+
+##  The site
+
+Eleventy builds <https://saxby-tools.github.io/lab/> from this repo's
+own Markdown, which stays plain Markdown on GitHub. See
+[site/README.md](site/README.md) for how pages, charts and comment
+blocks work.
