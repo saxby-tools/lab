@@ -1,3 +1,4 @@
 {
-  "layout": "report.ejs"
+  "layout": "report.ejs",
+  "description": "Six local coding models went through hidden tests on one MacBook to pick which one gets the coding job."
 }
