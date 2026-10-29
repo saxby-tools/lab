@@ -1,0 +1,41 @@
+<%
+  const f = (n) => n.toFixed(1);
+  const labelledBy = desc ? `${id}-t ${id}-d` : `${id}-t`;
+-%>
+<div class="figure">
+<% if (title) { -%>
+  <p class="chart-title"><%= title %></p>
+<% } -%>
+  <svg class="chart" viewBox="0 0 <%= view.width %> <%= view.height %>"
+    role="img" aria-labelledby="<%= labelledBy %>">
+<title id="<%= id %>-t"><%= svgTitle %></title>
+<% if (desc) { -%>
+<desc id="<%= id %>-d"><%= desc %></desc>
+<% } -%>
+<% for (const tick of yTicks) { -%>
+<line class="grid" x1="<%= plot.left %>" x2="<%= plot.right %>"
+  y1="<%= f(tick.at) %>" y2="<%= f(tick.at) %>"/>
+<text class="tick" x="<%= tickLabelX %>" y="<%= f(tick.at + 5) %>"
+  text-anchor="end"><%= tick.text %></text>
+<% } -%>
+<% for (const tick of xTicks) { -%>
+<text class="tick" x="<%= f(tick.at) %>" y="<%= xTickY %>"
+  text-anchor="middle"><%= tick.text %></text>
+<% } -%>
+<% if (xLabel) { -%>
+<text class="axis" x="<%= f((plot.left + plot.right) / 2) %>"
+  y="<%= axisLabelY %>" text-anchor="middle"><%= xLabel %></text>
+<% } -%>
+<% for (const p of points) { -%>
+<g class="<%= p.series %>"><circle class="bubble"
+  cx="<%= f(p.cx) %>" cy="<%= f(p.cy) %>" r="<%= f(p.r) %>"><title
+  ><%= p.tooltip %></title></circle><circle class="dot"
+  cx="<%= f(p.cx) %>" cy="<%= f(p.cy) %>" r="3.5"/><text class="pt-label"
+  x="<%= f(p.labelX) %>" y="<%= f(p.labelY) %>"
+  text-anchor="<%= p.anchor %>"><%= p.text %></text></g>
+<% } -%>
+</svg>
+<% if (caption) { -%>
+<%- caption.replace("<p>", '<p class="figcap">') %>
+<% } -%>
+</div>
