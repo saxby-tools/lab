@@ -1,0 +1,18 @@
+<ol class="race">
+<% for (const row of rows) { -%>
+  <li class="race-row <%= row.series %>">
+    <span class="race-rank"><%= row.rank %></span>
+    <span class="race-name"><%= row.name %>
+<% if (row.detail) { -%>
+      <small><%= row.detail %></small>
+<% } -%>
+    </span>
+    <span class="race-track"><span class="race-bar"
+      style="--w:<%= row.percent %>%"></span></span>
+    <span class="race-val"><%= row.head %><small><%= row.tail %></small></span>
+  </li>
+<% } -%>
+</ol>
+<% if (note) { -%>
+<%- note.replace("<p>", '<p class="race-note">') %>
+<% } -%>
