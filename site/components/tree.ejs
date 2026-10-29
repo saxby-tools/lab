@@ -1,0 +1,8 @@
+<% if (root) { -%>
+<p class="tree__root"><%= root %></p>
+<% } -%>
+<ul class="tree">
+<% for (const item of items) { -%>
+  <li><code><%- item.name %></code><span><%- item.text %></span></li>
+<% } -%>
+</ul>
