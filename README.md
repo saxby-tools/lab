@@ -20,7 +20,8 @@ for language models. The lab is where its model choices get tested.
 
 Each report has its own numbered folder under `reports/`:
 
-- `index.html`: the report itself.
+- `index.md`: the report itself, in Markdown. The site builds
+  `index.html` from it.
 - `README.md`: results, what's in the folder, how to rerun it, and any
   corrections.
 - `data.md`: what every data file holds, what was checked, and every
