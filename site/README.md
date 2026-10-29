@@ -89,6 +89,14 @@ A mistake stops the build and names the file and line: an unknown
 component, invalid JSON, a closer that doesn't match its opener, a
 block left open, a missing column, or a cell that isn't a number.
 
+The [markdown-it-comment-blocks][comment-blocks] package reads the
+blocks, and `eleventy.config.js` sets its namespace to `lab`. Each
+block becomes one token with the tokens inside it in
+`meta.children`, so a plugin that walks the tokens, such as
+`site/plugins/md-links.js`, has to look there too.
+
+[comment-blocks]: https://github.com/nikolowry/markdown-it-comment-blocks
+
 ##  Components
 
 Each component's own file lists its options at the top.
@@ -129,7 +137,7 @@ helpers for failing, numbers and colors.
 
 ```
 eleventy.config.js        layout, addresses, titles, copying
-site/plugins/             markdown-it plugins: comment blocks, links
+site/plugins/             the markdown-it plugin for links
 site/components/          a .ejs, and often a .js, per component
 site/layouts/page.ejs     the page around most rendered Markdown
 site/layouts/report.ejs   the page around a report's index.md

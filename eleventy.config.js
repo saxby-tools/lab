@@ -21,8 +21,8 @@ import { basename, join } from "node:path";
 import { pathToFileURL } from "node:url";
 
 import ejs from "ejs";
+import commentBlocks from "markdown-it-comment-blocks";
 
-import commentBlocks from "./site/plugins/comment-blocks.js";
 import mdLinks from "./site/plugins/md-links.js";
 
 // ---- Constants --------------------------------------------------------

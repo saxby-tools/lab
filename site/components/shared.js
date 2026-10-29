@@ -9,7 +9,7 @@
 // A name missing from the palette gets no color class; the series
 // default applies.
 
-import { CommentBlockError } from "../plugins/comment-blocks.js";
+import { CommentBlockError } from "markdown-it-comment-blocks";
 
 // ---- Constants --------------------------------------------------------
 

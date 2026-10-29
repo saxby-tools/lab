@@ -1,11 +1,12 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
+import { CommentBlockError } from "markdown-it-comment-blocks";
+
 import canary from "./canary.js";
 import lessons from "./lessons.js";
 import reportCards from "./report-cards.js";
 import tree from "./tree.js";
-import { CommentBlockError } from "../plugins/comment-blocks.js";
 
 // ---- Helpers ----------------------------------------------------------
 

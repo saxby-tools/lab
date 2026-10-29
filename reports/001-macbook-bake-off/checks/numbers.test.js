@@ -12,8 +12,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { test } from "node:test";
 
 import MarkdownIt from "markdown-it";
-
-import commentBlocks from "../../../site/plugins/comment-blocks.js";
+import commentBlocks from "markdown-it-comment-blocks";
 
 // ---- Constants --------------------------------------------------------
 
