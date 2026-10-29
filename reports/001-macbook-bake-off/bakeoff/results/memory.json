@@ -1,0 +1,62 @@
+{
+  "qwen3-coder-next:latest": {
+    "served": {
+      "gib": 53,
+      "vramGib": 53,
+      "context": 262144
+    },
+    "fixed128k": {
+      "gib": 50.6,
+      "vramGib": 50.6,
+      "context": 131072
+    }
+  },
+  "laguna-xs-2.1": {
+    "served": {
+      "gib": 26.5,
+      "vramGib": 26.5,
+      "context": 262144
+    },
+    "fixed128k": {
+      "gib": 22.9,
+      "vramGib": 22.9,
+      "context": 131072
+    }
+  },
+  "qwen3.8:27b": {
+    "served": {
+      "gib": 17.2,
+      "vramGib": 17.2,
+      "context": 262144
+    },
+    "fixed128k": {
+      "gib": 16.9,
+      "vramGib": 16.9,
+      "context": 131072
+    }
+  },
+  "gemma4:31b-128k": {
+    "served": {
+      "gib": 26.1,
+      "vramGib": 26.1,
+      "context": 131072
+    },
+    "fixed128k": {
+      "gib": 26.1,
+      "vramGib": 26.1,
+      "context": 131072
+    }
+  },
+  "laguna-s-2.1": {
+    "served": {
+      "gib": 96.9,
+      "vramGib": 96.9,
+      "context": 262144
+    },
+    "fixed128k": {
+      "gib": 93.1,
+      "vramGib": 93.1,
+      "context": 131072
+    }
+  }
+}
