@@ -1,0 +1,24 @@
+Reports, documentation and recorded data in this repository are
+licensed under the Creative Commons Attribution-ShareAlike 4.0
+International License (CC BY-SA 4.0).
+
+  Summary:    https://creativecommons.org/licenses/by-sa/4.0/
+  Legal code: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+CC BY-SA 4.0 covers:
+
+- This repository's README.md and CITATION.cff.
+- The files directly inside each report's folder, reports/<report>/,
+  such as index.html, README.md, data.md, preregistration.md and
+  judges.md.
+- Each report's recorded data: the answers, grades, summaries, review
+  packets, review keys and logs under bakeoff/results/,
+  bakeoff/round2/results/, bakeoff/review/, bakeoff/round2/review-style/
+  and bakeoff/logs/.
+
+Everything else is code and is licensed under the GNU Affero General
+Public License, version 3 or later; see LICENSE. That includes the
+scripts, the harness, the tasks and their specs, and the checks/
+folders.
+
+Copyright (C) 2026 Niko Lowry
