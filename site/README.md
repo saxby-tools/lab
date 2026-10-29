@@ -45,6 +45,16 @@ spot where the site adds something the Markdown doesn't hold.
 Data files under `bakeoff/` and `checks/` are copied as they are,
 never rendered.
 
+##  Icons and sharing
+
+`site/static/` is copied to the site's root: the favicons,
+`site.webmanifest`, and `social.png`, the 1280 × 640 image shown
+when a page is shared. Every layout includes `site/layouts/head.ejs`,
+which links the icons and sets the share tags. A page's share
+description is its `description` data, as in a report's
+`index.11tydata.json`, or else the lab's summary in
+`eleventy.config.js`.
+
 ##  Comment blocks
 
 A comment block puts a component around ordinary Markdown:
@@ -124,4 +134,6 @@ site/components/          a .ejs, and often a .js, per component
 site/layouts/page.ejs     the page around most rendered Markdown
 site/layouts/report.ejs   the page around a report's index.md
 site/layouts/home.ejs     the front page, from the repo's README.md
+site/layouts/head.ejs     icons and share tags, in every layout
+site/static/              copied to the site's root as is
 ```
