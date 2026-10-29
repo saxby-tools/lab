@@ -35,6 +35,13 @@ matter would:
 - `<folder>.11tydata.json` holds the folder's `palette`: each name
   as it appears in a table, mapped to a series color from 1 to 8.
 
+The repo's own `README.md` is the site's front page. Its
+`README.11tydata.json` picks `home.ejs`, the landing layout, and sets
+`output` to `index.html`. That layout builds the "On this page" list
+from the README's `##` headings, with the same anchors GitHub gives
+them, so a link like `#known-gaps` works in both places. It's the one
+spot where the site adds something the Markdown doesn't hold.
+
 Data files under `bakeoff/` and `checks/` are copied as they are,
 never rendered.
 
@@ -87,12 +94,15 @@ Each component's own file lists its options at the top.
 | `verdicts` | A table | Picks as colored pills; split rows shaded |
 | `data-table` | A table | A compact table with a color per row |
 | `judge-cards` | A list | One card per item, score first |
-| `lessons` | A list | Takeaways with bold leads |
+| `lessons` | A list | Items with bold leads; `class` sets the list's class |
 | `label` | A heading | The red label; GitHub shows the heading |
 | `deck` | A paragraph | The larger opening paragraph |
 | `notice` | A heading and text | A boxed aside with a kicker |
-| `bulletin` | Any Markdown | A boxed bulletin |
-| `footer` | Paragraphs | The page footer; the first is the colophon |
+| `bulletin` | Any Markdown | A boxed bulletin; `class` sets its class |
+| `footer` | Paragraphs | The page footer; the first is the colophon unless `colophon` is false |
+| `report-cards` | A table | One card per report, from the front page's list |
+| `tree` | A list | A folder's files, each named in code |
+| `canary` | A code block | The block boxed, with a copy button |
 
 Charts read each cell as a number with an optional `/max` and unit,
 so `23/24`, `17.2 GiB` and `96%` all work.
@@ -113,4 +123,5 @@ site/plugins/             markdown-it plugins: comment blocks, links
 site/components/          a .ejs, and often a .js, per component
 site/layouts/page.ejs     the page around most rendered Markdown
 site/layouts/report.ejs   the page around a report's index.md
+site/layouts/home.ejs     the front page, from the repo's README.md
 ```

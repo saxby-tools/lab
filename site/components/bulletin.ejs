@@ -1,4 +1,8 @@
-<%# A boxed bulletin around any Markdown: <!-- lab:bulletin --> ... -%>
-<div class="callout">
+<%#
+  A boxed bulletin around any Markdown. The class defaults to the
+  report's "callout"; the landing page uses "sx-bulletin":
+  <!-- lab:bulletin {"class": "sx-bulletin"} --> ...
+-%>
+<div class="<%= options.class ?? "callout" %>">
 <%- html %>
 </div>

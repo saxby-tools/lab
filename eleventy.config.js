@@ -11,6 +11,8 @@
 //
 // A report's `index.md` uses site/layouts/report.ejs, set by its
 // `index.11tydata.json`; its folder's data file holds the palette.
+// The repo's own README.md is the landing page: its data file picks
+// site/layouts/home.ejs and sets `output` to index.html.
 // Harnesses and data are copied as they are. Their .md files are data,
 // not pages, so they're never rendered.
 
@@ -32,7 +34,6 @@ const COMPONENTS_DIR = "site/components";
 const SOURCE_URL = "https://github.com/saxby-tools/lab/blob/main/";
 
 const PASSTHROUGH = [
-  "index.html",
   "LICENSE",
   "LICENSE-DATA",
   "CITATION.cff",
@@ -41,7 +42,6 @@ const PASSTHROUGH = [
 ];
 
 const IGNORES = [
-  "README.md",
   "site/**",
   "reports/*/bakeoff/**",
   "reports/*/checks/**",
@@ -139,7 +139,7 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addGlobalData("layout", "page.ejs");
   eleventyConfig.addGlobalData("eleventyComputed", {
-    permalink: (data) => `${data.page.filePathStem}.html`,
+    permalink: (data) => data.output ?? `${data.page.filePathStem}.html`,
     title: (data) => titleOf(data.page.inputPath),
     root: (data) => rootOf(data.page.filePathStem),
     source: (data) => sourceOf(data.page.inputPath),

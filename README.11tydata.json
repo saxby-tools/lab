@@ -1,0 +1,4 @@
+{
+  "layout": "home.ejs",
+  "output": "index.html"
+}

@@ -1,7 +1,11 @@
 <%#
-  The page's footer. Its first paragraph is the colophon:
-  <!-- lab:footer --> ... <!-- /lab:footer -->
+  The page's footer. Its first paragraph is the colophon, unless
+  {"colophon": false}: <!-- lab:footer --> ... <!-- /lab:footer -->
 -%>
 <footer>
+<% if (options.colophon === false) { -%>
+<%- html %>
+<% } else { -%>
 <%- html.replace("<p>", '<p class="sx-colophon">') %>
+<% } -%>
 </footer>
