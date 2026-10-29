@@ -104,6 +104,11 @@ S needs about 97 GiB of memory once loaded.
   names where each size comes from. In round 2, "the measure set before
   the bake-off" now reads "before round 2," since round 1 had already
   run when the measure was set.
+- **Oct. 29, 2026:** The round 1 caption called its counts "runs that
+  passed every hidden test." They also require the code to type-check:
+  Qwen3.8 passed every hidden test in 24 runs and type-checked in 23.
+  The caption now defines "fully passing," and the two charts that show
+  the same counts use that term.
 
 ##  Known gaps
 
