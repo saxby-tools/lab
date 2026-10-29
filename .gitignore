@@ -1,0 +1,6 @@
+# Rebuilt by the bake-off harness on every run
+work/
+node_modules/
+
+# macOS
+.DS_Store
