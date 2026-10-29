@@ -1,0 +1,9 @@
+<aside class="sx-notice" aria-labelledby="<%= id %>-kicker">
+<% if (kicker) { -%>
+  <span class="sx-notice__kicker" id="<%= id %>-kicker"><%= kicker %></span>
+<% } -%>
+  <pre class="canary" id="<%= id %>-text"><%- code %></pre>
+  <button class="copy" type="button"
+    data-copy="<%= id %>-text"><%= button %></button>
+<%- notes %>
+</aside>
