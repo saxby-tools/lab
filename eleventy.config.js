@@ -33,6 +33,12 @@ const COMPONENTS_DIR = "site/components";
 
 const SOURCE_URL = "https://github.com/saxby-tools/lab/blob/main/";
 
+const SITE_URL = "https://saxby-tools.github.io/lab/";
+
+const SITE_SUMMARY = "The tests, harnesses and raw results behind the " +
+  "Saxby lab reports. Every number can be checked and every run " +
+  "repeated.";
+
 const PASSTHROUGH = [
   "LICENSE",
   "LICENSE-DATA",
@@ -111,6 +117,11 @@ function sourceOf(inputPath) {
   return SOURCE_URL + inputPath.replace(/^\.\//, "");
 }
 
+// The page's full address, for share tags; "index.html" is dropped.
+function canonicalOf(url) {
+  return SITE_URL + url.replace(/^\//, "").replace(/index\.html$/, "");
+}
+
 // ---- Config -----------------------------------------------------------
 
 export default async function (eleventyConfig) {
@@ -133,12 +144,18 @@ export default async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy(path);
   }
 
+  // Icons, the web manifest and the share image sit at the site's root.
+  eleventyConfig.addPassthroughCopy({ "site/static": "/" });
+
   for (const glob of IGNORES) {
     eleventyConfig.ignores.add(glob);
   }
 
   eleventyConfig.addGlobalData("layout", "page.ejs");
+  eleventyConfig.addGlobalData("siteUrl", SITE_URL);
   eleventyConfig.addGlobalData("eleventyComputed", {
+    summary: (data) => data.description ?? SITE_SUMMARY,
+    canonical: (data) => canonicalOf(data.page.url),
     permalink: (data) => data.output ?? `${data.page.filePathStem}.html`,
     title: (data) => titleOf(data.page.inputPath),
     root: (data) => rootOf(data.page.filePathStem),
