@@ -1,0 +1,21 @@
+<div class="figure">
+  <div class="stack">
+<% for (const row of rows) { -%>
+  <div class="stack-row">
+    <span class="stack-label"><%= row.name %></span>
+    <span class="stack-track"><% -%>
+<% for (const seg of row.segments) { -%>
+<span class="seg <%= seg.series %>" style="--w:<%= seg.percent %>%"
+  title="<%= seg.hover %>"><% if (seg.text) { -%>
+<span class="seg-text"><%= seg.text %></span><% } -%>
+</span><% -%>
+<% } -%>
+</span>
+    <span class="stack-val"><%= row.head %><small><%= row.tail %></small></span>
+  </div>
+<% } -%>
+<% if (key) { -%>
+  <%- key.replace("<p>", '<p class="stack-key">') %>
+<% } -%>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<%
+  const f = (n) => n.toFixed(1);
+  const centerX = (i) => grid.left + grid.cellWidth / 2 + grid.stepX * i;
+-%>
+<div class="figure">
+  <div class="scroll"><svg class="chart heat"
+    viewBox="0 0 <%= width %> <%= height %>" role="img"
+    aria-labelledby="<%= id %>-t">
+<title id="<%= id %>-t"><%= svgTitle %></title>
+<% columns.forEach(([first, second], i) => { -%>
+<text class="hm-model" x="<%= f(centerX(i)) %>" y="28"
+  text-anchor="middle"><%= first %></text><text class="hm-model-2"
+  x="<%= f(centerX(i)) %>" y="46" text-anchor="middle"><%= second %></text>
+<% }) -%>
+<% rows.forEach((row, j) => { -%>
+<%   const top = grid.top + grid.stepY * j; -%>
+<text class="hm-task" x="<%= grid.rowLabelX %>" y="<%= f(top + 28) %>"
+  text-anchor="end"><%= row.name %></text>
+<%   row.cells.forEach((cell, i) => { -%>
+<%     const x = grid.left + grid.stepX * i; -%>
+<g class="cell v<%= cell.shade %>"><rect x="<%= x %>" y="<%= top %>"
+  width="<%= grid.cellWidth %>" height="<%= grid.cellHeight %>" rx="4"
+  ><title><%= cell.tooltip %></title></rect><text class="cell-main"
+  x="<%= f(centerX(i)) %>" y="<%= top + 23 %>" text-anchor="middle"
+  ><%= cell.count %>/<%= cell.of %></text><text class="cell-sub"
+  x="<%= f(centerX(i)) %>" y="<%= top + 39 %>" text-anchor="middle"
+  ><%= cell.share %>%</text></g>
+<%   }) -%>
+<% }) -%>
+</svg></div>
+<% if (caption) { -%>
+<%- caption.replace("<p>", '<p class="figcap">') %>
+<% } -%>
+</div>

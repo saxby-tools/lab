@@ -1,68 +1,34 @@
-// Prepares a bar chart from the Markdown table inside its block.
+// Bars for one column of a table, colored per row from the palette.
 //
-//   <!-- lab:bar-chart {"value": "Fully passing", "title": "..."} -->
+//   <!-- lab:bar-chart {"value": "Security tests", "title": "..."} -->
 //
 // Options:
-//   value  the column holding each bar's number (required)
-//   label  the column naming each bar (default: the first column)
-//   title  a caption above the chart
-//   max    the scale's top (default: the largest "/N", else the
-//          largest value)
+//   value    the column holding each bar's number (required)
+//   label    the column naming each bar (default: the first column)
+//   title    a title above the chart
+//   max      the scale's top (default: the largest "/N", else the
+//            largest value)
+//   marker   {"at": 95, "label": "..."}: a dashed line across every
+//            bar; values past it are marked as over
+//   details  true to keep the whole table under the chart
 //
-// Cells read as a leading number with an optional "/max" and unit, so
-// "23/24", "17.2 GiB" and "96%" all work. A cell that isn't a number
-// stops the build; a chart that silently drops a row would lie.
+// Any paragraph after the table becomes the chart's caption.
 
-import { CommentBlockError } from "../plugins/comment-blocks.js";
-
-// ---- Constants --------------------------------------------------------
-
-const CELL = /^(-?\d+(?:\.\d+)?)\s*(?:\/\s*(\d+(?:\.\d+)?))?\s*(.*)$/;
-
-// ---- Cells ------------------------------------------------------------
-
-export function parseCell(text) {
-  const match = text.trim().replace(/,/g, "").match(CELL);
-
-  if (!match) {
-    return null;
-  }
-
-  const [, value, max, unit] = match;
-
-  return {
-    value: Number(value),
-    max: max === undefined ? null : Number(max),
-    unit: unit.trim(),
-  };
-}
-
-// ---- Chart ------------------------------------------------------------
-
-function fail(block, message) {
-  throw new CommentBlockError(
-    `bar-chart: ${message}`,
-    block.line,
-    block.env,
-  );
-}
-
-function scaleTop(block, cells) {
-  if (block.options.max !== undefined) {
-    return block.options.max;
-  }
-
-  const tops = cells.map((cell) => cell.max ?? cell.value);
-
-  return Math.max(...tops);
-}
+import {
+  captionOf,
+  fail,
+  percentOf,
+  requireColumns,
+  requireNumber,
+  requireTable,
+  scaleTop,
+  seriesClass,
+  tableOf,
+} from "./shared.js";
 
 export default function barChart(block) {
-  const { table, options } = block;
-
-  if (table === null) {
-    fail(block, "needs a Markdown table inside the block");
-  }
+  const table = requireTable(block);
+  const { options } = block;
 
   if (options.value === undefined) {
     fail(block, 'needs a "value" option naming a column');
@@ -70,34 +36,30 @@ export default function barChart(block) {
 
   const label = options.label ?? table.columns[0];
 
-  for (const column of [label, options.value]) {
-    if (!table.columns.includes(column)) {
-      fail(block, `no column named "${column}"`);
-    }
-  }
+  requireColumns(block, [label, options.value]);
 
   const cells = table.rows.map((row) => {
-    const cell = parseCell(row[options.value]);
-
-    if (cell === null) {
-      fail(block, `"${row[options.value]}" in "${row[label]}" isn't a number`);
-    }
-
-    return cell;
+    return requireNumber(block, row[options.value], `"${row[label]}"`);
   });
 
-  const top = scaleTop(block, cells);
+  const top = scaleTop(options, cells);
+  const marker = options.marker ?? null;
 
   return {
     title: options.title ?? null,
-    html: block.html,
+    caption: captionOf(block.html),
+    tableHtml: options.details ? tableOf(block.html) : null,
+    marker: marker === null ? null : {
+      label: marker.label,
+      percent: percentOf(marker.at, top),
+    },
     rows: table.rows.map((row, i) => {
-      const share = top > 0 ? cells[i].value / top : 0;
-
       return {
         name: row[label],
         text: row[options.value],
-        percent: Math.min(100, Math.max(0, share * 100)).toFixed(1),
+        series: seriesClass(block, row[label]),
+        percent: percentOf(cells[i].value, top),
+        over: marker !== null && cells[i].value > marker.at,
       };
     }),
   };

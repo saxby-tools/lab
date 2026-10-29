@@ -123,9 +123,17 @@ function readTag(token, patterns, env) {
 
 // ---- Tables -----------------------------------------------------------
 
+function keyByColumn(columns, cells) {
+  return Object.fromEntries(
+    columns.map((column, i) => [column, cells[i] ?? ""]),
+  );
+}
+
 // The first table among a block's own tokens, as column names and one
-// object per row. Cell values are the raw Markdown source, trimmed.
-function readTable(tokens) {
+// object per row. `rows` holds each cell's raw Markdown, trimmed;
+// `htmlRows` holds the same cells rendered, for components that keep
+// links, code or emphasis.
+function readTable(tokens, renderInline) {
   const start = tokens.findIndex((token) => token.type === "table_open");
 
   if (start === -1) {
@@ -175,15 +183,19 @@ function readTable(tokens) {
       continue;
     }
 
-    row.push(token.content.trim());
+    row.push({
+      text: token.content.trim(),
+      html: renderInline(token.children ?? []),
+    });
   }
 
   return {
     columns,
     rows: rows.map((cells) => {
-      return Object.fromEntries(
-        columns.map((column, i) => [column, cells[i] ?? ""]),
-      );
+      return keyByColumn(columns, cells.map((cell) => cell.text));
+    }),
+    htmlRows: rows.map((cells) => {
+      return keyByColumn(columns, cells.map((cell) => cell.html));
     }),
   };
 }
@@ -302,6 +314,9 @@ export default function commentBlocks(md, options = {}) {
 
   md.renderer.rules[TOKEN_TYPE] = (tokens, idx, mdOptions, env, self) => {
     const { name, options: blockOptions, line, children } = tokens[idx].meta;
+    const renderInline = (inline) => {
+      return self.renderInline(inline, mdOptions, env);
+    };
 
     return components[name]({
       name,
@@ -309,7 +324,7 @@ export default function commentBlocks(md, options = {}) {
       line,
       env,
       html: self.render(children, mdOptions, env),
-      table: readTable(children),
+      table: readTable(children, renderInline),
     });
   };
 }

@@ -9,8 +9,10 @@
 // draws it and `name.js` turns the block into the template's data.
 // A comment block such as `<!-- lab:name {...} -->` picks one.
 //
-// Reports' own HTML pages, harnesses and data are copied as they are.
-// Their .md files are data, not pages, so they're never rendered.
+// A report's `index.md` uses site/layouts/report.ejs, set by its
+// `index.11tydata.json`; its folder's data file holds the palette.
+// Harnesses and data are copied as they are. Their .md files are data,
+// not pages, so they're never rendered.
 
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { basename, join } from "node:path";
@@ -34,7 +36,6 @@ const PASSTHROUGH = [
   "LICENSE",
   "LICENSE-DATA",
   "CITATION.cff",
-  "reports/*/index.html",
   "reports/*/bakeoff",
   "reports/*/checks",
 ];

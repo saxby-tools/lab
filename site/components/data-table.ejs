@@ -1,0 +1,18 @@
+<div class="figure"><div class="scroll"><table class="full"><thead><tr>
+<% for (const column of columns) { -%>
+<th scope="col"><%= column %></th>
+<% } -%>
+</tr></thead><tbody>
+<% for (const row of rows) { -%>
+<tr><th scope="row"><span
+  class="swatch <%= row.series %>"></span><%- row.name %></th>
+<%   for (const cell of row.cells) { -%>
+<td><%- cell %></td>
+<%   } -%>
+</tr>
+<% } -%>
+</tbody></table></div>
+<% if (caption) { -%>
+  <%- caption.replace("<p>", '<p class="figcap">') %>
+<% } -%>
+</div>

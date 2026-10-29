@@ -1,0 +1,31 @@
+<div class="figure">
+<div class="scroll"><table class="review">
+  <thead><tr><th scope="col"><%= head %></th>
+<% for (const column of columns) { -%>
+<th scope="col"><%= column %></th>
+<% } -%>
+</tr></thead>
+  <tbody>
+<% for (const row of rows) { -%>
+    <tr class="<%= row.split ? "split" : "" %>">
+      <th scope="row"><%= row.name %></th>
+<%   for (const cell of row.cells) { -%>
+<%     if (cell.pick) { -%>
+      <td><span class="pill <%= cell.pick.series %>"
+        ><%= cell.pick.name %></span><% -%>
+<%       if (cell.pick.confidence) { -%>
+<small class="conf"><%= cell.pick.confidence %></small><% -%>
+<%       } -%>
+</td>
+<%     } else { -%>
+      <td><%- cell.html %></td>
+<%     } -%>
+<%   } -%>
+    </tr>
+<% } -%>
+  </tbody>
+</table></div>
+<% if (caption) { -%>
+  <%- caption.replace("<p>", '<p class="figcap">') %>
+<% } -%>
+</div>

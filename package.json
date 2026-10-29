@@ -10,7 +10,7 @@
   "scripts": {
     "build": "eleventy",
     "serve": "eleventy --serve",
-    "test": "node --test \"site/**/*.test.js\""
+    "test": "node --test \"site/**/*.test.js\" \"reports/*/checks/*.test.js\""
   },
   "devDependencies": {
     "@11ty/eleventy": "3.1.7",

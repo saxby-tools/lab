@@ -1,0 +1,20 @@
+<div class="figure">
+<% if (title) { -%>
+  <p class="chart-title"><%= title %></p>
+<% } -%>
+  <ol class="persona">
+<% for (const row of rows) { -%>
+  <li class="p-row<%= row.flag ? " flag" : "" %>">
+    <span class="p-label"><%= row.name %></span>
+    <span class="p-bars"><% -%>
+<% for (const bar of row.bars) { -%>
+<span class="p-bar <%= bar.series %>"><span class="p-name"
+  ><%= bar.name %></span><span class="p-track"><span class="p-fill"
+  style="--w:<%= bar.percent %>%"></span></span><span class="p-val"
+  ><%= bar.head %><small><%= bar.tail %></small></span></span><% -%>
+<% } -%>
+</span>
+  </li>
+<% } -%>
+  </ol>
+</div>

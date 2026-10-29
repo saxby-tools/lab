@@ -1,0 +1,14 @@
+<%#
+  The report's red label, drawn from options. The Markdown inside the
+  block, usually the page's "# Title", is what GitHub shows instead.
+
+    <!-- lab:label {"number": "...", "top": "The MacBook",
+         "word": "Bake-off", "bottom": "Test with great care"} -->
+-%>
+<div class="sx-label">
+  <p class="sx-label__no"><%= options.number %></p>
+  <h1 class="sx-label__title"><span
+    class="sx-label__top"><%= options.top %></span><span
+    class="sx-label__word"><%= options.word %></span></h1>
+  <p class="sx-label__bottom"><%= options.bottom %></p>
+</div>
