@@ -1,10 +1,17 @@
-// A list of takeaways, each with its lead in bold:
+// A list with each item's lead in bold, such as takeaways or licenses:
 //
 //   <!-- lab:lessons -->
 //
 //   - **Run your own bake-off.** Published scores picked Laguna.
+//   - **CC BY-SA 4.0** — Reports, docs and recorded data.
 //
 //   <!-- /lab:lessons -->
+//
+// A dash or colon right after the lead is for GitHub readers and is
+// dropped on the site.
+//
+// Options:
+//   class  the list's class (default "lessons")
 
 import { fail } from "./shared.js";
 
@@ -12,7 +19,7 @@ import { fail } from "./shared.js";
 
 const ITEM = /<li>([\s\S]*?)<\/li>/g;
 
-const LEAD = /^\s*<strong>([\s\S]+?)<\/strong>\s*/;
+const LEAD = /^\s*<strong>([\s\S]+?)<\/strong>\s*(?:[—–:-]\s*)?/;
 
 // ---- Lessons ----------------------------------------------------------
 
@@ -24,6 +31,7 @@ export default function lessons(block) {
   }
 
   return {
+    className: block.options.class ?? "lessons",
     items: items.map((item) => {
       const lead = item.match(LEAD);
 
