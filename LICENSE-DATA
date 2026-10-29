@@ -8,9 +8,9 @@ International License (CC BY-SA 4.0).
 CC BY-SA 4.0 covers:
 
 - This repository's README.md and CITATION.cff.
-- The files directly inside each report's folder, reports/<report>/,
-  such as index.html, README.md, data.md, preregistration.md and
-  judges.md.
+- The Markdown files directly inside each report's folder,
+  reports/<report>/, such as index.md, README.md, data.md,
+  preregistration.md and judges.md.
 - Each report's recorded data: the answers, grades, summaries, review
   packets, review keys and logs under bakeoff/results/,
   bakeoff/round2/results/, bakeoff/review/, bakeoff/round2/review-style/
