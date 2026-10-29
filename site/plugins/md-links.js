@@ -34,10 +34,16 @@ function rewriteHref(href) {
   return path.replace(MARKDOWN_PATH, ".html") + rest;
 }
 
+// Comment blocks keep their content in `meta.children`, so look there
+// too, or links inside a block would be missed.
 function rewriteTokens(tokens) {
   for (const token of tokens) {
     if (token.children) {
       rewriteTokens(token.children);
+    }
+
+    if (Array.isArray(token.meta?.children)) {
+      rewriteTokens(token.meta.children);
     }
 
     if (token.type !== "link_open") {
