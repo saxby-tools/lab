@@ -27,6 +27,14 @@ rewritten to match. Don't add front matter; GitHub shows it as a
 table. The layout, address and title come from `eleventy.config.js`,
 and the title is the file's first heading.
 
+Two small data files beside a report's Markdown carry what front
+matter would:
+
+- `index.11tydata.json` gives the report itself `report.ejs`, the
+  report layout. Other pages use `page.ejs`.
+- `<folder>.11tydata.json` holds the folder's `palette`: each name
+  as it appears in a table, mapped to a series color from 1 to 8.
+
 Data files under `bakeoff/` and `checks/` are copied as they are,
 never rendered.
 
@@ -41,11 +49,14 @@ A comment block puts a component around ordinary Markdown:
 | ----- | ------------- |
 | Qwen  | 23/24         |
 
+Runs that passed every hidden test.
+
 <!-- /lab:bar-chart -->
 ```
 
-On GitHub, a reader sees the table. On the site, the table becomes a
-chart, and the table stays underneath it.
+On GitHub, a reader sees the table and its caption. On the site, the
+table becomes a chart, and the paragraph after it becomes the chart's
+caption.
 
 The grammar follows WordPress block comments:
 
@@ -58,38 +69,48 @@ The grammar follows WordPress block comments:
 - Comments outside the `lab:` namespace are left alone.
 
 A mistake stops the build and names the file and line: an unknown
-component, invalid JSON, a closer that doesn't match its opener, or a
-block left open.
+component, invalid JSON, a closer that doesn't match its opener, a
+block left open, a missing column, or a cell that isn't a number.
 
 ##  Components
 
-| Component | Wraps | Options |
+Each component's own file lists its options at the top.
+
+| Component | Wraps | Draws |
 | --- | --- | --- |
-| `bar-chart` | A table | `value`, `label`, `title`, `max` |
+| `bar-chart` | A table | Bars for one column, with an optional marker line |
+| `race` | A table | A ranked finish order |
+| `bubble-chart` | A table | Bubbles on a log-scale x axis |
+| `heatmap` | A table | Shaded cells such as `3/3 (100%)` |
+| `stacked-bar` | A table | One stacked bar per row |
+| `grouped-bars` | A table | A group of bars per row |
+| `verdicts` | A table | Picks as colored pills; split rows shaded |
+| `data-table` | A table | A compact table with a color per row |
+| `judge-cards` | A list | One card per item, score first |
+| `lessons` | A list | Takeaways with bold leads |
+| `label` | A heading | The red label; GitHub shows the heading |
+| `deck` | A paragraph | The larger opening paragraph |
+| `notice` | A heading and text | A boxed aside with a kicker |
+| `bulletin` | Any Markdown | A boxed bulletin |
+| `footer` | Paragraphs | The page footer; the first is the colophon |
 
-`bar-chart` options:
+Charts read each cell as a number with an optional `/max` and unit,
+so `23/24`, `17.2 GiB` and `96%` all work.
 
-- `value` (required): the column to chart.
-- `label`: the column naming each bar. Default: the first column.
-- `title`: a caption above the chart.
-- `max`: the top of the scale. Default: the largest `/max` in the
-  column, or else its largest value.
-
-It reads each cell as a number with an optional `/max` and unit, so
-`23/24`, `17.2 GiB` and `96%` all work. A cell that isn't a number
-stops the build.
-
-To add a component, add two files to `site/components/`: `name.ejs`
-draws it, and `name.js` turns the block into the template's data. The
-block holds `name`, `options`, `line`, `html` (the Markdown inside,
-rendered) and `table` (the first table inside, as `columns` and
-`rows`).
+To add a component, add `name.ejs` to `site/components/` to draw it,
+and `name.js` to turn the block into the template's data if it needs
+more than the block itself. The block holds `name`, `options`,
+`line`, `env` (the page's data), `html` (the Markdown inside,
+rendered) and `table`: the first table inside, as `columns`, `rows`
+of raw cells and `htmlRows` of rendered ones. `shared.js` has the
+helpers for failing, numbers and colors.
 
 ##  Files
 
 ```
 eleventy.config.js        layout, addresses, titles, copying
 site/plugins/             markdown-it plugins: comment blocks, links
-site/components/          one .ejs and one .js per component
-site/layouts/page.ejs     the page around every rendered Markdown file
+site/components/          a .ejs, and often a .js, per component
+site/layouts/page.ejs     the page around most rendered Markdown
+site/layouts/report.ejs   the page around a report's index.md
 ```
