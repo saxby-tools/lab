@@ -1,9 +1,10 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
+import { CommentBlockError } from "markdown-it-comment-blocks";
+
 import barChart from "./bar-chart.js";
 import { parseCell } from "./shared.js";
-import { CommentBlockError } from "../plugins/comment-blocks.js";
 
 // ---- Helpers ----------------------------------------------------------
 
