@@ -1,0 +1,17 @@
+<ol class="reports">
+<% for (const card of cards) { -%>
+  <li class="report">
+    <p class="report__no"><span>No.</span><%= card.number %></p>
+    <h3 class="report__title"><a
+      href="<%= card.href %>"><%- card.title %></a></h3>
+    <p class="report__meta">Published <%- card.published %></p>
+    <div>
+      <p class="report__summary"><%- card.summary %></p>
+      <ul class="report__links">
+        <li><a href="<%= card.href %>"><%= readText %></a></li>
+        <li><a href="<%= card.files %>"><%= filesText %></a></li>
+      </ul>
+    </div>
+  </li>
+<% } -%>
+</ol>
