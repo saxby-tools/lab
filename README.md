@@ -9,9 +9,12 @@ for language models. The lab is where its model choices get tested.
 
 ##  Reports
 
-| No. | Report | Published |
-| --- | --- | --- |
-| 001 | [The MacBook bake-off](reports/001-macbook-bake-off/) | Oct. 2026 |
+| No. | Report | Files and data | Published |
+| --- | --- | --- | --- |
+| 001 | [The MacBook bake-off][001] | [Files][001-files] | Oct. 2026 |
+
+[001]: https://saxby-tools.github.io/lab/reports/001-macbook-bake-off/
+[001-files]: reports/001-macbook-bake-off/
 
 ##  How a report is laid out
 
