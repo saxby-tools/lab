@@ -1,19 +1,32 @@
-<figure class="lab-chart">
+<div class="figure">
 <% if (title) { -%>
-  <figcaption class="lab-chart__title"><%= title %></figcaption>
+  <p class="chart-title"><%= title %></p>
 <% } -%>
-  <ol class="lab-chart__bars">
+<% if (marker) { -%>
+  <div class="bars-wrap has-budget" style="--at:<%= marker.percent %>%">
+  <div class="bar-row budget-head"><span></span><span
+    class="budget-label"><span><%= marker.label %></span></span><span
+    ></span></div>
+<% } else { -%>
+  <div class="bars-wrap">
+<% } -%>
+  <ol class="bars">
 <% for (const row of rows) { -%>
-    <li class="lab-chart__row">
-      <span class="lab-chart__name"><%= row.name %></span>
-      <span class="lab-chart__track"><span class="lab-chart__fill"
-        style="--w: <%= row.percent %>%"></span></span>
-      <span class="lab-chart__value"><%= row.text %></span>
-    </li>
+  <li class="bar-row <%= row.series %><%= row.over ? " over" : "" %>">
+    <span class="bar-name"><%= row.name %></span>
+    <span class="bar-track"><span class="bar-fill"
+      style="--w:<%= row.percent %>%"></span></span>
+    <span class="bar-val"><%= row.text %></span>
+  </li>
 <% } -%>
-  </ol>
-  <details class="lab-chart__data">
+  </ol></div>
+<% if (tableHtml) { -%>
+  <details class="figure-data">
     <summary>The numbers as a table</summary>
-<%- html -%>
+<%- tableHtml %>
   </details>
-</figure>
+<% } -%>
+<% if (caption) { -%>
+<%- caption.replace("<p>", '<p class="figcap">') %>
+<% } -%>
+</div>

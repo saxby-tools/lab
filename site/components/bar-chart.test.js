@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import barChart, { parseCell } from "./bar-chart.js";
+import barChart from "./bar-chart.js";
+import { parseCell } from "./shared.js";
 import { CommentBlockError } from "../plugins/comment-blocks.js";
 
 // ---- Helpers ----------------------------------------------------------
@@ -10,8 +11,8 @@ function block(options, rows = [["Qwen", "23/24"], ["Gemma", "22/24"]]) {
   return {
     name: "bar-chart",
     line: 7,
-    env: {},
-    html: "<table></table>",
+    env: { palette: { Qwen: 1 } },
+    html: "<table></table>\n<p>A caption.</p>\n",
     options,
     table: {
       columns: ["Model", "Score"],
@@ -39,9 +40,12 @@ test("bars scale to the largest /N and keep the cell's own text", () => {
   const view = barChart(block({ value: "Score", title: "Runs" }));
 
   assert.equal(view.title, "Runs");
+  assert.equal(view.caption, "<p>A caption.</p>");
   assert.deepEqual(view.rows, [
-    { name: "Qwen", text: "23/24", percent: "95.8" },
-    { name: "Gemma", text: "22/24", percent: "91.7" },
+    { name: "Qwen", text: "23/24", series: "c-1", percent: "95.8",
+      over: false },
+    { name: "Gemma", text: "22/24", series: "", percent: "91.7",
+      over: false },
   ]);
 });
 
@@ -56,6 +60,15 @@ test("without /N, bars scale to the largest value", () => {
   const view = barChart(block({ value: "Score" }, rows));
 
   assert.deepEqual(view.rows.map((row) => row.percent), ["50.0", "100.0"]);
+});
+
+test("a marker sits on the same scale and flags bars past it", () => {
+  const rows = [["A", "17.2 GiB"], ["B", "96.9 GiB"]];
+  const options = { value: "Score", max: 110, marker: { at: 95, label: "x" } };
+  const view = barChart(block(options, rows));
+
+  assert.deepEqual(view.marker, { label: "x", percent: "86.4" });
+  assert.deepEqual(view.rows.map((row) => row.over), [false, true]);
 });
 
 function assertFails(input, pattern) {
