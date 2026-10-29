@@ -1,0 +1,8 @@
+# Answers, grades, packets and logs written by the bake-off harness.
+# GitHub collapses them in diffs and leaves them out of the language
+# bar, so the bar shows the harness, not the 464 model-written answers.
+reports/001-macbook-bake-off/bakeoff/results/** linguist-generated
+reports/001-macbook-bake-off/bakeoff/round2/results/** linguist-generated
+reports/001-macbook-bake-off/bakeoff/review/** linguist-generated
+reports/001-macbook-bake-off/bakeoff/round2/review-style/** linguist-generated
+reports/001-macbook-bake-off/bakeoff/logs/** linguist-generated
