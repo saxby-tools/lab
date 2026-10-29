@@ -65,6 +65,30 @@ test("a wrapping block gets its options, table and inner HTML", () => {
   assert.doesNotMatch(html, /lab:chart/);
 });
 
+test("tables also come rendered, for cells with code or links", () => {
+  const { calls, components } = recorder();
+  const source = [
+    "<!-- lab:chart -->",
+    "",
+    "| Task | Why |",
+    "| ---- | --- |",
+    "| html | `<script>` got [through](a.md) |",
+    "",
+    "<!-- /lab:chart -->",
+  ].join("\n");
+
+  render(source, components);
+
+  const [row] = calls[0].table.rows;
+  const [htmlRow] = calls[0].table.htmlRows;
+
+  assert.equal(row.Why, "`<script>` got [through](a.md)");
+  assert.equal(
+    htmlRow.Why,
+    '<code>&lt;script&gt;</code> got <a href="a.md">through</a>',
+  );
+});
+
 test("a table right after the comment, no blank line, still counts", () => {
   const { calls, components } = recorder();
 
