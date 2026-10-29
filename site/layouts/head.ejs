@@ -1,0 +1,25 @@
+<%#
+  Icons and share tags, included by every layout. Icon links are
+  relative, through `root`, so they work under any base path. Share
+  tags must be absolute, so they use `canonical` and `siteUrl`.
+-%>
+<meta name="description" content="<%= summary %>">
+<link rel="icon" href="<%= root %>favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32"
+  href="<%= root %>favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+  href="<%= root %>favicon-16x16.png">
+<link rel="apple-touch-icon" href="<%= root %>apple-touch-icon.png">
+<link rel="manifest" href="<%= root %>site.webmanifest">
+<link rel="canonical" href="<%= canonical %>">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saxby lab">
+<meta property="og:title" content="<%= title %>">
+<meta property="og:description" content="<%= summary %>">
+<meta property="og:url" content="<%= canonical %>">
+<meta property="og:image" content="<%= siteUrl %>social.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta property="og:image:alt"
+  content="Saxby lab, tested with great care, in cream on red">
+<meta name="twitter:card" content="summary_large_image">
