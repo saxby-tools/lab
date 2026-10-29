@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title><%= title %> · Saxby lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Saxby design system tokens (light first, dark second) */
+:root, [data-theme="light"] {
+  color-scheme: light;
+  --ground: #fbf0de; --panel: #fff8ec; --buff: #f4d3a1; --soot: #241a15;
+  --soot-muted: #6a5849; --rule: #e3cba6; --track: #f0dfc4;
+  --signal: #c8231a; --on-signal: #fbf0de;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #17110e; --panel: #221914; --buff: #33261c; --soot: #f5e5cb;
+    --soot-muted: #b8a38b; --rule: #3b2d23; --track: #2d221c;
+    --signal: #ff6151; --on-signal: #17110e;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #17110e; --panel: #221914; --buff: #33261c; --soot: #f5e5cb;
+  --soot-muted: #b8a38b; --rule: #3b2d23; --track: #2d221c;
+  --signal: #ff6151; --on-signal: #17110e;
+}
+:root {
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+
+/* base */
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--ground); }
+html, body { min-width: 320px; overflow-x: hidden; overflow-x: clip; }
+body { margin: 0; background: var(--ground); color: var(--soot);
+  font: 400 18px/1.6 var(--display); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration-color: var(--signal);
+  text-decoration-thickness: 2px; text-underline-offset: 4px; }
+a:hover { color: var(--signal); }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--signal);
+  outline-offset: 3px; border-radius: 2px; }
+
+/* masthead */
+.lab-top { border-bottom: 2px solid var(--soot); }
+.lab-top__inner { max-width: 900px; margin: 0 auto; padding: 14px 28px;
+  display: flex; gap: 18px; align-items: baseline; flex-wrap: wrap; }
+.lab-top__home { font: 800 18px/1.2 var(--display); font-stretch: 115%;
+  letter-spacing: .12em; text-transform: uppercase; text-decoration: none; }
+.lab-top__home span { color: var(--signal); }
+.lab-top__source { margin-left: auto; font-size: 15px; font-weight: 600; }
+
+/* prose */
+.lab-page { max-width: 900px; margin: 0 auto; padding: 48px 28px 96px; }
+.lab-page h1 { margin: 0 0 24px; font: 800 clamp(34px, 6vw, 56px)/1.05
+  var(--display); font-stretch: 108%; letter-spacing: -.01em; }
+.lab-page h2 { margin: 56px 0 16px; font: 800 clamp(26px, 4vw, 34px)/1.1
+  var(--display); font-stretch: 108%; }
+.lab-page h2::before { content: ""; display: block; width: 48px;
+  height: 4px; background: var(--signal); margin-bottom: 16px; }
+.lab-page h3 { margin: 32px 0 10px; font: 700 21px/1.25 var(--display); }
+.lab-page p, .lab-page ul, .lab-page ol, .lab-page blockquote {
+  max-width: 66ch; margin: 0 0 1em; }
+.lab-page li { margin: 0 0 .35em; }
+.lab-page blockquote { margin-left: 0; padding: 4px 0 4px 18px;
+  border-left: 4px solid var(--rule); color: var(--soot-muted); }
+.lab-page code { font: 500 .86em/1.4 var(--mono); background: var(--panel);
+  border: 1px solid var(--rule); border-radius: 3px; padding: 1px 5px; }
+.lab-page pre { background: var(--panel); border: 1px solid var(--rule);
+  border-radius: 8px; padding: 16px 18px; overflow-x: auto;
+  font: 500 14px/1.6 var(--mono); }
+.lab-page pre code { background: none; border: 0; padding: 0;
+  font-size: inherit; }
+.lab-page table { display: block; max-width: 100%; overflow-x: auto;
+  border-collapse: collapse; margin: 0 0 1.4em; font-size: 16px; }
+.lab-page th, .lab-page td { text-align: left; padding: 9px 16px 9px 0;
+  border-bottom: 1px solid var(--rule); vertical-align: top; }
+.lab-page thead th { border-bottom: 2px solid var(--soot);
+  font-weight: 700; white-space: nowrap; }
+.lab-page hr { border: 0; border-top: 1px solid var(--rule);
+  margin: 40px 0; }
+
+/* component: bar chart */
+.lab-chart { margin: 8px 0 32px; padding: 24px; background: var(--panel);
+  border: 1px solid var(--rule); border-radius: 8px; }
+.lab-chart__title { margin: 0 0 16px; font-weight: 700; }
+.lab-chart__bars { list-style: none; margin: 0; padding: 0; max-width: none; }
+.lab-chart__row { display: grid; align-items: center; gap: 14px;
+  grid-template-columns: minmax(140px, 220px) 1fr 5.5em; margin: 0;
+  padding: 7px 0; }
+.lab-chart__name { font-weight: 600; font-size: 16px; line-height: 1.3; }
+.lab-chart__track { height: 18px; background: var(--track);
+  border-radius: 4px; overflow: hidden; }
+.lab-chart__fill { display: block; height: 100%; width: var(--w);
+  background: var(--signal); border-radius: 4px; }
+.lab-chart__value { text-align: right; font: 600 15px/1 var(--mono); }
+.lab-chart__data { margin-top: 16px; }
+.lab-chart__data summary { cursor: pointer; font-weight: 600;
+  font-size: 15px; color: var(--soot-muted); }
+.lab-chart__data table { margin: 12px 0 0; }
+
+/* small screens */
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+  .lab-top__inner { padding: 12px 18px; }
+  .lab-page { padding: 32px 18px 72px; }
+  .lab-chart { padding: 18px 16px; }
+  .lab-chart__row { grid-template-columns: 1fr 4.6em; }
+  .lab-chart__track { grid-column: 1 / 3; grid-row: 2; }
+}
+</style>
+</head>
+<body>
+<header class="lab-top">
+  <div class="lab-top__inner">
+    <a class="lab-top__home" href="<%= root %>">Saxby <span>lab</span></a>
+    <a class="lab-top__source" href="<%= source %>">This page in Markdown</a>
+  </div>
+</header>
+<main class="lab-page">
+<%- content %>
+</main>
+</body>
+</html>
