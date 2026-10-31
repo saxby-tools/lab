@@ -33,6 +33,7 @@ scorer, and the personality packet.
 | C3 | OpenClaw bge-m3 hybrid, no score cut (post hoc) | 4.7 | 15.3 | 21.1 | 12.3 to 18.3 |
 | C4 | OpenClaw bge-m3 hybrid, undated notes (post hoc) | 5.8 | 16.2 | 24.3 | 10.8 to 21.7 |
 | C4-control | OpenClaw bge-m3 hybrid, undated, exact fact text (post hoc) | 91.1 | 99.7 | 100.0 | 98.5 to 100.0 |
+| C5 | OpenClaw bge-m3 hybrid, undated, no score cut (round 4) | 9.6 | 38.8 | 60.0 | 36.7 to 40.8 |
 
 Recall at k, percent, mean of three seeds. Chance at five of 30 notes is 16.7.
 
@@ -55,7 +56,10 @@ recall/              the recall arm
   corpus/seed-N/     the three generated corpora, as they ran
   hermes-fts.py      cells A0 to A2, Hermes session_search
   hermes-lancedb.py  cells B0 to B2, the LanceDB plugin with bge-m3
-  openclaw.py        cells C0 to C2, OpenClaw memory_search
+  hermes-lancedb-facts.py
+                     round 3, cells B3 to B8: the plugin with its fact
+                     extraction on, as shipped and with the shim
+  openclaw.py        cells C0 to C5, OpenClaw memory_search
   corpus.py          shared loading and the exact-text controls
   score.py           recall at k, intervals, miss lists
   tables.py          prints the report's table rows from the summary

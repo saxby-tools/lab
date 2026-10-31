@@ -163,6 +163,13 @@ per-condition means.
 
 ##  Changes since recording
 
+- **Oct. 30, 2026, 11:45 p.m.:** round 4's cell C5 was recorded with
+  the undated file names (`note-entry-NN`) in `ranked`, because the
+  harness's reuse path did not load the name map; the rows were
+  translated to note ids in place with the same `mapping.json` the
+  C4 run used, and `openclaw.py` now loads the map on reuse. No search
+  was rerun.
+
 - **Oct. 30, 2026, late evening:** the personality ratings came in
   after the report was published. `ratings.md`, `key.json`, the
   report's personality section and this file were updated; nothing

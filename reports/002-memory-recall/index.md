@@ -144,6 +144,7 @@ work; what follows is about paraphrase.
 | C3 | OpenClaw bge-m3 hybrid, no score cut (post hoc) | 4.7 | 15.3 | 21.1 | 12.3 to 18.3 |
 | C4 | OpenClaw bge-m3 hybrid, undated notes (post hoc) | 5.8 | 16.2 | 24.3 | 10.8 to 21.7 |
 | C4-control | OpenClaw bge-m3 hybrid, undated, exact fact text (post hoc) | 91.1 | 99.7 | 100.0 | 98.5 to 100.0 |
+| C5 | OpenClaw bge-m3 hybrid, undated, no score cut (round 4) | 9.6 | 38.8 | 60.0 | 36.7 to 40.8 |
 
 Recall at k, mean of three seeds, percent. The interval is a
 t-interval over the three seed means; with three seeds it is wide by
@@ -266,6 +267,39 @@ scoring rules in OpenClaw's own documentation. It is what OpenClaw's
 built-in memory search does with this embedder over a dated diary.
 The hypothesis that the two harnesses would land within ten points of
 each other was wrong in both directions.
+
+## Round 4: OpenClaw without the cut, undated
+
+Added after publication, preregistered as round 4 and run the same
+night. The missing cell was undated notes with the score cut removed:
+C5, OpenClaw's bge-m3 hybrid with `--min-score 0` over the C4 indexes.
+
+<!-- lab:data-table -->
+
+| Setup | Score cut | Recall at 5 | Recall at 10 |
+| --- | --- | --- | --- |
+| Dated notes (C2) | 0.35 | 4.3 | 4.7 |
+| Dated notes, no cut (C3) | none | 15.3 | 21.1 |
+| Undated notes (C4) | 0.35 | 16.2 | 24.3 |
+| Undated notes, no cut (C5) | none | 38.8 | 60.0 |
+
+Mean of three seeds, percent. C5's seeds: 39.6, 38.8, 37.9.
+
+<!-- /lab:data-table -->
+
+H6 said C5 would stay within ten points of chance. It did not: with
+both defaults out of the way, OpenClaw finds the right day in its top
+five for 38.8 percent of paraphrased questions and in its top ten for
+60. So the cut does cost real recall once the decay is gone, about 22
+points at five, and the issue's premise half stands. The other half
+is the gap that remains: 38.8 against the LanceDB plugin's 68.6 with
+the same embedder, which is where chunk size (400 tokens with 80
+overlap, not a setting) and the keyword leg's weight live. Neither is
+reachable from the config, so that is where this round stops.
+
+For Aster today, the practical reading is the earlier one: dated daily
+notes plus the 30-day decay put OpenClaw's recall at chance regardless
+of the cut, and only undated files or a changed ranking would move it.
 
 ## Personality did not move
 
