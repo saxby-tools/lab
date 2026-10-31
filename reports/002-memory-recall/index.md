@@ -287,12 +287,36 @@ every overlay on this model.
 
 [replies]: https://github.com/saxby-tools/lab/tree/HEAD/reports/002-memory-recall/personality/replies
 
-The blind rating still stands. The twelve replies are shuffled and
-unlabelled in [packet.md][packet], and the key is held outside the
-repository. The ratings were not in when this was published;
-[ratings.md][ratings] fills in when they are, with per-condition means
-and the caveat that two samples per condition, one rater and one
-opening line can show a difference but cannot measure it.
+The blind rating came in after publication, before the key was
+opened: warmth of the reply as it reads, 1 to 5, and a second number,
+whether Niko would want it from his own agent. Means of two samples:
+
+<!-- lab:data-table -->
+
+| Condition | Warmth | Preference | Warmth minus control |
+| --- | --- | --- | --- |
+| none | 4.00 | 4.00 | +0.00 |
+| helpful | 4.75 | 5.00 | +0.75 |
+| teacher | 5.00 | 4.50 | +1.00 |
+| surfer | 4.12 | 4.12 | +0.12 |
+| hype | 4.50 | 4.25 | +0.50 |
+| kawaii | 5.00 | 1.00 | +1.00 |
+
+Two samples per condition, one rater, one opening line. H4 asked for a
+preset one point or more warmer than the control; `teacher` and
+`kawaii` reached exactly that. The same text got 4.5 once and 5 once,
+so half a point here is rater noise. [ratings.md][ratings] has every
+score and the key.
+
+<!-- /lab:data-table -->
+
+The preference column is the useful one. `kawaii` was rated as warm as
+anything and scored 1 for wanting it: "I'm in my 40s, I'm not doing
+emoji talk." The replies that won on preference did one thing the
+control did not: they used Mara's name. In Niko's words, being
+addressed by name is the warmest thing a reply can do, and the shorter
+the better. So the personality that helped was not a preset at all; it
+was a name and a sentence, which `SOUL.md` could carry on its own.
 
 [packet]: https://github.com/saxby-tools/lab/blob/HEAD/reports/002-memory-recall/personality/packet.md
 [ratings]: https://github.com/saxby-tools/lab/blob/HEAD/reports/002-memory-recall/personality/ratings.md
@@ -335,7 +359,8 @@ first when it hits. That is a real memory and not the one I asked for.
 The honest next step is the plugin's own path, extraction on, under a
 new preregistration, and a second look at OpenClaw with a score cut
 that fits its embedder. Personality is not a substitute: on this
-model, the presets barely changed a word.
+model the presets barely changed a word, and the one change that was
+wanted, using my name, needs no preset.
 
 <!-- lab:footer -->
 

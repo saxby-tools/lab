@@ -69,7 +69,8 @@ personality/         the personality arm
   packet.py          shuffles the replies for a blind rating
   replies/           every reply and the full CLI output behind it
   packet.md          the blind packet
-  ratings.md         the ratings, once they are in, and the key
+  ratings.md         Niko's blind ratings, the key and the means
+  key.json           the key, committed after the ratings were given
 ```
 
 ##  Rerun it
@@ -137,11 +138,11 @@ None yet.
 
 ##  Known gaps
 
-- [#9](https://github.com/saxby-tools/lab/issues/9): the personality
-  ratings are not in yet; the packet is built and the key is held
-  outside the repository.
+None open. [#9](https://github.com/saxby-tools/lab/issues/9), the
+personality ratings, closed the same evening when they came in; see
+`personality/ratings.md`.
 
-Follow-up rounds, not gaps:
+Follow-up rounds:
 [#10](https://github.com/saxby-tools/lab/issues/10) the LanceDB plugin
 with extraction on, and
 [#11](https://github.com/saxby-tools/lab/issues/11) OpenClaw with a

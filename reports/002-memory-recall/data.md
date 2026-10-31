@@ -127,7 +127,9 @@ line and the next rule. `replies/<name>.txt` holds each reply,
 `replies/<name>.log` the whole output including the model's thinking,
 and `replies.json` the set. `personality/packet.py` shuffles them into
 `packet.md` with the key kept outside the repository until the ratings
-are in.
+were in. Niko rated the packet on the evening of Oct. 30, blind;
+`ratings.md` holds the scores, the key (also `key.json`) and the
+per-condition means.
 
 ##  What was checked
 
@@ -160,6 +162,11 @@ are in.
   is dominated by startup and says nothing about the engine.
 
 ##  Changes since recording
+
+- **Oct. 30, 2026, late evening:** the personality ratings came in
+  after the report was published. `ratings.md`, `key.json`, the
+  report's personality section and this file were updated; nothing
+  about the recall arm changed.
 
 - **Oct. 30, 2026, during the runs:** the first seed-1 OpenClaw cells
   were collected by a version of `openclaw.py` that buffered its
