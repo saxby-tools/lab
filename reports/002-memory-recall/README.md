@@ -167,4 +167,6 @@ Both follow-up rounds ran the same night and are in the report:
 [#10](https://github.com/saxby-tools/lab/issues/10), the LanceDB plugin
 with extraction on, is round 3, and
 [#11](https://github.com/saxby-tools/lab/issues/11), OpenClaw with the
-score cut removed, is round 4.
+score cut removed, is round 4. The extraction bug round 3 found is
+filed upstream as
+[lancedb/hermes-agent-memory#14](https://github.com/lancedb/hermes-agent-memory/issues/14).
