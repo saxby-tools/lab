@@ -8,11 +8,14 @@ every change made since it was recorded.
 | Arm | Runs | Folder |
 | --- | --- | --- |
 | Recall, six cells plus three controls | 3 seeds, 240 queries each | `recall/results/seed-N/` |
+| Recall, round 3: extraction on, six cells | 3 seeds, 240 queries each | `recall/results/seed-N/`, facts in `facts.json` and `facts-shim.json` |
+| Recall, round 4: one OpenClaw cell | 3 seeds, 240 queries each | `recall/results/seed-N/C5.jsonl` |
 | Personality, six conditions | 2 samples each | `personality/replies/` |
 
 Everything ran on one machine: an Apple M5 Max with 128 GiB of unified
 memory, macOS 26, Docker Desktop 4.97.0 (engine 29.9.2, linux/arm64
-VM), Ollama 0.40.13 with Saxby's patches, on Oct. 30, 2026.
+VM), Ollama 0.40.13 with Saxby's patches, on Oct. 30, 2026, with
+round 3's extraction running into the early hours of Oct. 31.
 
 ##  Versions
 
@@ -27,7 +30,7 @@ Pinned before the first result commit.
 | OpenClaw | 2026.10.9 (`8b18b55`), the Homebrew install on the host |
 | Ollama | 0.40.13+saxby.ad4b55d8 (ollama-saxby build) |
 | Embedder | `bge-m3:latest`, Ollama digest `790764642607`, 566.7M parameters, 1,024 dimensions, F16 |
-| Chat model, personality arm only | `gemma4:31b-128k`, Ollama digest `d0e8710a4e62`, 31.3B, Q4_K_M, routed as a raw model name through Saxby |
+| Chat model, personality arm and round 3's extraction | `gemma4:31b-128k`, Ollama digest `d0e8710a4e62`, 31.3B, Q4_K_M, routed as a raw model name through Saxby |
 | Saxby | 0.9.7, commit `44038ca6fd0b4b4682db53cd71383a15beec59c7` (v0.9.7-7-g44038ca) |
 | Docker | Desktop 4.97.0, engine 29.9.2 |
 | Host Python for `generate.py`, `check.py`, `openclaw.py`, `score.py` | 3.15.2 |
@@ -83,6 +86,25 @@ returned in order (`ranked`, as note ids), and the time taken.
   `recall()` with `kind="turn"`, `limit=10`, RRF fusion. B1 is vector
   mode, the plugin default; B2 is hybrid; B0 is vector mode with each
   fact's own sentence. Items are rows.
+- **B3 to B8 (round 3):** `recall/hermes-lancedb-facts.py`, same
+  container and plugin, with `extraction.enabled: true` and Hermes's
+  model block pointing at `gemma4:31b-128k` through Saxby. For each
+  note it calls the plugin's own `extract()` over the session's
+  messages; what comes back is stored as `fact` rows in the shape of
+  the provider's `build_fact_row`, beside the same turn rows B1 used.
+  B3 is `recall(kind="fact")` in vector mode, B4 the same in hybrid,
+  B5 `kind="any"` in vector mode. As shipped, `extract()` returned no
+  facts for any note on this Hermes: the plugin passes
+  `response_format=` to Hermes's `call_llm`, which does not accept the
+  keyword, and the plugin logs that at debug level and returns an
+  empty list. So B3 and B4 searched an empty fact set, and B5 is B1
+  again. B6, B7 and B8 are the same three cells with `--shim`, which
+  moves `response_format` into `extra_body`, unwraps the
+  `ChatCompletion` the client now returns, and raises the plugin's
+  30-second timeout to 300 seconds for a local 31B model. The prompt,
+  the parsing and the storage are the plugin's. Each seed's facts sit
+  in `facts.json` and `facts-shim.json` next to the results, with the
+  time each note's extraction took. Items are rows.
 - **C0 to C4:** `recall/openclaw.py` on the host, with
   `OPENCLAW_CONFIG_PATH` and `OPENCLAW_STATE_DIR` pointing into a
   throwaway folder and no gateway started, copies the notes into a
@@ -109,7 +131,8 @@ returned in order (`ranked`, as note ids), and the time taken.
 | `text` | The query as written in `facts.json` |
 | `sent` | What the harness was given: the same text, or the `OR` form in A2 |
 | `ranked` | Note ids of the returned items, first to last, up to ten |
-| `roles` | B cells only: the role of each returned row, `user` or `assistant` |
+| `roles` | B0 to B2 only: the role of each returned row, `user` or `assistant` |
+| `kinds` | B3 to B8 only: the kind of each returned row, `fact` or `turn` |
 | `scores` | C cells only: OpenClaw's final score per chunk, after its recency decay |
 | `sessions_searched` | A cells only: distinct sessions Hermes returned |
 | `stale` | C cells only: OpenClaw's warning that the index was incomplete; never set |
@@ -160,8 +183,38 @@ per-condition means.
   dependencies.
 - OpenClaw's CLI starts a Node process per search, so its `elapsed_ms`
   is dominated by startup and says nothing about the engine.
+- The LanceDB plugin swallows every extraction failure: a rejected
+  call, a timeout or a reply that is not JSON all log at debug level
+  and return no facts. A note with no facts looks the same whether
+  the model had nothing to say or was never reached. The timings in
+  `facts.json` tell them apart: every as-shipped note came back empty
+  within two seconds; a shim note took 48 to 165 seconds, apart from
+  the two in seed 1 that ran while stray containers shared the model.
+- Hermes's auxiliary client retries a failed call on its own, so one
+  note whose extraction timed out took 15 minutes to come back empty.
 
 ##  Changes since recording
+
+- **Oct. 31, 2026, 3:15 a.m.:** round 3's seed 1, first session
+  (`note-2026-09-14`). Its shim extraction had run while six
+  containers from an earlier launch shared the model; it timed out
+  after 905 seconds and produced no facts. It was extracted again on
+  its own with `--redo-notes`, 17 facts in 146 seconds, and seed 1's
+  B6, B7 and B8 were rerun from the saved facts. Before the redo those
+  cells scored 86.7, 83.3 and 89.2 at five on seed 1 (means 88.3,
+  83.2 and 89.9); after, 90.0, 86.7 and 90.0 (means 89.4, 84.3 and
+  90.1). The other 89 extractions stand, including seed 3's
+  `note-2026-10-13`, which came back with no facts in 47 seconds: a
+  model answer, not a timeout.
+
+- **Oct. 30, 2026, about 11 p.m.:** the first round 3 launch left six
+  containers running after its shell chain failed (zsh's `noclobber`
+  refused to append to log files that did not exist yet), so two
+  copies of each seed-1 cell ran at once against the same home. They
+  were stopped by container id, seed 1's as-shipped cells were
+  discarded and rerun in a fresh home, and the chain was relaunched.
+  Seed 1's shim run began while the strays were still up, which is
+  where the timed-out session above came from.
 
 - **Oct. 30, 2026, 11:45 p.m.:** round 4's cell C5 was recorded with
   the undated file names (`note-entry-NN`) in `ranked`, because the
