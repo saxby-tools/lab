@@ -155,7 +155,10 @@ python3 personality/run.py --work /tmp/report-002
 
 ##  Corrections
 
-None yet.
+- **Oct. 30, 2026:** The red label at the top of the report's page on
+  the site was retitled "Memory / Recall / Test with great care," to
+  fit the box the lab's reports share. The report's title, folder and
+  address are the same, and no data or numbers changed.
 
 ##  Known gaps
 

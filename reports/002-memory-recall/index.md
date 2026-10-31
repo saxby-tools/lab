@@ -1,8 +1,8 @@
 <!-- lab:label {
   "number": "Saxby lab report No. 002",
-  "top": "The memory",
-  "word": "Recall test",
-  "bottom": "Tested with great care"
+  "top": "Memory",
+  "word": "Recall",
+  "bottom": "Test with great care"
 } -->
 
 # The memory recall test
