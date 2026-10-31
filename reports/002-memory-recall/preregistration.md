@@ -149,3 +149,30 @@ OpenAI SDK versions in the container, and the Saxby commit.
 | Pinned versions | Model digests not recorded (issue 1) | Digests and commits in `data.md` |
 | Scripts and data committed | Yes | Yes, with a corpus check |
 | Limitations stated | Partly, in Corrections | Its own section in the report |
+
+##  Decided after the plan
+
+Written as the runs went, dated by their commits. None of it changes
+the verdict cell or the bar.
+
+- **Exact-text controls (A0, B0, C0).** Added after the first seed-1
+  smoke run and before the full runs: each fact's own sentence as the
+  query, one per fact. A validity check that each index finds the
+  text it holds, not a hypothesis test.
+- **Hermes retries with OR on its own.** Found in Hermes's search code
+  after the plan was written: when the `AND` of a multi-word query
+  finds nothing, `search_messages` retries the terms joined with
+  `OR`, stopwords included. Cell A1 is therefore "as typed, with
+  Hermes's own retry", not pure `AND`. A2 stays as planned.
+- **C3, OpenClaw without the score cut.** Added after C2's first rows
+  showed most paraphrases returning nothing. The same index and
+  queries with `--min-score 0`. Post hoc; reported, not judged.
+- **C4, OpenClaw with undated notes.** Added after the C0 control came
+  back at about a fifth: a verbatim sentence from four weeks earlier
+  lost to recent filler. The same notes copied in as `entry-NN.md`,
+  which OpenClaw treats as evergreen, so its 30-day recency decay does
+  not apply, with its own exact-text control. Post hoc; reported, not
+  judged.
+- **Acknowledgement rows, B cells.** A post hoc rescoring of the same
+  ranked lists with the assistant's acknowledgement rows removed, to
+  see whether storing them cost recall.
