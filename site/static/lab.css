@@ -85,7 +85,7 @@ body { margin: 0; background: var(--ground); color: var(--soot);
   font: 400 1.125rem/1.6 var(--display);
   -webkit-font-smoothing: antialiased; }
 
-main { max-width: 56.25rem; margin: 0 auto; padding: 4.5rem 1.75rem 6rem; }
+main { max-width: 56.25rem; margin: 0 auto; padding: 3rem 1.75rem 6rem; }
 
 p { margin: 0 0 1em; max-width: 66ch; }
 
@@ -138,7 +138,8 @@ code { font-family: var(--mono); font-size: .88em; font-weight: 500;
 
 .sx-label { position: relative; background: var(--label-stock);
   color: var(--label-ink); text-align: center;
-  padding: 2.5rem 2.25rem 2.125rem; max-width: 100%; }
+  padding: 2.5rem 2.25rem 2.125rem; max-width: 100%;
+  margin-bottom: 2.5rem; }
 .sx-label p { margin: 0; max-width: none; }
 .sx-label__no { position: absolute; top: .875rem; right: 1rem;
   font: 500 .75rem/1 var(--mono); letter-spacing: .04em; }
