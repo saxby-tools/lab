@@ -167,7 +167,7 @@ body {
 main {
     max-width: 56.25rem;
     margin: 0 auto;
-    padding: 3rem 1.75rem 6rem;
+    padding: 2rem 1.75rem 6rem;
 }
 
 p {
@@ -1316,7 +1316,7 @@ footer p {
         font-size: 1.0625rem;
     }
     main {
-        padding: 2.5rem 1.125rem 4.5rem;
+        padding: 2rem 1.125rem 4.5rem;
     }
     .layout-report main {
         padding-top: 2.75rem;
