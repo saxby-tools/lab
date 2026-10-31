@@ -13,6 +13,9 @@ Mean over seeds, recall at k; 95 percent t-interval on recall at 5; pooled Wilso
 | B3 | Hermes LanceDB bge-m3, extracted facts, vector (round 3) | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 to 0.0 | 0.0 (0.0 to 0.5, n=720) |
 | B4 | Hermes LanceDB bge-m3, extracted facts, hybrid (round 3) | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 to 0.0 | 0.0 (0.0 to 0.5, n=720) |
 | B5 | Hermes LanceDB bge-m3, facts and turns, vector (round 3) | 47.1 | 68.6 | 75.4 | 69.6 | 65.3 to 71.9 | 68.6 (65.1 to 71.9, n=720) |
+| B6 | Hermes LanceDB bge-m3, extracted facts, vector, shim (round 3) | 70.4 | 89.4 | 92.2 | 89.7 | 82.1 to 96.8 | 89.4 (87.0 to 91.5, n=720) |
+| B7 | Hermes LanceDB bge-m3, extracted facts, hybrid, shim (round 3) | 40.1 | 84.3 | 91.5 | 85.0 | 76.7 to 91.9 | 84.3 (81.5 to 86.8, n=720) |
+| B8 | Hermes LanceDB bge-m3, facts and turns, vector, shim (round 3) | 72.9 | 90.1 | 93.8 | 91.2 | 84.4 to 95.8 | 90.1 (87.7 to 92.1, n=720) |
 | C0 | OpenClaw bge-m3 hybrid, exact fact text (control) | 36.9 | 55.8 | 60.3 | 56.9 | 50.4 to 61.3 | 55.8 (50.7 to 60.9, n=360) |
 | C1 | OpenClaw keyword only | 1.0 | 3.9 | 4.7 | 4.2 | 1.5 to 6.3 | 3.9 (2.7 to 5.6, n=720) |
 | C2 | OpenClaw bge-m3 hybrid | 1.7 | 4.3 | 4.7 | 4.4 | 1.7 to 6.9 | 4.3 (3.0 to 6.0, n=720) |
@@ -44,6 +47,9 @@ Verdict on B2 at the preregistered bar: **fail**.
 | B3 | 0.0 | 0.0 | 0.0 |
 | B4 | 0.0 | 0.0 | 0.0 |
 | B5 | 69.6 | 67.1 | 69.2 |
+| B6 | 90.0 | 92.1 | 86.2 |
+| B7 | 86.7 | 85.4 | 80.8 |
+| B8 | 90.0 | 92.5 | 87.9 |
 | C0 | 58.3 | 55.0 | 54.2 |
 | C1 | 3.3 | 3.3 | 5.0 |
 | C2 | 5.4 | 3.3 | 4.2 |
@@ -1037,6 +1043,50 @@ Verdict on B2 at the preregistered bar: **fail**.
 - `F097-q1` the rotating bin for food waste (seed 1: absent, seed 2: 10, seed 3: absent)
 - `F097-q2` the device for turning peelings into soil (seed 1: absent, seed 2: absent, seed 3: absent)
 - `F117-q1` the job application at the other company and its next stage (seed 1: absent, seed 2: absent, seed 3: absent)
+
+### B6: 11 queries
+
+- `F007-q1` the beeping detector on the steps and what I did about it (seed 1: absent, seed 2: absent, seed 3: 9)
+- `F007-q2` that annoying fire sensor noise (seed 1: absent, seed 2: absent, seed 3: absent)
+- `F008-q2` who is coming to clear the fireplace vent (seed 1: absent, seed 2: absent, seed 3: absent)
+- `F055-q1` the train under the channel for my sister's celebration and the fare (seed 1: absent, seed 2: absent, seed 3: 9)
+- `F069-q2` the picture game that occupied the eating area for months (seed 1: 10, seed 2: 6, seed 3: absent)
+- `F080-q2` the meal out with the pricey ribbon noodles and fungus (seed 1: absent, seed 2: absent, seed 3: 9)
+- `F094-q2` the orchard crop that became a relish (seed 1: 7, seed 2: absent, seed 3: absent)
+- `F097-q2` the device for turning peelings into soil (seed 1: 10, seed 2: absent, seed 3: absent)
+- `F107-q1` the charity drop-off of old garments (seed 1: absent, seed 2: absent, seed 3: absent)
+- `F107-q2` where I took the sacks of wardrobe clearout (seed 1: absent, seed 2: absent, seed 3: absent)
+- `F109-q2` the office furniture that took ages to put together (seed 1: 8, seed 2: 10, seed 3: 9)
+
+### B7: 16 queries
+
+- `F007-q1` the beeping detector on the steps and what I did about it (seed 1: absent, seed 2: absent, seed 3: 9)
+- `F007-q2` that annoying fire sensor noise (seed 1: absent, seed 2: absent, seed 3: absent)
+- `F008-q2` who is coming to clear the fireplace vent (seed 1: absent, seed 2: absent, seed 3: absent)
+- `F016-q1` what the hound destroyed when I was washing (seed 1: 8, seed 2: 7, seed 3: 8)
+- `F018-q2` the venue for the hound's lessons (seed 1: 8, seed 2: 7, seed 3: 7)
+- `F047-q2` goodbye drinks at the tenpin place (seed 1: absent, seed 2: 9, seed 3: 10)
+- `F055-q1` the train under the channel for my sister's celebration and the fare (seed 1: absent, seed 2: absent, seed 3: absent)
+- `F069-q2` the picture game that occupied the eating area for months (seed 1: absent, seed 2: absent, seed 3: absent)
+- `F080-q2` the meal out with the pricey ribbon noodles and fungus (seed 1: absent, seed 2: absent, seed 3: 10)
+- `F081-q2` cheap broth noodles from the recently opened eatery (seed 1: 10, seed 2: 8, seed 3: 8)
+- `F094-q2` the orchard crop that became a relish (seed 1: 7, seed 2: absent, seed 3: absent)
+- `F097-q2` the device for turning peelings into soil (seed 1: 10, seed 2: absent, seed 3: absent)
+- `F107-q1` the charity drop-off of old garments (seed 1: absent, seed 2: absent, seed 3: absent)
+- `F107-q2` where I took the sacks of wardrobe clearout (seed 1: absent, seed 2: absent, seed 3: absent)
+- `F109-q2` the office furniture that took ages to put together (seed 1: 9, seed 2: absent, seed 3: 10)
+- `F116-q2` the two-week canine houseguest (seed 1: 9, seed 2: 6, seed 3: 8)
+
+### B8: 8 queries
+
+- `F007-q1` the beeping detector on the steps and what I did about it (seed 1: absent, seed 2: absent, seed 3: 10)
+- `F008-q2` who is coming to clear the fireplace vent (seed 1: absent, seed 2: absent, seed 3: absent)
+- `F025-q2` that dark mark the nurse took a sample of (seed 1: absent, seed 2: absent, seed 3: absent)
+- `F031-q1` the numbers talk to the directors and their follow-up question (seed 1: absent, seed 2: absent, seed 3: absent)
+- `F047-q2` goodbye drinks at the tenpin place (seed 1: absent, seed 2: 6, seed 3: absent)
+- `F068-q2` the vegetable growing space after a very long queue (seed 1: absent, seed 2: 8, seed 3: absent)
+- `F069-q2` the picture game that occupied the eating area for months (seed 1: absent, seed 2: 6, seed 3: absent)
+- `F097-q2` the device for turning peelings into soil (seed 1: absent, seed 2: absent, seed 3: absent)
 
 ### C0: 14 queries
 

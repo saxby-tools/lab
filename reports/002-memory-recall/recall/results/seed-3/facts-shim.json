@@ -1,0 +1,3224 @@
+[
+ {
+  "note_id": "note-2026-09-14",
+  "facts": [
+   {
+    "content": "Carla's dog, Wilbur, stayed with the user for a fortnight while Carla was in Toronto.",
+    "abstract": "Wilbur the dog stayed with the user for two weeks.",
+    "category": "event",
+    "tags": [
+     "Carla",
+     "Wilbur",
+     "dog",
+     "Toronto"
+    ],
+    "evidence": [
+     6
+    ]
+   },
+   {
+    "content": "The user created a will with Patterson Solicitors and named Carla as the executor.",
+    "abstract": "The user has a will with Carla as executor.",
+    "category": "case",
+    "tags": [
+     "will",
+     "Patterson Solicitors",
+     "Carla",
+     "legal"
+    ],
+    "evidence": [
+     10
+    ]
+   },
+   {
+    "content": "The user purchased new glasses with thinner lenses for 240 pounds following a change in prescription.",
+    "abstract": "The user bought new glasses for 240 pounds.",
+    "category": "general",
+    "tags": [
+     "glasses",
+     "optician",
+     "health"
+    ],
+    "evidence": [
+     22
+    ]
+   },
+   {
+    "content": "The user frequently eats avocado on rye or granola with yoghurt for breakfast.",
+    "abstract": "Preferred breakfast options include avocado on rye and granola with yoghurt.",
+    "category": "preference",
+    "tags": [
+     "breakfast",
+     "diet",
+     "food"
+    ],
+    "evidence": [
+     26,
+     32,
+     34,
+     36
+    ]
+   },
+   {
+    "content": "The user has a habit of doing the newspaper's crossword while drinking tea.",
+    "abstract": "Routine involves doing crosswords with tea.",
+    "category": "pattern",
+    "tags": [
+     "routine",
+     "crossword",
+     "tea"
+    ],
+    "evidence": [
+     14,
+     24,
+     28,
+     30
+    ]
+   },
+   {
+    "content": "The user typically has tea and a digestive biscuit at 10:30 PM.",
+    "abstract": "Late-night routine of tea and a digestive.",
+    "category": "pattern",
+    "tags": [
+     "routine",
+     "snack",
+     "tea"
+    ],
+    "evidence": [
+     18,
+     36,
+     38
+    ]
+   },
+   {
+    "content": "The user listens to the cricket while washing the pans.",
+    "abstract": "Listens to cricket during kitchen chores.",
+    "category": "pattern",
+    "tags": [
+     "routine",
+     "cricket",
+     "chores"
+    ],
+    "evidence": [
+     8,
+     32,
+     38
+    ]
+   }
+  ],
+  "count": 7,
+  "elapsed_s": 120.6,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-09-15",
+  "facts": [
+   {
+    "content": "The user has a right shoulder impingement and is undergoing physiotherapy; after three sessions, they can lift their arm overhead again.",
+    "abstract": "Undergoing physiotherapy for right shoulder impingement.",
+    "category": "case",
+    "tags": [
+     "health",
+     "physio",
+     "shoulder"
+    ],
+    "evidence": [
+     6
+    ]
+   },
+   {
+    "content": "The user invested £5,000 in a one-year fixed bond with Nestbank at an interest rate of 4.6%.",
+    "abstract": "Invested £5,000 in a Nestbank fixed bond.",
+    "category": "case",
+    "tags": [
+     "finance",
+     "Nestbank",
+     "investment"
+    ],
+    "evidence": [
+     22
+    ]
+   },
+   {
+    "content": "The user finished reading Middlemarch after three attempts, completing it over the month of September.",
+    "abstract": "Finished reading Middlemarch in September.",
+    "category": "event",
+    "tags": [
+     "books",
+     "Middlemarch",
+     "reading"
+    ],
+    "evidence": [
+     26
+    ]
+   },
+   {
+    "content": "The user considers beans on toast to be a 'reliable fallback' meal.",
+    "abstract": "Prefers beans on toast as a reliable meal.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "preferences"
+    ],
+    "evidence": [
+     16,
+     34
+    ]
+   },
+   {
+    "content": "The user typically eats granola with yoghurt for breakfast.",
+    "abstract": "Regularly eats granola and yoghurt for breakfast.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "breakfast",
+     "preferences"
+    ],
+    "evidence": [
+     30
+    ]
+   }
+  ],
+  "count": 5,
+  "elapsed_s": 81.7,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-09-16",
+  "facts": [
+   {
+    "content": "Set up a Raspberry Pi running Pi-hole to block ads across the home network.",
+    "abstract": "",
+    "category": "entity",
+    "tags": [
+     "tech",
+     "pi-hole",
+     "network"
+    ],
+    "evidence": [
+     2
+    ]
+   },
+   {
+    "content": "Member of a pub quiz team called the 'Quizzly Bears', who won the Thursday night league for the first time.",
+    "abstract": "",
+    "category": "entity",
+    "tags": [
+     "pub quiz",
+     "Quizzly Bears",
+     "hobbies"
+    ],
+    "evidence": [
+     16
+    ]
+   },
+   {
+    "content": "Work team migrated from Jira to Linear, which caused the loss of all sprint history prior to 2025.",
+    "abstract": "",
+    "category": "event",
+    "tags": [
+     "work",
+     "Jira",
+     "Linear",
+     "migration"
+    ],
+    "evidence": [
+     28
+    ]
+   },
+   {
+    "content": "A hairline crack was found in their lower left molar; a crown is to be fitted in January.",
+    "abstract": "",
+    "category": "case",
+    "tags": [
+     "health",
+     "dentist",
+     "dental"
+    ],
+    "evidence": [
+     34
+    ]
+   },
+   {
+    "content": "Frequently eats avocado on rye for breakfast.",
+    "abstract": "",
+    "category": "preference",
+    "tags": [
+     "food",
+     "breakfast"
+    ],
+    "evidence": [
+     4,
+     30,
+     40
+    ]
+   },
+   {
+    "content": "Tends to make large batches of lentil stew to last for several meals.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "food",
+     "cooking"
+    ],
+    "evidence": [
+     10,
+     30,
+     32
+    ]
+   },
+   {
+    "content": "Enjoys watching Danish crime series.",
+    "abstract": "",
+    "category": "preference",
+    "tags": [
+     "tv",
+     "crime",
+     "danish"
+    ],
+    "evidence": [
+     12,
+     32,
+     38
+    ]
+   },
+   {
+    "content": "Enjoys listening to the cricket.",
+    "abstract": "",
+    "category": "preference",
+    "tags": [
+     "sports",
+     "cricket"
+    ],
+    "evidence": [
+     14,
+     32
+    ]
+   },
+   {
+    "content": "Plays chess online.",
+    "abstract": "",
+    "category": "preference",
+    "tags": [
+     "games",
+     "chess"
+    ],
+    "evidence": [
+     18,
+     36
+    ]
+   }
+  ],
+  "count": 9,
+  "elapsed_s": 106.6,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-09-19",
+  "facts": [
+   {
+    "content": "Felix is the user's accountant.",
+    "abstract": "Identification of the user's accountant.",
+    "category": "entity",
+    "tags": [
+     "Felix",
+     "accountant"
+    ],
+    "evidence": [
+     12
+    ]
+   },
+   {
+    "content": "The user owes 1,340 pounds for their self-assessment by the end of January.",
+    "abstract": "",
+    "category": "case",
+    "tags": [
+     "taxes",
+     "self-assessment",
+     "finance"
+    ],
+    "evidence": [
+     12
+    ]
+   },
+   {
+    "content": "The user's blue Trek bicycle with a Brooks saddle was stolen from outside the station.",
+    "abstract": "Details of a stolen bicycle.",
+    "category": "event",
+    "tags": [
+     "bicycle",
+     "Trek",
+     "theft"
+    ],
+    "evidence": [
+     20
+    ]
+   },
+   {
+    "content": "Beans on toast is the user's reliable fallback meal.",
+    "abstract": "",
+    "category": "preference",
+    "tags": [
+     "food",
+     "beans on toast"
+    ],
+    "evidence": [
+     16,
+     22,
+     36,
+     38
+    ]
+   },
+   {
+    "content": "The user ordered a 20 kg sack of Thai jasmine rice from an Asian wholesaler for 34 pounds.",
+    "abstract": "",
+    "category": "general",
+    "tags": [
+     "shopping",
+     "rice",
+     "Asian wholesaler"
+    ],
+    "evidence": [
+     26
+    ]
+   },
+   {
+    "content": "During a quarterly metrics presentation to the board, the board requested that churn be broken out by region.",
+    "abstract": "",
+    "category": "event",
+    "tags": [
+     "work",
+     "metrics",
+     "churn",
+     "board meeting"
+    ],
+    "evidence": [
+     36
+    ]
+   }
+  ],
+  "count": 6,
+  "elapsed_s": 111.5,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-09-20",
+  "facts": [
+   {
+    "content": "The user has a cat named Biscuit who is 5.4 kg (slightly overweight) and is on a renal diet called Nephra Care due to raised creatinine.",
+    "abstract": "Details about the user's cat, Biscuit, and her health requirements.",
+    "category": "entity",
+    "tags": [
+     "cat",
+     "Biscuit",
+     "pet",
+     "health"
+    ],
+    "evidence": [
+     28,
+     42
+    ]
+   },
+   {
+    "content": "The user frequently eats granola with yoghurt for breakfast, noting it is 'same as always'.",
+    "abstract": "",
+    "category": "preference",
+    "tags": [
+     "breakfast",
+     "food",
+     "habits"
+    ],
+    "evidence": [
+     10,
+     36
+    ]
+   },
+   {
+    "content": "The user considers beans on toast to be their 'reliable fallback' meal.",
+    "abstract": "",
+    "category": "preference",
+    "tags": [
+     "food",
+     "preferences"
+    ],
+    "evidence": [
+     18
+    ]
+   },
+   {
+    "content": "The user considers pasta with pesto to be a 'ten-minute supper'.",
+    "abstract": "",
+    "category": "preference",
+    "tags": [
+     "food",
+     "preferences"
+    ],
+    "evidence": [
+     28,
+     34
+    ]
+   },
+   {
+    "content": "The user has a habit of reading a thriller novel during bus commutes.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "reading",
+     "bus",
+     "habits"
+    ],
+    "evidence": [
+     6,
+     18,
+     36
+    ]
+   },
+   {
+    "content": "The user frequently watches the second half of sports matches on their phone.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "sports",
+     "phone",
+     "habits"
+    ],
+    "evidence": [
+     6,
+     22,
+     30,
+     34
+    ]
+   },
+   {
+    "content": "The user often browses baking videos without actually baking.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "hobbies",
+     "baking",
+     "habits"
+    ],
+    "evidence": [
+     16,
+     20,
+     28,
+     40
+    ]
+   },
+   {
+    "content": "The user has a recurring nighttime routine of having tea and a digestive biscuit at 10:30 PM.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "routine",
+     "night",
+     "food"
+    ],
+    "evidence": [
+     20,
+     34
+    ]
+   },
+   {
+    "content": "The user knows someone named Carla and attended her birthday dinner at Osteria Lupo.",
+    "abstract": "",
+    "category": "entity",
+    "tags": [
+     "Carla",
+     "social",
+     "Osteria Lupo"
+    ],
+    "evidence": [
+     18
+    ]
+   },
+   {
+    "content": "The user owns a smart thermostat.",
+    "abstract": "",
+    "category": "entity",
+    "tags": [
+     "home",
+     "technology"
+    ],
+    "evidence": [
+     26
+    ]
+   }
+  ],
+  "count": 10,
+  "elapsed_s": 111.4,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-09-21",
+  "facts": [
+   {
+    "content": "The user's flat is in council tax band D, following a rejected appeal.",
+    "abstract": "Council tax band for the user's residence.",
+    "category": "general",
+    "tags": [
+     "council-tax",
+     "housing"
+    ],
+    "evidence": [
+     8
+    ]
+   },
+   {
+    "content": "The user claimed £120 from travel insurance for a cancelled train to the Peak District.",
+    "abstract": "Travel insurance claim for Peak District trip.",
+    "category": "event",
+    "tags": [
+     "insurance",
+     "finance",
+     "Peak-District"
+    ],
+    "evidence": [
+     16
+    ]
+   },
+   {
+    "content": "The user paid £85 to replace a faulty pressure valve during a boiler service.",
+    "abstract": "Cost of boiler repair.",
+    "category": "event",
+    "tags": [
+     "home-maintenance",
+     "boiler"
+    ],
+    "evidence": [
+     20
+    ]
+   },
+   {
+    "content": "The user volunteers at the Southgate food bank on Saturdays from 9 AM to 1 PM.",
+    "abstract": "Regular volunteer schedule at Southgate food bank.",
+    "category": "pattern",
+    "tags": [
+     "volunteering",
+     "schedule",
+     "Southgate"
+    ],
+    "evidence": [
+     30
+    ]
+   }
+  ],
+  "count": 4,
+  "elapsed_s": 84.7,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-09-22",
+  "facts": [
+   {
+    "content": "Sets up a monthly 200 GBP standing order into a Vanguard global index fund.",
+    "abstract": "Financial investment preference.",
+    "category": "preference",
+    "tags": [
+     "finance",
+     "savings",
+     "Vanguard"
+    ],
+    "evidence": [
+     10
+    ]
+   },
+   {
+    "content": "Has a sister named Carla.",
+    "abstract": "",
+    "category": "entity",
+    "tags": [
+     "family",
+     "sister"
+    ],
+    "evidence": [
+     22
+    ]
+   },
+   {
+    "content": "Agreed to split the cost of their mother's stairlift with sister Carla, at 2,400 GBP each.",
+    "abstract": "Shared family expense for a stairlift.",
+    "category": "case",
+    "tags": [
+     "family",
+     "finance",
+     "stairlift"
+    ],
+    "evidence": [
+     22
+    ]
+   },
+   {
+    "content": "The wedding gift for Priya and Tom is a Le Creuset casserole from their John Lewis list.",
+    "abstract": "",
+    "category": "general",
+    "tags": [
+     "gift",
+     "wedding",
+     "Priya",
+     "Tom"
+    ],
+    "evidence": [
+     36
+    ]
+   },
+   {
+    "content": "Grandad's 90th birthday party is booked for March 15th at the Fox and Pheasant pub.",
+    "abstract": "",
+    "category": "event",
+    "tags": [
+     "birthday",
+     "Grandad",
+     "event"
+    ],
+    "evidence": [
+     38
+    ]
+   },
+   {
+    "content": "Frequently listens to the cricket while washing pans.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "habit",
+     "cricket",
+     "chores"
+    ],
+    "evidence": [
+     4,
+     24,
+     26,
+     38
+    ]
+   },
+   {
+    "content": "Often completes the paper's crossword while drinking tea.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "habit",
+     "crossword",
+     "tea"
+    ],
+    "evidence": [
+     6,
+     20,
+     36
+    ]
+   },
+   {
+    "content": "Browses baking videos frequently but rarely follows through with making the recipes.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "hobby",
+     "baking"
+    ],
+    "evidence": [
+     8,
+     22,
+     24
+    ]
+   }
+  ],
+  "count": 8,
+  "elapsed_s": 129.2,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-09-23",
+  "facts": [
+   {
+    "content": "The user's energy bill for October was 212 pounds, double the amount from last year.",
+    "abstract": "October energy bill was £212 (double previous year).",
+    "category": "general",
+    "tags": [
+     "energy bill",
+     "finance"
+    ],
+    "evidence": [
+     16
+    ]
+   },
+   {
+    "content": "The neighbors at number 8, the Coopers, had a baby girl named Freya on the 3rd.",
+    "abstract": "Neighbor's baby girl, Freya, born on the 3rd.",
+    "category": "entity",
+    "tags": [
+     "neighbors",
+     "Coopers",
+     "Freya"
+    ],
+    "evidence": [
+     20
+    ]
+   },
+   {
+    "content": "The user has a habitual routine of having tea and a digestive biscuit at 10:30 PM.",
+    "abstract": "Tea and digestive routine at 10:30.",
+    "category": "pattern",
+    "tags": [
+     "routine",
+     "snacks"
+    ],
+    "evidence": [
+     18,
+     26,
+     38
+    ]
+   },
+   {
+    "content": "The Saturday farmers' market now has a stall selling raw milk from Hadlow Farm.",
+    "abstract": "Hadlow Farm raw milk available at Saturday farmers' market.",
+    "category": "general",
+    "tags": [
+     "farmers market",
+     "Hadlow Farm",
+     "raw milk"
+    ],
+    "evidence": [
+     26
+    ]
+   },
+   {
+    "content": "The user regularly eats granola with yoghurt for breakfast.",
+    "abstract": "Standard breakfast is granola with yoghurt.",
+    "category": "preference",
+    "tags": [
+     "breakfast",
+     "food"
+    ],
+    "evidence": [
+     14
+    ]
+   },
+   {
+    "content": "The user bought a second-hand Yamaha keyboard for 180 pounds from a seller in Kettering.",
+    "abstract": "Purchased a second-hand Yamaha keyboard for £180 from Kettering.",
+    "category": "entity",
+    "tags": [
+     "Yamaha",
+     "keyboard",
+     "purchase"
+    ],
+    "evidence": [
+     42
+    ]
+   }
+  ],
+  "count": 6,
+  "elapsed_s": 111.4,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-09-24",
+  "facts": [
+   {
+    "content": "The street's bin collection day changed from Monday to Thursday starting next month.",
+    "abstract": "Bin collection day is now Thursday.",
+    "category": "general",
+    "tags": [
+     "waste",
+     "logistics",
+     "home"
+    ],
+    "evidence": [
+     6
+    ]
+   },
+   {
+    "content": "The user owns a Flexispot E7 standing desk in their study.",
+    "abstract": "User has a Flexispot E7 standing desk.",
+    "category": "entity",
+    "tags": [
+     "furniture",
+     "study",
+     "equipment"
+    ],
+    "evidence": [
+     8
+    ]
+   },
+   {
+    "content": "The user passed the belay test at the Rockhouse climbing gym and is qualified to use the lead walls.",
+    "abstract": "User is certified for lead walls at Rockhouse climbing gym.",
+    "category": "general",
+    "tags": [
+     "climbing",
+     "skills",
+     "Rockhouse"
+    ],
+    "evidence": [
+     14
+    ]
+   },
+   {
+    "content": "The user frequently listens to the cricket while washing pans.",
+    "abstract": "Listen to cricket during dishwashing.",
+    "category": "pattern",
+    "tags": [
+     "habits",
+     "hobbies",
+     "cricket"
+    ],
+    "evidence": [
+     18,
+     24,
+     28
+    ]
+   },
+   {
+    "content": "The user routinely has tea and a digestive biscuit at 10:30.",
+    "abstract": "Morning tea and digestive habit at 10:30.",
+    "category": "pattern",
+    "tags": [
+     "habits",
+     "food",
+     "routine"
+    ],
+    "evidence": [
+     24,
+     28
+    ]
+   },
+   {
+    "content": "The user typically reads just the headlines for their news.",
+    "abstract": "Preference for reading news headlines.",
+    "category": "preference",
+    "tags": [
+     "habits",
+     "news"
+    ],
+    "evidence": [
+     2,
+     22,
+     34,
+     38
+    ]
+   }
+  ],
+  "count": 6,
+  "elapsed_s": 126.9,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-09-25",
+  "facts": [
+   {
+    "content": "The user has a pet named Biscuit.",
+    "abstract": "User owns a pet named Biscuit.",
+    "category": "entity",
+    "tags": [
+     "pet",
+     "Biscuit"
+    ],
+    "evidence": [
+     16
+    ]
+   },
+   {
+    "content": "The user has a Synology NAS in their study for storing family photos.",
+    "abstract": "User uses a Synology NAS for photo backups.",
+    "category": "entity",
+    "tags": [
+     "tech",
+     "NAS",
+     "storage",
+     "photos"
+    ],
+    "evidence": [
+     30
+    ]
+   },
+   {
+    "content": "The user has a routine of doing the newspaper crossword while drinking tea.",
+    "abstract": "Crossword and tea is a habit.",
+    "category": "pattern",
+    "tags": [
+     "hobby",
+     "crossword",
+     "tea"
+    ],
+    "evidence": [
+     12,
+     20,
+     24
+    ]
+   },
+   {
+    "content": "The user typically has tea and a digestive biscuit at 10:30.",
+    "abstract": "Specific late-night snack habit.",
+    "category": "pattern",
+    "tags": [
+     "routine",
+     "tea",
+     "digestive"
+    ],
+    "evidence": [
+     16,
+     32
+    ]
+   },
+   {
+    "content": "The user reads thriller novels during bus commutes.",
+    "abstract": "Reads thrillers on the bus.",
+    "category": "pattern",
+    "tags": [
+     "reading",
+     "thriller",
+     "bus"
+    ],
+    "evidence": [
+     12,
+     18
+    ]
+   },
+   {
+    "content": "The user's landlord agreed to replace the dishwasher after it flooded the floor twice in one week.",
+    "abstract": "Dishwasher replacement due to flooding.",
+    "category": "case",
+    "tags": [
+     "home",
+     "apartment",
+     "dishwasher",
+     "landlord"
+    ],
+    "evidence": [
+     32
+    ]
+   },
+   {
+    "content": "The user enjoys watching Danish crime series.",
+    "abstract": "Interest in Danish crime shows.",
+    "category": "preference",
+    "tags": [
+     "media",
+     "TV",
+     "Danish crime"
+    ],
+    "evidence": [
+     18,
+     28,
+     36
+    ]
+   },
+   {
+    "content": "The user frequently eats a bagel with cream cheese at their desk.",
+    "abstract": "Common desk meal.",
+    "category": "pattern",
+    "tags": [
+     "diet",
+     "bagel",
+     "work"
+    ],
+    "evidence": [
+     2,
+     36
+    ]
+   },
+   {
+    "content": "The user often regrets skipping lunch by 4:00 PM.",
+    "abstract": "Tendency to skip lunch and feel it later.",
+    "category": "pattern",
+    "tags": [
+     "habit",
+     "diet"
+    ],
+    "evidence": [
+     24,
+     26,
+     38
+    ]
+   }
+  ],
+  "count": 9,
+  "elapsed_s": 79.7,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-09-27",
+  "facts": [
+   {
+    "content": "HR confirmed the pension contribution match increases to 6% starting in April.",
+    "abstract": "Pension contribution match increase.",
+    "category": "general",
+    "tags": [
+     "pension",
+     "finance",
+     "HR"
+    ],
+    "evidence": [
+     2
+    ]
+   },
+   {
+    "content": "The user's GP is Dr. Okafor.",
+    "abstract": "User's primary care physician.",
+    "category": "entity",
+    "tags": [
+     "GP",
+     "doctor",
+     "health"
+    ],
+    "evidence": [
+     38
+    ]
+   },
+   {
+    "content": "The user's levothyroxine dose was increased from 75 to 100 micrograms following a blood test.",
+    "abstract": "Updated levothyroxine dosage.",
+    "category": "case",
+    "tags": [
+     "medication",
+     "levothyroxine",
+     "health"
+    ],
+    "evidence": [
+     38
+    ]
+   },
+   {
+    "content": "A table for eight has been booked at the Golden Lantern for Marco's leaving dinner.",
+    "abstract": "Booking for Marco's farewell dinner.",
+    "category": "event",
+    "tags": [
+     "Golden Lantern",
+     "Marco",
+     "dinner"
+    ],
+    "evidence": [
+     42
+    ]
+   },
+   {
+    "content": "The greenhouse glass panel was replaced with polycarbonate after it blew out in a storm.",
+    "abstract": "Greenhouse structural update.",
+    "category": "general",
+    "tags": [
+     "greenhouse",
+     "home maintenance"
+    ],
+    "evidence": [
+     16
+    ]
+   },
+   {
+    "content": "The user has a recurring interest in typography video essays, Danish crime series, and articles about volcanoes.",
+    "abstract": "Specific media preferences and interests.",
+    "category": "preference",
+    "tags": [
+     "interests",
+     "typography",
+     "crime series",
+     "volcanoes"
+    ],
+    "evidence": [
+     8,
+     14,
+     24,
+     26,
+     28,
+     34,
+     36
+    ]
+   }
+  ],
+  "count": 6,
+  "elapsed_s": 100.6,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-09-28",
+  "facts": [
+   {
+    "content": "The user's driving licence renewal photo was rejected due to glare on their glasses.",
+    "abstract": "Issue with driver's license photo renewal.",
+    "category": "case",
+    "tags": [
+     "administrative",
+     "licence"
+    ],
+    "evidence": [
+     14
+    ]
+   },
+   {
+    "content": "The user's mother has a hip replacement scheduled for November 22nd at St. Brigid's Hospital.",
+    "abstract": "Upcoming medical procedure for user's mother.",
+    "category": "event",
+    "tags": [
+     "family",
+     "medical",
+     "hospital"
+    ],
+    "evidence": [
+     16
+    ]
+   },
+   {
+    "content": "The user joined the Hallam Street book club.",
+    "abstract": "User is a member of a book club.",
+    "category": "entity",
+    "tags": [
+     "hobby",
+     "book club"
+    ],
+    "evidence": [
+     20
+    ]
+   },
+   {
+    "content": "The current book pick for the Hallam Street book club is 'The Overstory'.",
+    "abstract": "Current book club reading assignment.",
+    "category": "general",
+    "tags": [
+     "books",
+     "The Overstory"
+    ],
+    "evidence": [
+     20
+    ]
+   }
+  ],
+  "count": 4,
+  "elapsed_s": 98.0,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-09-29",
+  "facts": [
+   {
+    "content": "The user considers fish fingers and peas a nostalgic and quick meal.",
+    "abstract": "Preference for fish fingers and peas.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "favorites"
+    ],
+    "evidence": [
+     14,
+     28,
+     32
+    ]
+   },
+   {
+    "content": "The user has a habit of having tea and a digestive biscuit at 10:30.",
+    "abstract": "Daily snack routine at 10:30.",
+    "category": "pattern",
+    "tags": [
+     "routine",
+     "habits"
+    ],
+    "evidence": [
+     6,
+     30,
+     38
+    ]
+   },
+   {
+    "content": "The user ordered blackout curtains for the bedroom from a shop in Leeds, expected to arrive in approximately three weeks.",
+    "abstract": "Ordered blackout curtains from Leeds.",
+    "category": "event",
+    "tags": [
+     "home",
+     "shopping"
+    ],
+    "evidence": [
+     20
+    ]
+   },
+   {
+    "content": "The user's father sold the fishing boat, the Marguerite, to a couple from Whitby for 3,000 pounds.",
+    "abstract": "Sale of the family fishing boat 'Marguerite'.",
+    "category": "event",
+    "tags": [
+     "family",
+     "assets",
+     "boat"
+    ],
+    "evidence": [
+     22
+    ]
+   },
+   {
+    "content": "A biopsy of a mole on the user's back returned a benign result.",
+    "abstract": "Medical biopsy for a mole was benign.",
+    "category": "event",
+    "tags": [
+     "health",
+     "medical"
+    ],
+    "evidence": [
+     26
+    ]
+   },
+   {
+    "content": "The user booked a chimney sweep for the first Tuesday of November at a cost of sixty pounds.",
+    "abstract": "Scheduled chimney sweep for November.",
+    "category": "event",
+    "tags": [
+     "home",
+     "maintenance"
+    ],
+    "evidence": [
+     36
+    ]
+   }
+  ],
+  "count": 6,
+  "elapsed_s": 93.8,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-09-30",
+  "facts": [
+   {
+    "content": "Cancelled the Peloton subscription, which cost 39 pounds a month.",
+    "abstract": "The user has cancelled their Peloton subscription.",
+    "category": "general",
+    "tags": [
+     "peloton",
+     "subscription",
+     "finance"
+    ],
+    "evidence": [
+     8
+    ]
+   },
+   {
+    "content": "Dana is the pet sitter for the Lisbon trip and charges 35 pounds a night.",
+    "abstract": "Details for the pet sitter (Dana) and their rate for the upcoming Lisbon trip.",
+    "category": "entity",
+    "tags": [
+     "pet sitter",
+     "Dana",
+     "Lisbon",
+     "travel"
+    ],
+    "evidence": [
+     12
+    ]
+   },
+   {
+    "content": "A watercolour painting of the harbour was accepted for the Marsden Gallery open exhibition.",
+    "abstract": "The user's artwork was accepted for exhibition at Marsden Gallery.",
+    "category": "event",
+    "tags": [
+     "art",
+     "watercolour",
+     "Marsden Gallery"
+    ],
+    "evidence": [
+     16
+    ]
+   },
+   {
+    "content": "The council approved a new cycle lane on Bellamy Road.",
+    "abstract": "A new cycle lane was approved on Bellamy Road despite 400 objections.",
+    "category": "general",
+    "tags": [
+     "infrastructure",
+     "cycle lane",
+     "Bellamy Road"
+    ],
+    "evidence": [
+     32
+    ]
+   }
+  ],
+  "count": 4,
+  "elapsed_s": 72.7,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-03",
+  "facts": [
+   {
+    "content": "The user takes magnesium glycinate at night to prevent leg cramps from waking them up.",
+    "abstract": "User takes magnesium glycinate for leg cramps.",
+    "category": "preference",
+    "tags": [
+     "health",
+     "supplements",
+     "sleep"
+    ],
+    "evidence": [
+     2
+    ]
+   },
+   {
+    "content": "The user typically does twenty minutes of yoga before breakfast.",
+    "abstract": "Daily morning yoga routine.",
+    "category": "pattern",
+    "tags": [
+     "fitness",
+     "routine",
+     "yoga"
+    ],
+    "evidence": [
+     4,
+     30,
+     32
+    ]
+   },
+   {
+    "content": "The user frequently eats porridge with banana for breakfast.",
+    "abstract": "Common breakfast preference.",
+    "category": "preference",
+    "tags": [
+     "diet",
+     "breakfast"
+    ],
+    "evidence": [
+     10,
+     34,
+     40
+    ]
+   },
+   {
+    "content": "The user often reads a thriller novel while traveling on the bus.",
+    "abstract": "Reading habit during commutes.",
+    "category": "pattern",
+    "tags": [
+     "hobbies",
+     "reading",
+     "commute"
+    ],
+    "evidence": [
+     10,
+     22,
+     26,
+     34
+    ]
+   },
+   {
+    "content": "The user listens to the cricket while washing the pans.",
+    "abstract": "Multitasking habit during chores.",
+    "category": "pattern",
+    "tags": [
+     "hobbies",
+     "cricket",
+     "chores"
+    ],
+    "evidence": [
+     12,
+     28,
+     34,
+     42
+    ]
+   },
+   {
+    "content": "A flickering hallway light was traced to a loose neutral wire in the junction box behind the thermostat.",
+    "abstract": "Electrical fault in the hallway light.",
+    "category": "case",
+    "tags": [
+     "home maintenance",
+     "electrical"
+    ],
+    "evidence": [
+     12
+    ]
+   },
+   {
+    "content": "The user enjoys Danish crime series.",
+    "abstract": "Preference for Nordic noir.",
+    "category": "preference",
+    "tags": [
+     "entertainment",
+     "TV"
+    ],
+    "evidence": [
+     14,
+     22
+    ]
+   },
+   {
+    "content": "The user has a habit of having tea and a digestive biscuit at 10:30 PM.",
+    "abstract": "Nightly snack routine.",
+    "category": "pattern",
+    "tags": [
+     "routine",
+     "diet"
+    ],
+    "evidence": [
+     18,
+     30
+    ]
+   },
+   {
+    "content": "The user does the newspaper's crossword puzzle while drinking tea.",
+    "abstract": "Relaxation habit.",
+    "category": "pattern",
+    "tags": [
+     "hobbies",
+     "crossword"
+    ],
+    "evidence": [
+     20,
+     24,
+     34,
+     40
+    ]
+   },
+   {
+    "content": "The user presses their shirts for Monday through Wednesday.",
+    "abstract": "Weekly clothing preparation.",
+    "category": "pattern",
+    "tags": [
+     "routine",
+     "chores"
+    ],
+    "evidence": [
+     20,
+     36
+    ]
+   },
+   {
+    "content": "The user plays chess online.",
+    "abstract": "Online chess hobby.",
+    "category": "preference",
+    "tags": [
+     "hobbies",
+     "games"
+    ],
+    "evidence": [
+     20,
+     22
+    ]
+   },
+   {
+    "content": "The user frequently eats a cheese toastie for lunch at their desk.",
+    "abstract": "Common work lunch.",
+    "category": "preference",
+    "tags": [
+     "diet",
+     "lunch"
+    ],
+    "evidence": [
+     22,
+     28,
+     36
+    ]
+   },
+   {
+    "content": "The user ran their first 10K in 54 minutes at the Riverside Park race.",
+    "abstract": "Personal running achievement.",
+    "category": "event",
+    "tags": [
+     "fitness",
+     "running",
+     "milestone"
+    ],
+    "evidence": [
+     38
+    ]
+   },
+   {
+    "content": "The user's car has a slow puncture near the valve on the rear left tyre.",
+    "abstract": "Car tire issue.",
+    "category": "case",
+    "tags": [
+     "car",
+     "maintenance"
+    ],
+    "evidence": [
+     42
+    ]
+   },
+   {
+    "content": "The user frequently eats avocado on rye for breakfast.",
+    "abstract": "Breakfast preference.",
+    "category": "preference",
+    "tags": [
+     "diet",
+     "breakfast"
+    ],
+    "evidence": [
+     14,
+     28,
+     42
+    ]
+   }
+  ],
+  "count": 15,
+  "elapsed_s": 150.0,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-04",
+  "facts": [
+   {
+    "content": "Signed up for the Bramley half marathon in March and started a twelve-week training plan.",
+    "abstract": "Training for Bramley half marathon in March.",
+    "category": "event",
+    "tags": [
+     "fitness",
+     "marathon",
+     "Bramley"
+    ],
+    "evidence": [
+     18
+    ]
+   },
+   {
+    "content": "MOT is due on the 14th of December and should be booked at the place on Harbour Road.",
+    "abstract": "Car MOT due Dec 14th at Harbour Road.",
+    "category": "event",
+    "tags": [
+     "car",
+     "MOT",
+     "maintenance"
+    ],
+    "evidence": [
+     28
+    ]
+   },
+   {
+    "content": "Ordered a compost tumbler from Greenward for 129 pounds.",
+    "abstract": "Purchased a compost tumbler for £129.",
+    "category": "general",
+    "tags": [
+     "shopping",
+     "garden",
+     "Greenward"
+    ],
+    "evidence": [
+     30
+    ]
+   },
+   {
+    "content": "An Airbnb in Alfama costs 95 euros a night and features a rooftop terrace.",
+    "abstract": "Alfama Airbnb details: 95€/night, rooftop terrace.",
+    "category": "entity",
+    "tags": [
+     "travel",
+     "Airbnb",
+     "Alfama"
+    ],
+    "evidence": [
+     36
+    ]
+   },
+   {
+    "content": "Regularly eats granola with yoghurt for breakfast.",
+    "abstract": "Granola and yoghurt is a habitual breakfast.",
+    "category": "pattern",
+    "tags": [
+     "diet",
+     "breakfast"
+    ],
+    "evidence": [
+     20,
+     26,
+     36
+    ]
+   },
+   {
+    "content": "Considers beans on toast to be a reliable fallback meal.",
+    "abstract": "Preference for beans on toast as a dependable meal.",
+    "category": "preference",
+    "tags": [
+     "diet",
+     "food"
+    ],
+    "evidence": [
+     10,
+     36
+    ]
+   }
+  ],
+  "count": 6,
+  "elapsed_s": 102.4,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-05",
+  "facts": [
+   {
+    "content": "The user's credit card was cloned, resulting in 480 pounds spent at a Manchester electronics shop, which the bank subsequently refunded.",
+    "abstract": "Fraudulent credit card transaction in Manchester was refunded.",
+    "category": "case",
+    "tags": [
+     "finance",
+     "fraud",
+     "refund"
+    ],
+    "evidence": [
+     14
+    ]
+   },
+   {
+    "content": "The user had a sourdough starter named Gloria that died; they started a new one using rye flour.",
+    "abstract": "Sourdough starter Gloria was replaced with a rye flour version.",
+    "category": "entity",
+    "tags": [
+     "sourdough",
+     "baking",
+     "Gloria"
+    ],
+    "evidence": [
+     20
+    ]
+   },
+   {
+    "content": "The user has a dog named Rufus.",
+    "abstract": "Possesses a dog named Rufus.",
+    "category": "entity",
+    "tags": [
+     "pet",
+     "dog",
+     "Rufus"
+    ],
+    "evidence": [
+     30
+    ]
+   },
+   {
+    "content": "During an oil change, a mechanic replaced a cracked serpentine belt for forty pounds.",
+    "abstract": "Car repair for a serpentine belt cost 40 pounds.",
+    "category": "event",
+    "tags": [
+     "car",
+     "maintenance",
+     "repair"
+    ],
+    "evidence": [
+     22
+    ]
+   },
+   {
+    "content": "The user considers beans on toast to be a 'reliable fallback' meal.",
+    "abstract": "Preference for beans on toast as a fallback meal.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "meal"
+    ],
+    "evidence": [
+     10,
+     30
+    ]
+   },
+   {
+    "content": "The user frequently eats granola with yoghurt for breakfast.",
+    "abstract": "Regular breakfast preference of granola and yoghurt.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "breakfast"
+    ],
+    "evidence": [
+     18,
+     20,
+     26
+    ]
+   },
+   {
+    "content": "The user views pasta with pesto as a 'ten-minute supper'.",
+    "abstract": "Pasta with pesto is a preferred quick supper.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "supper"
+    ],
+    "evidence": [
+     2,
+     36
+    ]
+   },
+   {
+    "content": "The user has a habit of having tea and a digestive biscuit at 10:30.",
+    "abstract": "Regular mid-morning snack of tea and a digestive.",
+    "category": "pattern",
+    "tags": [
+     "habit",
+     "food",
+     "tea"
+    ],
+    "evidence": [
+     16,
+     26
+    ]
+   },
+   {
+    "content": "The user typically reads a thriller novel while traveling on the bus.",
+    "abstract": "Pattern of reading thrillers during bus commutes.",
+    "category": "pattern",
+    "tags": [
+     "reading",
+     "commute",
+     "books"
+    ],
+    "evidence": [
+     20,
+     22,
+     30,
+     38
+    ]
+   },
+   {
+    "content": "The user listens to cricket while washing pans.",
+    "abstract": "Pattern of listening to cricket during kitchen chores.",
+    "category": "pattern",
+    "tags": [
+     "hobbies",
+     "cricket",
+     "chores"
+    ],
+    "evidence": [
+     18,
+     24,
+     26
+    ]
+   }
+  ],
+  "count": 10,
+  "elapsed_s": 123.4,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-06",
+  "facts": [
+   {
+    "content": "The user's upright piano has a cracked soundboard and was deemed not worth repairing by the piano tuner, Mr. Abara.",
+    "abstract": "Piano is beyond repair.",
+    "category": "case",
+    "tags": [
+     "piano",
+     "Mr. Abara",
+     "maintenance"
+    ],
+    "evidence": [
+     8
+    ]
+   },
+   {
+    "content": "The user has a weekly 1:1 meeting with Teodora on Wednesdays at 2 PM to discuss the lead role.",
+    "abstract": "Weekly meeting with Teodora.",
+    "category": "pattern",
+    "tags": [
+     "Teodora",
+     "schedule",
+     "work"
+    ],
+    "evidence": [
+     18
+    ]
+   },
+   {
+    "content": "The user received a £70 parking fine on Wexford Lane because the meter reset itself.",
+    "abstract": "Parking fine on Wexford Lane.",
+    "category": "event",
+    "tags": [
+     "parking fine",
+     "Wexford Lane",
+     "finance"
+    ],
+    "evidence": [
+     20
+    ]
+   },
+   {
+    "content": "The user is disputing a yearly auto-renewal of their Pulse Fitness gym membership, which costs £44 per month.",
+    "abstract": "Disputing Pulse Fitness membership renewal.",
+    "category": "case",
+    "tags": [
+     "Pulse Fitness",
+     "gym",
+     "finance"
+    ],
+    "evidence": [
+     28
+    ]
+   },
+   {
+    "content": "Beans on toast is the user's 'reliable fallback' meal.",
+    "abstract": "Preference for beans on toast.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "beans on toast"
+    ],
+    "evidence": [
+     6,
+     22
+    ]
+   },
+   {
+    "content": "Fish fingers and peas is a 'nostalgic and quick' meal for the user.",
+    "abstract": "Preference for fish fingers and peas.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "fish fingers"
+    ],
+    "evidence": [
+     14,
+     26
+    ]
+   },
+   {
+    "content": "Pasta with pesto is the user's 'ten-minute supper'.",
+    "abstract": "Quick dinner preference: pasta with pesto.",
+    "category": "pattern",
+    "tags": [
+     "food",
+     "pasta"
+    ],
+    "evidence": [
+     16,
+     22
+    ]
+   },
+   {
+    "content": "Granola with yoghurt is the user's standard breakfast ('same as always').",
+    "abstract": "Regular breakfast: granola and yoghurt.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "breakfast"
+    ],
+    "evidence": [
+     22,
+     30
+    ]
+   },
+   {
+    "content": "The user has a habit of writing their Saturday to-do list on the fridge.",
+    "abstract": "Writes Saturday list on fridge.",
+    "category": "pattern",
+    "tags": [
+     "habits",
+     "organization"
+    ],
+    "evidence": [
+     24,
+     36
+    ]
+   },
+   {
+    "content": "The user often takes the 8:10 bus.",
+    "abstract": "Commuter habit: 8:10 bus.",
+    "category": "pattern",
+    "tags": [
+     "transport",
+     "bus"
+    ],
+    "evidence": [
+     22
+    ]
+   },
+   {
+    "content": "The user enjoys Danish crime series, online chess, cricket, and reading/watching content about Antarctic expeditions, typography, the history of salt, and volcanoes.",
+    "abstract": "Broad range of hobbies and interests.",
+    "category": "preference",
+    "tags": [
+     "interests",
+     "hobbies",
+     "media"
+    ],
+    "evidence": [
+     2,
+     4,
+     6,
+     10,
+     14,
+     18,
+     30
+    ]
+   }
+  ],
+  "count": 11,
+  "elapsed_s": 149.3,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-09",
+  "facts": [
+   {
+    "content": "Signed up for a six-week Italian evening course at the Whitfield Institute, Tuesdays at 7.",
+    "abstract": "Attending an Italian language course.",
+    "category": "event",
+    "tags": [
+     "education",
+     "italian",
+     "whitfield_institute"
+    ],
+    "evidence": [
+     10
+    ]
+   },
+   {
+    "content": "The user's office is moving to the third floor of the Harrow Building in Canary Wharf next summer.",
+    "abstract": "Upcoming office relocation.",
+    "category": "event",
+    "tags": [
+     "work",
+     "office",
+     "canary_wharf",
+     "harrow_building"
+    ],
+    "evidence": [
+     22
+    ]
+   },
+   {
+    "content": "Priya and Tom are engaged; their wedding is planned for next September.",
+    "abstract": "Priya and Tom's upcoming wedding.",
+    "category": "event",
+    "tags": [
+     "social",
+     "wedding",
+     "priya",
+     "tom"
+    ],
+    "evidence": [
+     28
+    ]
+   },
+   {
+    "content": "The user's brother Luis and his wife are expecting twins in early April.",
+    "abstract": "Family addition: Luis is expecting twins.",
+    "category": "event",
+    "tags": [
+     "family",
+     "luis",
+     "twins"
+    ],
+    "evidence": [
+     34
+    ]
+   },
+   {
+    "content": "Often eats granola with yoghurt for breakfast.",
+    "abstract": "",
+    "category": "preference",
+    "tags": [
+     "food",
+     "breakfast"
+    ],
+    "evidence": [
+     2
+    ]
+   },
+   {
+    "content": "Considers beans on toast to be a reliable fallback meal.",
+    "abstract": "",
+    "category": "preference",
+    "tags": [
+     "food",
+     "meals"
+    ],
+    "evidence": [
+     18,
+     36
+    ]
+   },
+   {
+    "content": "Listens to the cricket while washing the pans.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "habits",
+     "cricket"
+    ],
+    "evidence": [
+     16,
+     26,
+     36
+    ]
+   },
+   {
+    "content": "Does the paper's crossword while having tea.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "habits",
+     "crossword"
+    ],
+    "evidence": [
+     20,
+     32
+    ]
+   },
+   {
+    "content": "Frequently eats bagels with cream cheese while working at their desk.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "work",
+     "food"
+    ],
+    "evidence": [
+     12,
+     36
+    ]
+   }
+  ],
+  "count": 9,
+  "elapsed_s": 120.7,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-12",
+  "facts": [
+   {
+    "content": "Renews car insurance with Marlow Mutual for 612 pounds a year.",
+    "abstract": "Car insurance provider and annual premium.",
+    "category": "entity",
+    "tags": [
+     "insurance",
+     "finance",
+     "Marlow Mutual"
+    ],
+    "evidence": [
+     12
+    ]
+   },
+   {
+    "content": "Received a speeding ticket on the A34 (38 in a 30), resulting in 3 points and a 100 pound fine.",
+    "abstract": "Traffic violation and penalty.",
+    "category": "event",
+    "tags": [
+     "driving",
+     "fine",
+     "A34"
+    ],
+    "evidence": [
+     18
+    ]
+   },
+   {
+    "content": "Experienced food poisoning from a prawn curry at the Blue Lagoon, which lasted two days.",
+    "abstract": "Health incident related to a specific restaurant.",
+    "category": "event",
+    "tags": [
+     "health",
+     "food poisoning",
+     "Blue Lagoon"
+    ],
+    "evidence": [
+     28
+    ]
+   },
+   {
+    "content": "Was assigned allotment plot 14B after a four-year wait.",
+    "abstract": "Possession of an allotment plot.",
+    "category": "entity",
+    "tags": [
+     "allotment",
+     "gardening"
+    ],
+    "evidence": [
+     34
+    ]
+   },
+   {
+    "content": "Regularly eats granola with yoghurt for breakfast.",
+    "abstract": "Consistent breakfast choice.",
+    "category": "pattern",
+    "tags": [
+     "food",
+     "breakfast"
+    ],
+    "evidence": [
+     28,
+     34
+    ]
+   },
+   {
+    "content": "Has a habit of having tea and a digestive at 10:30.",
+    "abstract": "Consistent nightly snack routine.",
+    "category": "pattern",
+    "tags": [
+     "food",
+     "routine"
+    ],
+    "evidence": [
+     14,
+     36
+    ]
+   },
+   {
+    "content": "Associates fish fingers and peas with nostalgia.",
+    "abstract": "Emotional connection to a specific meal.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "nostalgia"
+    ],
+    "evidence": [
+     14,
+     32
+    ]
+   },
+   {
+    "content": "Considers beans on toast to be a 'reliable fallback' meal.",
+    "abstract": "Preference for beans on toast as a comfort/reliable option.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "comfort food"
+    ],
+    "evidence": [
+     30
+    ]
+   }
+  ],
+  "count": 8,
+  "elapsed_s": 133.6,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-13",
+  "facts": [],
+  "count": 0,
+  "elapsed_s": 47.5,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-14",
+  "facts": [
+   {
+    "content": "Beans on toast is the user's reliable fallback meal.",
+    "abstract": "Preference for beans on toast.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "diet"
+    ],
+    "evidence": [
+     2,
+     26,
+     32,
+     34,
+     42
+    ]
+   },
+   {
+    "content": "The user regularly eats granola with yoghurt for breakfast.",
+    "abstract": "Regular breakfast preference.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "breakfast"
+    ],
+    "evidence": [
+     12,
+     38,
+     42
+    ]
+   },
+   {
+    "content": "The user has a habit of having tea and a digestive biscuit at 10:30.",
+    "abstract": "Daily routine regarding snacks.",
+    "category": "pattern",
+    "tags": [
+     "routine",
+     "food"
+    ],
+    "evidence": [
+     10,
+     24,
+     32
+    ]
+   },
+   {
+    "content": "The user frequently spends too much time scrolling on their device before bed.",
+    "abstract": "Bedtime habit.",
+    "category": "pattern",
+    "tags": [
+     "habits",
+     "digital-wellbeing"
+    ],
+    "evidence": [
+     18,
+     24,
+     30,
+     40,
+     42
+    ]
+   },
+   {
+    "content": "The user has rebooked a cottage in the Peak District for May after a previous trip was rained off.",
+    "abstract": "Upcoming trip in May.",
+    "category": "event",
+    "tags": [
+     "travel",
+     "Peak District"
+    ],
+    "evidence": [
+     6
+    ]
+   },
+   {
+    "content": "Aunt Rosalind will visit for Christmas and requires the downstairs bedroom due to her knee.",
+    "abstract": "Christmas visitor requirements.",
+    "category": "event",
+    "tags": [
+     "family",
+     "Christmas",
+     "accommodation"
+    ],
+    "evidence": [
+     10
+    ]
+   },
+   {
+    "content": "The user replaced their home router with a Ubiquiti Dream Machine to eliminate a Wi-Fi dead spot in the loft.",
+    "abstract": "Home network hardware update.",
+    "category": "general",
+    "tags": [
+     "technology",
+     "home-improvement",
+     "wifi"
+    ],
+    "evidence": [
+     40
+    ]
+   }
+  ],
+  "count": 7,
+  "elapsed_s": 88.9,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-15",
+  "facts": [
+   {
+    "content": "The user interviewed for the data lead role at Northwind Analytics, with the second round scheduled for next week.",
+    "abstract": "Career update regarding Northwind Analytics.",
+    "category": "event",
+    "tags": [
+     "career",
+     "interview",
+     "Northwind Analytics"
+    ],
+    "evidence": [
+     18
+    ]
+   },
+   {
+    "content": "The user's neighbor, Mr. Halloran of number 12, is selling his house and moving to Spain.",
+    "abstract": "Information about neighbor Mr. Halloran.",
+    "category": "entity",
+    "tags": [
+     "neighbor",
+     "Mr. Halloran",
+     "housing"
+    ],
+    "evidence": [
+     16
+    ]
+   },
+   {
+    "content": "Pho Mai is a Vietnamese restaurant on Garrett Street that serves beef pho for nine pounds.",
+    "abstract": "Details about a local Vietnamese restaurant.",
+    "category": "entity",
+    "tags": [
+     "food",
+     "restaurant",
+     "Pho Mai",
+     "Garrett Street"
+    ],
+    "evidence": [
+     22
+    ]
+   },
+   {
+    "content": "The user frequently eats granola with yoghurt as a regular habit.",
+    "abstract": "Preference for granola and yoghurt.",
+    "category": "preference",
+    "tags": [
+     "diet",
+     "food",
+     "breakfast"
+    ],
+    "evidence": [
+     6,
+     36
+    ]
+   },
+   {
+    "content": "The user considers beans on toast to be a 'reliable fallback' meal.",
+    "abstract": "Preference for beans on toast.",
+    "category": "preference",
+    "tags": [
+     "diet",
+     "food"
+    ],
+    "evidence": [
+     16,
+     32
+    ]
+   },
+   {
+    "content": "The user does twenty minutes of yoga before breakfast.",
+    "abstract": "Morning yoga routine.",
+    "category": "pattern",
+    "tags": [
+     "health",
+     "yoga",
+     "routine"
+    ],
+    "evidence": [
+     14
+    ]
+   },
+   {
+    "content": "The user has plants on their windowsill.",
+    "abstract": "Presence of indoor plants.",
+    "category": "entity",
+    "tags": [
+     "home",
+     "plants"
+    ],
+    "evidence": [
+     10
+    ]
+   },
+   {
+    "content": "The user has a haircut arranged for Friday.",
+    "abstract": "Upcoming haircut appointment.",
+    "category": "event",
+    "tags": [
+     "appointment",
+     "haircut"
+    ],
+    "evidence": [
+     12
+    ]
+   }
+  ],
+  "count": 8,
+  "elapsed_s": 95.9,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-17",
+  "facts": [
+   {
+    "content": "Mortgage fix ends in March; broker Hannah is finding a new five-year deal.",
+    "abstract": "Information regarding mortgage renewal and the broker involved.",
+    "category": "general",
+    "tags": [
+     "mortgage",
+     "finance",
+     "Hannah"
+    ],
+    "evidence": [
+     6
+    ]
+   },
+   {
+    "content": "Flu jab appointment is on the 9th at 10:15 at the pharmacy on Castle Street.",
+    "abstract": "Scheduled health appointment details.",
+    "category": "event",
+    "tags": [
+     "health",
+     "appointment",
+     "Castle Street"
+    ],
+    "evidence": [
+     30
+    ]
+   },
+   {
+    "content": "Kwame, a new backend hire, starts on the 3rd; the user is his onboarding buddy.",
+    "abstract": "Professional responsibility regarding a new hire.",
+    "category": "entity",
+    "tags": [
+     "work",
+     "onboarding",
+     "Kwame"
+    ],
+    "evidence": [
+     36
+    ]
+   },
+   {
+    "content": "The user listens to the cricket while washing the pans.",
+    "abstract": "A recurring habit during chores.",
+    "category": "pattern",
+    "tags": [
+     "habit",
+     "cricket",
+     "chores"
+    ],
+    "evidence": [
+     10,
+     22,
+     28
+    ]
+   },
+   {
+    "content": "The user frequently puts on a record and does nothing for a while as a way to relax.",
+    "abstract": "A recurring relaxation pattern.",
+    "category": "pattern",
+    "tags": [
+     "habit",
+     "music",
+     "relaxation"
+    ],
+    "evidence": [
+     18,
+     24,
+     26
+    ]
+   },
+   {
+    "content": "Pasta with pesto is the user's preferred 'ten-minute supper'.",
+    "abstract": "Preferred quick meal choice.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "meal",
+     "recipe"
+    ],
+    "evidence": [
+     24,
+     32
+    ]
+   },
+   {
+    "content": "The bench outside the library on Pell Street was stolen.",
+    "abstract": "An observation about a local event.",
+    "category": "event",
+    "tags": [
+     "local",
+     "Pell Street",
+     "library"
+    ],
+    "evidence": [
+     28
+    ]
+   }
+  ],
+  "count": 7,
+  "elapsed_s": 110.9,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-21",
+  "facts": [
+   {
+    "content": "Rufus attends agility classes on Thursday evenings at the Oakfield community hall.",
+    "abstract": "Rufus's agility class schedule.",
+    "category": "event",
+    "tags": [
+     "Rufus",
+     "agility classes",
+     "Oakfield community hall"
+    ],
+    "evidence": [
+     38
+    ]
+   },
+   {
+    "content": "Switched the household password manager from LastPass to Bitwarden, exporting 312 entries.",
+    "abstract": "Migration of password manager.",
+    "category": "preference",
+    "tags": [
+     "password manager",
+     "Bitwarden",
+     "LastPass"
+    ],
+    "evidence": [
+     40
+    ]
+   },
+   {
+    "content": "The garden shed is painted a dull green color called 'sage whisper'.",
+    "abstract": "Garden shed color.",
+    "category": "general",
+    "tags": [
+     "garden",
+     "shed",
+     "sage whisper"
+    ],
+    "evidence": [
+     18
+    ]
+   },
+   {
+    "content": "Considers beans on toast a 'reliable fallback' meal.",
+    "abstract": "Food preference for beans on toast.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "beans on toast"
+    ],
+    "evidence": [
+     20
+    ]
+   },
+   {
+    "content": "Regularly eats porridge with banana for breakfast.",
+    "abstract": "Breakfast preference.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "breakfast",
+     "porridge"
+    ],
+    "evidence": [
+     14,
+     36
+    ]
+   },
+   {
+    "content": "Frequently eats bagels with cream cheese at their desk.",
+    "abstract": "Work-desk meal preference.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "bagel",
+     "desk"
+    ],
+    "evidence": [
+     2,
+     34,
+     40
+    ]
+   },
+   {
+    "content": "Regularly eats granola with yoghurt for breakfast.",
+    "abstract": "Breakfast preference.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "breakfast",
+     "granola"
+    ],
+    "evidence": [
+     28
+    ]
+   },
+   {
+    "content": "Has a recurring pattern of playing online chess and losing exactly twice.",
+    "abstract": "Online chess performance pattern.",
+    "category": "pattern",
+    "tags": [
+     "chess",
+     "online gaming"
+    ],
+    "evidence": [
+     2,
+     10,
+     18,
+     24,
+     28,
+     34
+    ]
+   },
+   {
+    "content": "Often reads thriller novels during bus commutes.",
+    "abstract": "Reading habit during commutes.",
+    "category": "pattern",
+    "tags": [
+     "reading",
+     "thriller",
+     "bus"
+    ],
+    "evidence": [
+     6,
+     16,
+     30,
+     34,
+     36
+    ]
+   },
+   {
+    "content": "Frequently listens to cricket while washing pans.",
+    "abstract": "Multitasking habit during chores.",
+    "category": "pattern",
+    "tags": [
+     "cricket",
+     "chores"
+    ],
+    "evidence": [
+     6,
+     18,
+     28,
+     34
+    ]
+   },
+   {
+    "content": "The passenger door of the user's car was scraped in a supermarket car park by an unknown party.",
+    "abstract": "Damage to car.",
+    "category": "event",
+    "tags": [
+     "car",
+     "damage",
+     "supermarket"
+    ],
+    "evidence": [
+     24
+    ]
+   },
+   {
+    "content": "Interested in typography video essays, nature programmes, and podcasts/articles about salt and volcanoes.",
+    "abstract": "Specific intellectual interests.",
+    "category": "preference",
+    "tags": [
+     "interests",
+     "typography",
+     "nature",
+     "salt",
+     "volcanoes"
+    ],
+    "evidence": [
+     6,
+     8,
+     10,
+     12,
+     14,
+     18,
+     26,
+     28,
+     32
+    ]
+   }
+  ],
+  "count": 12,
+  "elapsed_s": 144.4,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-22",
+  "facts": [
+   {
+    "content": "The user has applied for a Canadian eTA for a conference in Vancouver in June.",
+    "abstract": "Attending a conference in Vancouver in June.",
+    "category": "event",
+    "tags": [
+     "travel",
+     "conference",
+     "Vancouver",
+     "Canada"
+    ],
+    "evidence": [
+     10
+    ]
+   },
+   {
+    "content": "The user has booked flights to Lisbon from November 12th to 19th, departing from Stansted via Ryanair.",
+    "abstract": "Trip to Lisbon in November.",
+    "category": "event",
+    "tags": [
+     "travel",
+     "Lisbon",
+     "Ryanair",
+     "Stansted"
+    ],
+    "evidence": [
+     18
+    ]
+   },
+   {
+    "content": "The user's phone battery health is at 78 percent.",
+    "abstract": "Phone battery health status.",
+    "category": "entity",
+    "tags": [
+     "phone",
+     "battery health",
+     "technical"
+    ],
+    "evidence": [
+     6
+    ]
+   },
+   {
+    "content": "The user has a Bramley apple tree.",
+    "abstract": "Owns a Bramley variety apple tree.",
+    "category": "entity",
+    "tags": [
+     "garden",
+     "apple tree",
+     "Bramleys"
+    ],
+    "evidence": [
+     14
+    ]
+   },
+   {
+    "content": "The user booked a replacement appointment at the Apple Store for Saturday.",
+    "abstract": "Apple Store appointment on Saturday.",
+    "category": "event",
+    "tags": [
+     "appointment",
+     "Apple Store",
+     "phone"
+    ],
+    "evidence": [
+     6
+    ]
+   },
+   {
+    "content": "The user arranged a haircut for Friday.",
+    "abstract": "Haircut appointment on Friday.",
+    "category": "event",
+    "tags": [
+     "appointment",
+     "haircut"
+    ],
+    "evidence": [
+     10,
+     36
+    ]
+   }
+  ],
+  "count": 6,
+  "elapsed_s": 115.6,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-24",
+  "facts": [
+   {
+    "content": "The user's broadband contract with Virgin ends in February.",
+    "abstract": "Broadband contract expiration date.",
+    "category": "general",
+    "tags": [
+     "broadband",
+     "Virgin",
+     "contract"
+    ],
+    "evidence": [
+     10
+    ]
+   },
+   {
+    "content": "Hyperoptic provided a quote of 29 pounds per month for gigabit broadband.",
+    "abstract": "Hyperoptic broadband pricing.",
+    "category": "general",
+    "tags": [
+     "broadband",
+     "Hyperoptic",
+     "pricing"
+    ],
+    "evidence": [
+     10
+    ]
+   },
+   {
+    "content": "The user was invited to Nadia's pottery studio opening on Mill Road on the 28th.",
+    "abstract": "Upcoming event at Nadia's pottery studio.",
+    "category": "event",
+    "tags": [
+     "Nadia",
+     "pottery studio",
+     "Mill Road",
+     "event"
+    ],
+    "evidence": [
+     14
+    ]
+   },
+   {
+    "content": "The user has purchased Eurostar tickets to Paris for Carla's birthday for 158 pounds return.",
+    "abstract": "Trip to Paris for Carla's birthday.",
+    "category": "event",
+    "tags": [
+     "Paris",
+     "Carla",
+     "birthday",
+     "Eurostar"
+    ],
+    "evidence": [
+     16
+    ]
+   },
+   {
+    "content": "The corner shop on Dunmore Avenue has been converted into a vape store.",
+    "abstract": "Change of business at Dunmore Avenue.",
+    "category": "general",
+    "tags": [
+     "Dunmore Avenue",
+     "vape store",
+     "location"
+    ],
+    "evidence": [
+     18
+    ]
+   },
+   {
+    "content": "The user regularly eats granola with yoghurt for breakfast.",
+    "abstract": "Consistent breakfast preference.",
+    "category": "preference",
+    "tags": [
+     "breakfast",
+     "food",
+     "granola"
+    ],
+    "evidence": [
+     14
+    ]
+   },
+   {
+    "content": "The user frequently makes pasta with pesto as a quick 'ten-minute supper'.",
+    "abstract": "Pattern of eating pasta with pesto for dinner.",
+    "category": "pattern",
+    "tags": [
+     "food",
+     "supper",
+     "pesto"
+    ],
+    "evidence": [
+     8,
+     26,
+     32,
+     38
+    ]
+   }
+  ],
+  "count": 7,
+  "elapsed_s": 85.4,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-25",
+  "facts": [
+   {
+    "content": "The user's job title is Senior Analyst.",
+    "abstract": "The user's current professional role.",
+    "category": "entity",
+    "tags": [
+     "career",
+     "employment"
+    ],
+    "evidence": [
+     4
+    ]
+   },
+   {
+    "content": "The user adopted a second cat, a grey tabby named Pickle, from the Larkhill shelter.",
+    "abstract": "Information about the user's pets.",
+    "category": "entity",
+    "tags": [
+     "pet",
+     "cat"
+    ],
+    "evidence": [
+     38
+    ]
+   },
+   {
+    "content": "The user frequently does the paper's crossword while drinking tea.",
+    "abstract": "A recurring daily habit.",
+    "category": "pattern",
+    "tags": [
+     "hobby",
+     "routine"
+    ],
+    "evidence": [
+     8,
+     20,
+     24,
+     28,
+     38
+    ]
+   },
+   {
+    "content": "The user reads a thriller novel during their bus commutes.",
+    "abstract": "A reading habit during transit.",
+    "category": "pattern",
+    "tags": [
+     "habit",
+     "reading"
+    ],
+    "evidence": [
+     8,
+     16,
+     20,
+     34
+    ]
+   },
+   {
+    "content": "The user is interested in topics such as octopuses, volcanoes, and typography.",
+    "abstract": "General intellectual interests and curiosities.",
+    "category": "preference",
+    "tags": [
+     "interests",
+     "learning"
+    ],
+    "evidence": [
+     6,
+     12,
+     14,
+     20,
+     22,
+     24,
+     26
+    ]
+   },
+   {
+    "content": "The user plays online chess, though they often lose.",
+    "abstract": "A hobby and its typical outcome.",
+    "category": "pattern",
+    "tags": [
+     "hobby",
+     "chess"
+    ],
+    "evidence": [
+     2,
+     18,
+     20
+    ]
+   },
+   {
+    "content": "Marco's leaving party is on Friday at the bowling alley in Ferndale.",
+    "abstract": "A specific scheduled social event.",
+    "category": "event",
+    "tags": [
+     "social",
+     "event"
+    ],
+    "evidence": [
+     34
+    ]
+   },
+   {
+    "content": "The user planted forty dark purple 'Queen of Night' tulip bulbs along their front path.",
+    "abstract": "Recent gardening activity at home.",
+    "category": "event",
+    "tags": [
+     "gardening",
+     "home"
+    ],
+    "evidence": [
+     16
+    ]
+   }
+  ],
+  "count": 8,
+  "elapsed_s": 105.9,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-27",
+  "facts": [
+   {
+    "content": "The user's manager is Teodora.",
+    "abstract": "",
+    "category": "entity",
+    "tags": [
+     "work",
+     "manager",
+     "Teodora"
+    ],
+    "evidence": [
+     28
+    ]
+   },
+   {
+    "content": "The user has approval to work from Porto for the entirety of February.",
+    "abstract": "Working remotely from Porto in February.",
+    "category": "event",
+    "tags": [
+     "work",
+     "travel",
+     "Porto"
+    ],
+    "evidence": [
+     28
+    ]
+   },
+   {
+    "content": "The user's polling station is Ashby Primary School.",
+    "abstract": "",
+    "category": "general",
+    "tags": [
+     "voting",
+     "address",
+     "Ashby Primary School"
+    ],
+    "evidence": [
+     32
+    ]
+   },
+   {
+    "content": "The Falconer project was delayed by three weeks because the payments vendor failed its security review.",
+    "abstract": "Falconer project delay due to vendor security failure.",
+    "category": "case",
+    "tags": [
+     "work",
+     "Falconer project",
+     "delay"
+    ],
+    "evidence": [
+     42
+    ]
+   },
+   {
+    "content": "The user purchased a Dyson V12 vacuum for 299 pounds during a Black Friday sale.",
+    "abstract": "",
+    "category": "entity",
+    "tags": [
+     "purchase",
+     "Dyson V12",
+     "vacuum"
+    ],
+    "evidence": [
+     26
+    ]
+   },
+   {
+    "content": "The user frequently eats avocado on rye or granola with yoghurt for breakfast.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "diet",
+     "breakfast"
+    ],
+    "evidence": [
+     10,
+     26,
+     34,
+     36,
+     42
+    ]
+   },
+   {
+    "content": "The user frequently has a bagel with cream cheese for lunch at their desk.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "diet",
+     "lunch",
+     "desk"
+    ],
+    "evidence": [
+     8,
+     26,
+     34,
+     42
+    ]
+   },
+   {
+    "content": "The user frequently eats instant ramen with an egg.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "diet",
+     "ramen"
+    ],
+    "evidence": [
+     2,
+     26,
+     28,
+     34
+    ]
+   },
+   {
+    "content": "Fish fingers and peas are a nostalgic and quick meal for the user.",
+    "abstract": "",
+    "category": "preference",
+    "tags": [
+     "diet",
+     "nostalgia"
+    ],
+    "evidence": [
+     4,
+     30,
+     36
+    ]
+   },
+   {
+    "content": "The user habitually reads a thriller novel while traveling on the bus.",
+    "abstract": "",
+    "category": "pattern",
+    "tags": [
+     "habit",
+     "reading",
+     "bus"
+    ],
+    "evidence": [
+     6,
+     14,
+     24,
+     30,
+     36
+    ]
+   }
+  ],
+  "count": 10,
+  "elapsed_s": 140.9,
+  "error": ""
+ },
+ {
+  "note_id": "note-2026-10-29",
+  "facts": [
+   {
+    "content": "The user's niece, Imogen, was accepted into the Royal Northern College of Music for cello.",
+    "abstract": "Imogen (niece) is studying cello at the Royal Northern College of Music.",
+    "category": "entity",
+    "tags": [
+     "family",
+     "Imogen",
+     "education"
+    ],
+    "evidence": [
+     14
+    ]
+   },
+   {
+    "content": "A roofer quoted £1,850 to replace cracked slates above the back porch.",
+    "abstract": "Roof repair cost estimate is £1,850.",
+    "category": "case",
+    "tags": [
+     "home maintenance",
+     "roof",
+     "cost"
+    ],
+    "evidence": [
+     16
+    ]
+   },
+   {
+    "content": "Donal quoted £80 to cut back the hedge along the side fence.",
+    "abstract": "Hedge trimming cost estimate from Donal is £80.",
+    "category": "case",
+    "tags": [
+     "garden",
+     "home maintenance",
+     "cost"
+    ],
+    "evidence": [
+     30
+    ]
+   },
+   {
+    "content": "The user's laptop screen hinge is cracked, with a repair estimate of £190 for a new assembly.",
+    "abstract": "Laptop hinge repair cost is £190.",
+    "category": "case",
+    "tags": [
+     "laptop",
+     "repair",
+     "cost"
+    ],
+    "evidence": [
+     36
+    ]
+   },
+   {
+    "content": "The user frequently eats granola with yoghurt for breakfast.",
+    "abstract": "Preference for granola and yoghurt as a regular breakfast.",
+    "category": "preference",
+    "tags": [
+     "food",
+     "breakfast",
+     "habit"
+    ],
+    "evidence": [
+     22,
+     28,
+     30
+    ]
+   }
+  ],
+  "count": 5,
+  "elapsed_s": 96.6,
+  "error": ""
+ }
+]
