@@ -298,7 +298,10 @@ scored zero: B3 and B4 at 0.0, and B5, facts and turns together,
 exactly B1 again. Someone who installed this plugin on this Hermes,
 left the defaults alone and asked "that time we talked about X" would
 get the two-in-three memory from the sections above, and nothing in
-the logs to say why. It has not been reported upstream yet.
+the logs to say why. Reported upstream as [lancedb/hermes-agent-memory
+issue 14][upstream].
+
+[upstream]: https://github.com/lancedb/hermes-agent-memory/issues/14
 
 So the round ran a second time with a shim: a short patch that moves
 the argument into the client's `extra_body`, unwraps the reply object
