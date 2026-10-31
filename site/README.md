@@ -45,15 +45,24 @@ spot where the site adds something the Markdown doesn't hold.
 Data files under `bakeoff/` and `checks/` are copied as they are,
 never rendered.
 
-##  Icons and sharing
+##  Head, styles and icons
 
-`site/static/` is copied to the site's root: the favicons,
-`site.webmanifest`, and `social.png`, the 1280 × 640 image shown
-when a page is shared. Every layout includes `site/layouts/head.ejs`,
-which links the icons and sets the share tags. A page's share
-description is its `description` data, as in a report's
-`index.11tydata.json`, or else the lab's summary in
-`eleventy.config.js`.
+Every layout includes `site/layouts/head.ejs`: the viewport and theme
+colours, the share tags, the icons, the web fonts, and the site's one
+stylesheet and one script, `site/static/lab.css` and
+`site/static/lab.js`. There is no SCSS and no bundler. `site/static/`
+is copied to the site's root as it is, so the favicons,
+`site.webmanifest` and `social.png`, the 1280 × 640 image shown when
+a page is shared, sit there too. A page's share description is its
+`description` data, as in a report's `index.11tydata.json`, or else
+the lab's summary in `eleventy.config.js`.
+
+Every layout also includes `site/layouts/top.ejs`, the masthead, and
+names itself on `<body>`: `layout-home`, `layout-report` or
+`layout-page`. The stylesheet uses those classes only at its end,
+under "what still differs by layout," for the few rules the three
+layouts never agreed on. Lengths are in `rem` on a 16px root, except
+1px rules, and breakpoints are in `em`.
 
 ##  Comment blocks
 
@@ -125,6 +134,22 @@ Each component's own file lists its options at the top.
 Charts read each cell as a number with an optional `/max` and unit,
 so `23/24`, `17.2 GiB` and `96%` all work.
 
+###  The label
+
+The label is the red box at the top of a report and of the front
+page: `number` in the corner, `top` above the rule, `word` in the big
+type, `bottom` under it. Its rules:
+
+- Write the copy for the red box, not for the page. `word` is one
+  short word, set as large as the box allows. The Markdown heading
+  inside the block can say more, and the report may call itself by
+  that longer name in prose.
+- Never put "test" in the title. The line under it already says
+  "Test with great care."
+- Keep it lighthearted.
+- Niko approves every title. It is the one thing in this repo that
+  does not go on autopilot.
+
 To add a component, add `name.ejs` to `site/components/` to draw it,
 and `name.js` to turn the block into the template's data if it needs
 more than the block itself. The block holds `name`, `options`,
@@ -142,6 +167,9 @@ site/components/          a .ejs, and often a .js, per component
 site/layouts/page.ejs     the page around most rendered Markdown
 site/layouts/report.ejs   the page around a report's index.md
 site/layouts/home.ejs     the front page, from the repo's README.md
-site/layouts/head.ejs     icons and share tags, in every layout
+site/layouts/head.ejs     the shared head, in every layout
+site/layouts/top.ejs      the masthead, in every layout
+site/static/lab.css       the one stylesheet
+site/static/lab.js        the one script
 site/static/              copied to the site's root as is
 ```
