@@ -217,6 +217,10 @@ code {
         box-shadow: var(--lap-top-scroll-shadow-rgba)
             var(--lap-top-scroll-shadow-spread);
     }
+    100% {
+        box-shadow: var(--lap-top-scroll-shadow-rgba)
+            var(--lap-top-scroll-shadow-spread);
+    }
 }
 
 .lab-top {
