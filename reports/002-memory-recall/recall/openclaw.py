@@ -226,9 +226,12 @@ def main():
     queries = load_json(args.corpus / "queries.json")
 
     if args.no_threshold:
-        env = existing_home(args.home, args.mode)
-        path = run_cell("C3", env, queries, args.out, min_score=0)
-        print(f"C3 ({args.mode}, min-score 0): {len(queries)} -> {path}")
+        suffix = "-undated" if args.undated else ""
+        cell = "C5" if args.undated else "C3"
+        env = existing_home(args.home, args.mode + suffix)
+        path = run_cell(cell, env, queries, args.out, min_score=0)
+        print(f"{cell} ({args.mode}{suffix}, min-score 0): "
+              f"{len(queries)} -> {path}")
         return
 
     if args.only_control:

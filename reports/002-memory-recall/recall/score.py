@@ -44,6 +44,13 @@ CELL_LABELS = {
     "C3": "OpenClaw bge-m3 hybrid, no score cut (post hoc)",
     "C4": "OpenClaw bge-m3 hybrid, undated notes (post hoc)",
     "C4-control": "OpenClaw bge-m3 hybrid, undated, exact fact text (post hoc)",
+    "C5": "OpenClaw bge-m3 hybrid, undated, no score cut (round 4)",
+    "B3": "Hermes LanceDB bge-m3, extracted facts, vector (round 3)",
+    "B4": "Hermes LanceDB bge-m3, extracted facts, hybrid (round 3)",
+    "B5": "Hermes LanceDB bge-m3, facts and turns, vector (round 3)",
+    "B6": "Hermes LanceDB bge-m3, extracted facts, vector, shim (round 3)",
+    "B7": "Hermes LanceDB bge-m3, extracted facts, hybrid, shim (round 3)",
+    "B8": "Hermes LanceDB bge-m3, facts and turns, vector, shim (round 3)",
 }
 
 VERDICT_GO = 0.90
