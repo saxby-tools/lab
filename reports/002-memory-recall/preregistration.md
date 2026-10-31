@@ -167,9 +167,9 @@ the verdict cell or the bar.
 - **C3, OpenClaw without the score cut.** Added after C2's first rows
   showed most paraphrases returning nothing. The same index and
   queries with `--min-score 0`. Post hoc; reported, not judged.
-- **C4, OpenClaw with undated notes.** Added after the C0 control came
-  back at about a fifth: a verbatim sentence from four weeks earlier
-  lost to recent filler. The same notes copied in as `entry-NN.md`,
+- **C4, OpenClaw with undated notes.** Added after the first C0
+  control rows came back at a fifth (56 percent once complete): a
+  verbatim sentence from four weeks earlier lost to recent filler. The same notes copied in as `entry-NN.md`,
   which OpenClaw treats as evergreen, so its 30-day recency decay does
   not apply, with its own exact-text control. Post hoc; reported, not
   judged.

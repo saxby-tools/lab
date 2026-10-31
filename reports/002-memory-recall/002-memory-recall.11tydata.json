@@ -1,0 +1,22 @@
+{
+  "palette": {
+    "Hermes LanceDB, vector": 2,
+    "Hermes LanceDB, hybrid": 2,
+    "B0": 2,
+    "B1": 2,
+    "B2": 2,
+    "Hermes FTS5, as typed": 1,
+    "Hermes FTS5, OR": 1,
+    "A0": 1,
+    "A1": 1,
+    "A2": 1,
+    "OpenClaw keyword": 3,
+    "C1": 3,
+    "OpenClaw hybrid": 4,
+    "C0": 4,
+    "C2": 4,
+    "C3": 4,
+    "Chance": 7,
+    "bge-m3": 8
+  }
+}
