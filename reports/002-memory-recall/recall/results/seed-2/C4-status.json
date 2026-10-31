@@ -1,0 +1,134 @@
+{
+ "agentId": "main",
+ "status": {
+  "backend": "builtin",
+  "files": 30,
+  "chunks": 120,
+  "dirty": false,
+  "workspaceDir": "/Users/neeks/Workspaces/saxby-lab/.scratch/report-0002/work/openclaw-seed-2/ollama-undated/workspace",
+  "dbPath": "/Users/neeks/Workspaces/saxby-lab/.scratch/report-0002/work/openclaw-seed-2/ollama-undated/state/agents/main/agent/openclaw-agent.sqlite",
+  "storage": {
+   "databaseBytes": 7655424,
+   "walBytes": 0,
+   "reusableBytes": 0,
+   "embeddingCacheBytes": 983040,
+   "embeddingCacheEntries": 120
+  },
+  "provider": "ollama",
+  "model": "bge-m3",
+  "requestedProvider": "ollama",
+  "sources": [
+   "memory",
+   "sessions"
+  ],
+  "extraPaths": [],
+  "sourceCounts": [
+   {
+    "source": "memory",
+    "files": 30,
+    "chunks": 120,
+    "chunkBytes": 1143453,
+    "dirty": false,
+    "eligible": 30,
+    "issues": []
+   },
+   {
+    "source": "sessions",
+    "files": 0,
+    "chunks": 0,
+    "chunkBytes": 0,
+    "eligible": 0,
+    "issues": [
+     "no eligible session transcripts found"
+    ]
+   }
+  ],
+  "cache": {
+   "enabled": true,
+   "entries": 120,
+   "maxEntries": 50000
+  },
+  "fts": {
+   "enabled": true,
+   "available": true
+  },
+  "vector": {
+   "enabled": true,
+   "index": {
+    "state": "complete"
+   },
+   "storeAvailable": true,
+   "semanticAvailable": true,
+   "available": true,
+   "extensionPath": "/opt/homebrew/lib/node_modules/openclaw/node_modules/sqlite-vec-darwin-arm64/vec0.dylib",
+   "dims": 1024
+  },
+  "batch": {
+   "enabled": false,
+   "failures": 0,
+   "limit": 2,
+   "wait": true,
+   "concurrency": 2,
+   "pollIntervalMs": 2000,
+   "timeoutMs": 3600000
+  },
+  "custom": {
+   "searchMode": "hybrid",
+   "providerState": {
+    "mode": "active",
+    "providerId": "ollama"
+   },
+   "indexIdentity": {
+    "status": "valid"
+   },
+   "automaticRebuildNotice": {
+    "sequence": 0,
+    "warning": ""
+   }
+  }
+ },
+ "embeddingProbe": {
+  "ok": true
+ },
+ "scan": {
+  "sources": [
+   {
+    "source": "memory",
+    "totalFiles": 30,
+    "issues": []
+   },
+   {
+    "source": "sessions",
+    "totalFiles": 0,
+    "issues": [
+     "no eligible session transcripts found"
+    ]
+   }
+  ],
+  "totalFiles": 30,
+  "issues": [
+   "no eligible session transcripts found"
+  ]
+ },
+ "audit": {
+  "storePath": "plugin-state:memory-core/short-term-recall/3e0b9ee98915a4248920dbdbdf556c6f5cec777b8820a897ffc19b140f815383",
+  "lockPath": "plugin-state:memory-core/short-term-locks/3e0b9ee98915a4248920dbdbdf556c6f5cec777b8820a897ffc19b140f815383",
+  "exists": false,
+  "entryCount": 0,
+  "promotedCount": 0,
+  "spacedEntryCount": 0,
+  "conceptTaggedEntryCount": 0,
+  "invalidEntryCount": 0,
+  "danglingEntryCount": 0,
+  "issues": []
+ },
+ "dreamingAudit": {
+  "sessionCorpusDir": "/Users/neeks/Workspaces/saxby-lab/.scratch/report-0002/work/openclaw-seed-2/ollama-undated/workspace/memory/.dreams/session-corpus",
+  "sessionCorpusFileCount": 0,
+  "suspiciousSessionCorpusFileCount": 0,
+  "suspiciousSessionCorpusLineCount": 0,
+  "sessionIngestionPath": "/Users/neeks/Workspaces/saxby-lab/.scratch/report-0002/work/openclaw-seed-2/ollama-undated/workspace/memory/.dreams/session-ingestion.json",
+  "sessionIngestionExists": false,
+  "issues": []
+ }
+}

@@ -1,0 +1,134 @@
+{
+ "agentId": "main",
+ "status": {
+  "backend": "builtin",
+  "files": 30,
+  "chunks": 122,
+  "dirty": false,
+  "workspaceDir": "/Users/neeks/Workspaces/saxby-lab/.scratch/report-0002/homes/openclaw/none/workspace",
+  "dbPath": "/Users/neeks/Workspaces/saxby-lab/.scratch/report-0002/homes/openclaw/none/state/agents/main/agent/openclaw-agent.sqlite",
+  "storage": {
+   "databaseBytes": 1359872,
+   "walBytes": 0,
+   "reusableBytes": 0,
+   "embeddingCacheBytes": 0,
+   "embeddingCacheEntries": 0
+  },
+  "provider": "none",
+  "requestedProvider": "none",
+  "sources": [
+   "memory",
+   "sessions"
+  ],
+  "extraPaths": [],
+  "sourceCounts": [
+   {
+    "source": "memory",
+    "files": 30,
+    "chunks": 122,
+    "chunkBytes": 166385,
+    "dirty": false,
+    "eligible": 30,
+    "issues": []
+   },
+   {
+    "source": "sessions",
+    "files": 0,
+    "chunks": 0,
+    "chunkBytes": 0,
+    "eligible": 0,
+    "issues": [
+     "no eligible session transcripts found"
+    ]
+   }
+  ],
+  "cache": {
+   "enabled": true,
+   "entries": 0,
+   "maxEntries": 50000
+  },
+  "fts": {
+   "enabled": true,
+   "available": true
+  },
+  "vector": {
+   "enabled": false,
+   "index": {
+    "state": "empty"
+   },
+   "storeAvailable": false,
+   "semanticAvailable": false,
+   "available": false
+  },
+  "batch": {
+   "enabled": false,
+   "failures": 0,
+   "limit": 2,
+   "wait": true,
+   "concurrency": 2,
+   "pollIntervalMs": 2000,
+   "timeoutMs": 3600000
+  },
+  "custom": {
+   "searchMode": "fts-only",
+   "providerState": {
+    "mode": "fts-only",
+    "reason": "No embedding provider available (FTS-only mode)",
+    "attemptedProviderId": "none"
+   },
+   "providerUnavailableReason": "No embedding provider available (FTS-only mode)",
+   "indexIdentity": {
+    "status": "valid"
+   },
+   "automaticRebuildNotice": {
+    "sequence": 0,
+    "warning": ""
+   }
+  }
+ },
+ "embeddingProbe": {
+  "ok": false,
+  "error": "No embedding provider available (FTS-only mode)"
+ },
+ "scan": {
+  "sources": [
+   {
+    "source": "memory",
+    "totalFiles": 30,
+    "issues": []
+   },
+   {
+    "source": "sessions",
+    "totalFiles": 0,
+    "issues": [
+     "no eligible session transcripts found"
+    ]
+   }
+  ],
+  "totalFiles": 30,
+  "issues": [
+   "no eligible session transcripts found"
+  ]
+ },
+ "audit": {
+  "storePath": "plugin-state:memory-core/short-term-recall/8b54759c679c13db32aab5151795fe80a69d23eccf5379fd6d993357e09f5c75",
+  "lockPath": "plugin-state:memory-core/short-term-locks/8b54759c679c13db32aab5151795fe80a69d23eccf5379fd6d993357e09f5c75",
+  "exists": false,
+  "entryCount": 0,
+  "promotedCount": 0,
+  "spacedEntryCount": 0,
+  "conceptTaggedEntryCount": 0,
+  "invalidEntryCount": 0,
+  "danglingEntryCount": 0,
+  "issues": []
+ },
+ "dreamingAudit": {
+  "sessionCorpusDir": "/Users/neeks/Workspaces/saxby-lab/.scratch/report-0002/homes/openclaw/none/workspace/memory/.dreams/session-corpus",
+  "sessionCorpusFileCount": 0,
+  "suspiciousSessionCorpusFileCount": 0,
+  "suspiciousSessionCorpusLineCount": 0,
+  "sessionIngestionPath": "/Users/neeks/Workspaces/saxby-lab/.scratch/report-0002/homes/openclaw/none/workspace/memory/.dreams/session-ingestion.json",
+  "sessionIngestionExists": false,
+  "issues": []
+ }
+}
