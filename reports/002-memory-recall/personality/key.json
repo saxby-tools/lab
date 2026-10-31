@@ -1,0 +1,62 @@
+[
+ {
+  "label": "R01",
+  "name": "hype-2",
+  "condition": "hype"
+ },
+ {
+  "label": "R02",
+  "name": "kawaii-2",
+  "condition": "kawaii"
+ },
+ {
+  "label": "R03",
+  "name": "helpful-2",
+  "condition": "helpful"
+ },
+ {
+  "label": "R04",
+  "name": "teacher-1",
+  "condition": "teacher"
+ },
+ {
+  "label": "R05",
+  "name": "surfer-2",
+  "condition": "surfer"
+ },
+ {
+  "label": "R06",
+  "name": "surfer-1",
+  "condition": "surfer"
+ },
+ {
+  "label": "R07",
+  "name": "hype-1",
+  "condition": "hype"
+ },
+ {
+  "label": "R08",
+  "name": "helpful-1",
+  "condition": "helpful"
+ },
+ {
+  "label": "R09",
+  "name": "teacher-2",
+  "condition": "teacher"
+ },
+ {
+  "label": "R10",
+  "name": "kawaii-1",
+  "condition": "kawaii"
+ },
+ {
+  "label": "R11",
+  "name": "none-2",
+  "condition": "none"
+ },
+ {
+  "label": "R12",
+  "name": "none-1",
+  "condition": "none"
+ }
+]
