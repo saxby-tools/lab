@@ -34,6 +34,12 @@ scorer, and the personality packet.
 | C4 | OpenClaw bge-m3 hybrid, undated notes (post hoc) | 5.8 | 16.2 | 24.3 | 10.8 to 21.7 |
 | C4-control | OpenClaw bge-m3 hybrid, undated, exact fact text (post hoc) | 91.1 | 99.7 | 100.0 | 98.5 to 100.0 |
 | C5 | OpenClaw bge-m3 hybrid, undated, no score cut (round 4) | 9.6 | 38.8 | 60.0 | 36.7 to 40.8 |
+| B3 | Hermes LanceDB bge-m3, extracted facts, vector (round 3) | 0.0 | 0.0 | 0.0 | 0.0 to 0.0 |
+| B4 | Hermes LanceDB bge-m3, extracted facts, hybrid (round 3) | 0.0 | 0.0 | 0.0 | 0.0 to 0.0 |
+| B5 | Hermes LanceDB bge-m3, facts and turns, vector (round 3) | 47.1 | 68.6 | 75.4 | 65.3 to 71.9 |
+| B6 | Hermes LanceDB bge-m3, extracted facts, vector, shim (round 3) | 70.4 | 89.4 | 92.2 | 82.1 to 96.8 |
+| B7 | Hermes LanceDB bge-m3, extracted facts, hybrid, shim (round 3) | 40.1 | 84.3 | 91.5 | 76.7 to 91.9 |
+| B8 | Hermes LanceDB bge-m3, facts and turns, vector, shim (round 3) | 72.9 | 90.1 | 93.8 | 84.4 to 95.8 |
 
 Recall at k, percent, mean of three seeds. Chance at five of 30 notes is 16.7.
 
@@ -64,7 +70,8 @@ recall/              the recall arm
   score.py           recall at k, intervals, miss lists
   tables.py          prints the report's table rows from the summary
   run.sh             reruns everything from a clean checkout
-  results/seed-N/    one JSON line per query per cell
+  results/seed-N/    one JSON line per query per cell, and round 3's
+                     extracted facts per note
   results/summary/   the tables the report quotes
 personality/         the personality arm
   config.yaml        the Hermes config each sample starts from
@@ -113,13 +120,23 @@ for s in 1 2 3; do recall/run.sh hermes $s; done
 for s in 1 2 3; do recall/run.sh openclaw $s; done
 ```
 
+Round 3 also needs Saxby on `127.0.0.1:11435` with `gemma4:31b-128k`
+behind it, and takes about an hour a seed, most of it the model
+extracting facts:
+
+```bash
+for s in 1 2 3; do recall/run.sh facts $s; done
+```
+
 ```bash
 recall/run.sh score
 ```
 
 The runners overwrite `recall/results/`. Embeddings are deterministic
-for the same model file, so the B and C cells should reproduce the
-committed numbers; the A cells are plain SQLite and will.
+for the same model file, so cells B0 to B5 and the C cells should
+reproduce the committed numbers; the A cells are plain SQLite and
+will. The extracted facts are sampled from a model and will differ,
+so B6 to B8 will land near the committed numbers, not on them.
 
 Check every number in the report and this README against the data,
 from the repository's root after `npm ci`:
@@ -146,8 +163,8 @@ None open. [#9](https://github.com/saxby-tools/lab/issues/9), the
 personality ratings, closed the same evening when they came in; see
 `personality/ratings.md`.
 
-Follow-up rounds:
-[#10](https://github.com/saxby-tools/lab/issues/10) the LanceDB plugin
-with extraction on, and
-[#11](https://github.com/saxby-tools/lab/issues/11) OpenClaw with a
-score cut that fits `bge-m3`.
+Both follow-up rounds ran the same night and are in the report:
+[#10](https://github.com/saxby-tools/lab/issues/10), the LanceDB plugin
+with extraction on, is round 3, and
+[#11](https://github.com/saxby-tools/lab/issues/11), OpenClaw with the
+score cut removed, is round 4.
