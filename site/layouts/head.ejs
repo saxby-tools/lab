@@ -1,8 +1,16 @@
 <%#
-  Icons and share tags, included by every layout. Icon links are
-  relative, through `root`, so they work under any base path. Share
-  tags must be absolute, so they use `canonical` and `siteUrl`.
+  The head every layout shares: viewport, theme colours, share tags,
+  icons, fonts, and the site's one stylesheet and one script. Links to
+  the site's own files are relative, through `root`, so they work under
+  any base path. Share tags must be absolute, so they use `canonical`
+  and `siteUrl`.
 -%>
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbf0de"
+  media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17110e"
+  media="(prefers-color-scheme: dark)">
 <meta name="description" content="<%= summary %>">
 <link rel="icon" href="<%= root %>favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32"
@@ -23,3 +31,8 @@
 <meta property="og:image:alt"
   content="Saxby lab, tested with great care, in cream on red">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="<%= root %>lab.css">
+<script src="<%= root %>lab.js" defer></script>
