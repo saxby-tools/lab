@@ -157,7 +157,7 @@ const provenanceCache = new Map<string, Provenance>();
 
 // Which exact weights and which server answered: the model's digest
 // from /api/tags and the version from /api/version. Known gap 1 of
-// report 001: records before Oct. 31, 2026 do not carry these.
+// report 001: records before Oct. 30, 2026 do not carry these.
 export async function provenance(model: string): Promise<Provenance> {
   const cached = provenanceCache.get(model);
 

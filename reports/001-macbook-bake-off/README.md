@@ -139,7 +139,7 @@ S needs about 97 GiB of memory once loaded.
 
 ##  Known gaps
 
-All three closed on Oct. 31, 2026; the records as published are
+All three closed late on Oct. 30, 2026; the records as published are
 unchanged.
 
 - [#1](https://github.com/saxby-tools/lab/issues/1): `run.ts` and

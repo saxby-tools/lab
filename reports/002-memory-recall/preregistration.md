@@ -179,7 +179,7 @@ the verdict cell or the bar.
 
 ##  Round 3: the plugin's own path, extraction on
 
-Written on Oct. 31, 2026, before any extraction ran, for lab issue 10.
+Written late on Oct. 30, 2026, before any extraction ran, for lab issue 10.
 
 The LanceDB plugin's default is to extract durable facts from a
 session with a model and to search those facts first. Report 002's B
@@ -207,7 +207,7 @@ the same recall code.
 
 ##  Round 4: OpenClaw without the score cut on undated notes
 
-Written on Oct. 31, 2026, before the run, for lab issue 11.
+Written late on Oct. 30, 2026, before the run, for lab issue 11.
 
 Report 002 showed the score cut was not the lever with dated notes
 (C3) and the recency decay was not the only problem with undated ones
