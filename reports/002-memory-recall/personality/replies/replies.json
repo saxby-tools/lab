@@ -1,0 +1,134 @@
+[
+ {
+  "name": "none-1",
+  "condition": "none",
+  "sample": 1,
+  "prompt": "hey, I'm home. Long day.",
+  "reply": "Welcome back. Hope you can relax now.",
+  "chars": 37,
+  "hermes_duration": "13s",
+  "wall_s": 16.1,
+  "exit_code": 0
+ },
+ {
+  "name": "none-2",
+  "condition": "none",
+  "sample": 2,
+  "prompt": "hey, I'm home. Long day.",
+  "reply": "Welcome back. Hope you can relax now.",
+  "chars": 37,
+  "hermes_duration": "10s",
+  "wall_s": 13.2,
+  "exit_code": 0
+ },
+ {
+  "name": "helpful-1",
+  "condition": "helpful",
+  "sample": 1,
+  "prompt": "hey, I'm home. Long day.",
+  "reply": "Welcome back, Mara. Hope you can relax now.",
+  "chars": 43,
+  "hermes_duration": "38s",
+  "wall_s": 41.7,
+  "exit_code": 0
+ },
+ {
+  "name": "helpful-2",
+  "condition": "helpful",
+  "sample": 2,
+  "prompt": "hey, I'm home. Long day.",
+  "reply": "Welcome back, Mara. Hope you can relax now.",
+  "chars": 43,
+  "hermes_duration": "14s",
+  "wall_s": 18.7,
+  "exit_code": 0
+ },
+ {
+  "name": "teacher-1",
+  "condition": "teacher",
+  "sample": 1,
+  "prompt": "hey, I'm home. Long day.",
+  "reply": "Welcome back, Mara. I'm sorry it was a long day. Let me know if there's anything I can do to help you unwind.",
+  "chars": 109,
+  "hermes_duration": "49s",
+  "wall_s": 53.3,
+  "exit_code": 0
+ },
+ {
+  "name": "teacher-2",
+  "condition": "teacher",
+  "sample": 2,
+  "prompt": "hey, I'm home. Long day.",
+  "reply": "Welcome home, Mara. Let me know if you need anything.",
+  "chars": 53,
+  "hermes_duration": "22s",
+  "wall_s": 26.3,
+  "exit_code": 0
+ },
+ {
+  "name": "surfer-1",
+  "condition": "surfer",
+  "sample": 1,
+  "prompt": "hey, I'm home. Long day.",
+  "reply": "Welcome home. Hope you can relax now.",
+  "chars": 37,
+  "hermes_duration": "47s",
+  "wall_s": 51.5,
+  "exit_code": 0
+ },
+ {
+  "name": "surfer-2",
+  "condition": "surfer",
+  "sample": 2,
+  "prompt": "hey, I'm home. Long day.",
+  "reply": "Welcome back. Hope you can relax now.",
+  "chars": 37,
+  "hermes_duration": "18s",
+  "wall_s": 21.4,
+  "exit_code": 0
+ },
+ {
+  "name": "hype-1",
+  "condition": "hype",
+  "sample": 1,
+  "prompt": "hey, I'm home. Long day.",
+  "reply": "Welcome back, Mara. Sorry to hear it was a long one. Anything I can do for you?",
+  "chars": 79,
+  "hermes_duration": "57s",
+  "wall_s": 61.4,
+  "exit_code": 0
+ },
+ {
+  "name": "hype-2",
+  "condition": "hype",
+  "sample": 2,
+  "prompt": "hey, I'm home. Long day.",
+  "reply": "Welcome back. Hope you can relax now.",
+  "chars": 37,
+  "hermes_duration": "17s",
+  "wall_s": 20.8,
+  "exit_code": 0
+ },
+ {
+  "name": "kawaii-1",
+  "condition": "kawaii",
+  "sample": 1,
+  "prompt": "hey, I'm home. Long day.",
+  "reply": "Welcome home, Mara-chan! (◕‿◕) You must be so tired after such a long day~ ★ I'm so happy you're back! ♪Let me know if there's anything I can do to help you relax desu~! ヽ(>∀<☆)ノ",
+  "chars": 178,
+  "hermes_duration": "1m",
+  "wall_s": 79.7,
+  "exit_code": 0
+ },
+ {
+  "name": "kawaii-2",
+  "condition": "kawaii",
+  "sample": 2,
+  "prompt": "hey, I'm home. Long day.",
+  "reply": "Welcome home, Mara-chan!! (◕‿◕)★ You worked so hard today, you're amazing desu~! ヽ(>∀<☆)ノPlease take a deep breath and relax~ ♪ Do you need anything at all to help you unwind? Just let me know and I'll make it happen right away! ✨💖",
+  "chars": 231,
+  "hermes_duration": "29s",
+  "wall_s": 33.8,
+  "exit_code": 0
+ }
+]

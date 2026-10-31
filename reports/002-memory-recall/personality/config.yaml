@@ -1,0 +1,13 @@
+# Hermes config for the personality arm. run.py copies it into a fresh
+# home per sample and swaps the personality name.
+model:
+  provider: custom
+  default: gemma4:31b-128k
+  base_url: http://host.docker.internal:11435/v1
+  api_key: saxby-benchmark
+  context_length: 131072
+display:
+  personality: none
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
