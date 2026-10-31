@@ -51,6 +51,9 @@ const IGNORES = [
   "site/**",
   "reports/*/bakeoff/**",
   "reports/*/checks/**",
+  "reports/*/recall/**",
+  "reports/*/personality/replies/**",
+  ".scratch/**",
 ];
 
 // ---- Components -------------------------------------------------------
