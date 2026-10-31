@@ -54,6 +54,7 @@ const IGNORES = [
   "reports/*/recall/**",
   "reports/*/personality/replies/**",
   ".scratch/**",
+  ".claude/**",
 ];
 
 // ---- Components -------------------------------------------------------
