@@ -135,6 +135,13 @@ def existing_home(home, mode):
     env = dict(os.environ)
     env["OPENCLAW_CONFIG_PATH"] = str(root / "openclaw.json")
     env["OPENCLAW_STATE_DIR"] = str(root / "state")
+
+    # Undated homes name their files entry-NN.md; without the mapping
+    # every hit reads as "note-entry-NN" and nothing can match. The
+    # first C5 run was scored that way and translated afterwards.
+    if (root / "mapping.json").exists():
+        env["RECALL_MAPPING"] = str(root / "mapping.json")
+
     return env
 
 

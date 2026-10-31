@@ -15,7 +15,8 @@ const REPORT = join(HERE, "..");
 const SUMMARY = join(REPORT, "recall", "results", "summary", "summary.json");
 const PAGES = ["index.md", "README.md"].map((name) => join(REPORT, name));
 
-const CELL_ROW = /^\| (A0|A1|A2|B0|B1|B2|C0|C1|C2|C3|C4|C4-control) \|/;
+const CELL_ROW =
+  /^\| (A0|A1|A2|B0|B1|B2|B3|B4|B5|B6|B7|B8|C0|C1|C2|C3|C4|C4-control|C5) \|/;
 const KS = [1, 5, 10];
 
 const summary = JSON.parse(readFileSync(SUMMARY, "utf8"));
