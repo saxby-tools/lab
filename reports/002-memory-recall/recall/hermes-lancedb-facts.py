@@ -22,6 +22,10 @@ note, so recall can be rerun without a model), then:
 
 --notes N limits extraction to the first N notes for a smoke test.
 --facts-from FILE skips extraction and loads a saved facts.json.
+--redo-notes ID... with --facts-from, extracts those notes again,
+rewrites the file, then runs the cells. Used once, on Oct. 31, 2026,
+for seed 1's first note, whose extraction had timed out while six
+stray containers from an earlier launch were sharing the model.
 
 --shim runs the same thing as cells B6, B7 and B8 with two calls
 patched: the plugin passes `response_format=` to Hermes's `call_llm`,
@@ -115,6 +119,9 @@ def parse_args():
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--notes", type=int, default=None)
     parser.add_argument("--facts-from", type=Path, default=None)
+    parser.add_argument("--redo-notes", nargs="+", default=[],
+                        metavar="ID", help="with --facts-from: extract "
+                        "these notes again and rewrite the file")
     parser.add_argument("--shim", action="store_true",
                         help="patch the two broken calls; cells B6 to B8")
     return parser.parse_args()
@@ -179,9 +186,24 @@ def reset_store(home):
 def open_store(home, plugin):
     config = plugin.src.config.load_config()
     embedder = plugin.src.embeddings.embedder_from_config(config["embedding"])
-    store = plugin.src.store.LanceDBStore(
-        home, embedder, maintenance_enabled=False)
-    store.open()
+
+    # On a Docker bind mount a just-removed table dir can still be
+    # listed for a moment, and create_table then says it exists; one
+    # more reset and retry has been enough.
+    for attempt in range(2):
+        store = plugin.src.store.LanceDBStore(
+            home, embedder, maintenance_enabled=False)
+
+        try:
+            store.open()
+            return store
+        except ValueError:
+            if attempt:
+                raise
+
+            time.sleep(2)
+            reset_store(home)
+
     return store
 
 
@@ -226,6 +248,27 @@ def extract_note(plugin, note):
         "elapsed_s": round(time.perf_counter() - started, 1),
         "error": error,
     }
+
+
+def redo_notes(plugin, notes, extracted, ids, path):
+    """Extract the named notes again and save the file in place."""
+    by_id = {note["id"]: note for note in notes}
+    redone = []
+
+    for entry in extracted:
+        if entry["note_id"] not in ids:
+            redone.append(entry)
+            continue
+
+        entry = extract_note(plugin, by_id[entry["note_id"]])
+        redone.append(entry)
+        print(f"{entry['note_id']}: redone, {entry['count']} facts in "
+              f"{entry['elapsed_s']} s"
+              + ("  ERROR" if entry["error"] else ""), flush=True)
+
+    path.write_text(json.dumps(redone, indent=1, ensure_ascii=False) + "\n",
+                    encoding="utf-8")
+    return redone
 
 
 def turn_row(plugin, note, index, role, content):
@@ -353,6 +396,10 @@ def main():
 
     if args.facts_from:
         extracted = load_json(args.facts_from)
+
+        if args.redo_notes:
+            extracted = redo_notes(plugin, notes, extracted,
+                                   args.redo_notes, args.facts_from)
     else:
         extracted = []
 
