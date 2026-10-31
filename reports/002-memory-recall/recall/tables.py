@@ -28,7 +28,8 @@ CHART_ROWS = (
     ("C2", "OpenClaw hybrid"),
 )
 
-CELL_ORDER = ("A0", "A1", "A2", "B0", "B1", "B2", "C0", "C1", "C2", "C3")
+CELL_ORDER = ("A0", "A1", "A2", "B0", "B1", "B2", "C0", "C1", "C2", "C3",
+              "C4", "C4-control")
 
 
 def pct(value):
