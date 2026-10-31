@@ -19,6 +19,8 @@
   --series-1: #c8231a; --series-2: #1f6046; --series-3: #1f4e7a;
   --series-4: #6189b4; --series-5: #6b4a7c; --series-6: #9a8b7e;
   --series-7: #8a7868; --series-8: #c9b49a; --on-series: #ffffff;
+  --lap-top-scroll-shadow-rgba: rgba(0, 0, 0, 0.04);
+  --lap-top-scroll-shadow-spread: 0px .188rem .313rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,6 +32,7 @@
     --series-1: #ff6151; --series-2: #52b48a; --series-3: #6e9ed2;
     --series-4: #a9c7e7; --series-5: #b791cf; --series-6: #857668;
     --series-7: #6f604f; --series-8: #4a3b30; --on-series: #17110e;
+    --lap-top-scroll-shadow-rgba: rgba(0, 0, 0, 0);
   }
 }
 
@@ -41,6 +44,7 @@
   --series-1: #ff6151; --series-2: #52b48a; --series-3: #6e9ed2;
   --series-4: #a9c7e7; --series-5: #b791cf; --series-6: #857668;
   --series-7: #6f604f; --series-8: #4a3b30; --on-series: #17110e;
+  --lap-top-scroll-shadow-rgba: rgba(0, 0, 0, 0);
 }
 
 :root {
@@ -102,8 +106,19 @@ code { font-family: var(--mono); font-size: .88em; font-weight: 500;
 
 /* ---- Masthead: site/layouts/top.ejs ------------------------------- */
 
+@keyframes lap-top-scroll-shadow {
+    0% {
+        box-shadow: rgba(0, 0, 0, 0) var(--lap-top-scroll-shadow-spread);
+    }
+    1% {
+        box-shadow: var(--lap-top-scroll-shadow-rgba) var(--lap-top-scroll-shadow-spread);
+    }
+}
+
 .lab-top { position: sticky; top: env(safe-area-inset-top, 0px);
-  z-index: 2; background: var(--panel); }
+  z-index: 2; background: var(--panel);
+  animation-name: lap-top-scroll-shadow; animation-timeline: scroll(root);
+  animation-duration: 200ms; }
 
 .lab-top__inner { max-width: 56.25rem; margin: 0 auto;
   padding: .875rem 1.75rem; display: flex; gap: 1.125rem;
