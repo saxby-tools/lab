@@ -20,7 +20,11 @@ times each. **Hermes with the LanceDB plugin and `bge-m3` found the
 right day for about two questions in three. The bar I set was nine in
 ten.** Hermes on its own scored at chance. OpenClaw, with the same
 embedder, scored at chance too, and missed the verbatim sentence
-almost half the time.
+almost half the time. **Two follow-up rounds ran the same night. The
+plugin's own path, with fact extraction on, reached 89 percent once a
+small incompatibility with this Hermes was patched; as shipped, it
+extracted nothing.** OpenClaw with its two defaults set aside got to
+39.
 
 <!-- /lab:deck -->
 
@@ -34,6 +38,7 @@ almost half the time.
 
 | Setup | Recall at 1 | Recall at 5 | Recall at 10 |
 | --- | --- | --- | --- |
+| Hermes LanceDB, facts, patched (round 3) | 70.4 | 89.4 | 92.2 |
 | Hermes LanceDB, vector | 47.1 | 68.6 | 75.4 |
 | Hermes LanceDB, hybrid | 33.1 | 65.1 | 73.2 |
 | Hermes FTS5, as typed | 4.2 | 17.2 | 35.7 |
@@ -145,6 +150,12 @@ work; what follows is about paraphrase.
 | C4 | OpenClaw bge-m3 hybrid, undated notes (post hoc) | 5.8 | 16.2 | 24.3 | 10.8 to 21.7 |
 | C4-control | OpenClaw bge-m3 hybrid, undated, exact fact text (post hoc) | 91.1 | 99.7 | 100.0 | 98.5 to 100.0 |
 | C5 | OpenClaw bge-m3 hybrid, undated, no score cut (round 4) | 9.6 | 38.8 | 60.0 | 36.7 to 40.8 |
+| B3 | Hermes LanceDB bge-m3, extracted facts, vector (round 3) | 0.0 | 0.0 | 0.0 | 0.0 to 0.0 |
+| B4 | Hermes LanceDB bge-m3, extracted facts, hybrid (round 3) | 0.0 | 0.0 | 0.0 | 0.0 to 0.0 |
+| B5 | Hermes LanceDB bge-m3, facts and turns, vector (round 3) | 47.1 | 68.6 | 75.4 | 65.3 to 71.9 |
+| B6 | Hermes LanceDB bge-m3, extracted facts, vector, shim (round 3) | 70.4 | 89.4 | 92.2 | 82.1 to 96.8 |
+| B7 | Hermes LanceDB bge-m3, extracted facts, hybrid, shim (round 3) | 40.1 | 84.3 | 91.5 | 76.7 to 91.9 |
+| B8 | Hermes LanceDB bge-m3, facts and turns, vector, shim (round 3) | 72.9 | 90.1 | 93.8 | 84.4 to 95.8 |
 
 Recall at k, mean of three seeds, percent. The interval is a
 t-interval over the three seed means; with three seeds it is wide by
@@ -213,7 +224,7 @@ against "the plumber replaced the kitchen faucet cartridge" should do
 better than against the paragraph it was buried in. It was left out
 here because it adds a model call whose output changes between runs,
 and because the preregistered question was whether embeddings find
-paraphrases.
+paraphrases. Round 3, below, ran it.
 
 ## OpenClaw scored at chance, and its control explains why
 
@@ -267,6 +278,87 @@ scoring rules in OpenClaw's own documentation. It is what OpenClaw's
 built-in memory search does with this embedder over a dated diary.
 The hypothesis that the two harnesses would land within ten points of
 each other was wrong in both directions.
+
+## Round 3: the plugin's own path, extraction on
+
+Added after publication, preregistered as round 3 and run overnight.
+The B cells above fed the plugin raw turns with its fact extraction
+off. This round turns it on: for each of the 30 sessions, the
+plugin's own `extract()` asks the chat model, `gemma4:31b-128k`
+through Saxby, for durable facts, stores them as fact rows beside the
+turns, and recall searches the facts first, the way the plugin runs
+by default.
+
+**As shipped, it extracted nothing.** On this Hermes, v0.22.5, the
+plugin's extraction call passes a `response_format` argument that
+Hermes's auxiliary client does not accept. The plugin catches the
+error, logs it at debug level and returns no facts, so all 90
+sessions came back empty within two seconds each, and the fact cells
+scored zero: B3 and B4 at 0.0, and B5, facts and turns together,
+exactly B1 again. Someone who installed this plugin on this Hermes,
+left the defaults alone and asked "that time we talked about X" would
+get the two-in-three memory from the sections above, and nothing in
+the logs to say why. It has not been reported upstream yet.
+
+So the round ran a second time with a shim: a short patch that moves
+the argument into the client's `extra_body`, unwraps the reply object
+the client now returns, and gives a local 31B model 300 seconds
+instead of 30. The prompt, the parsing and the storage stay the
+plugin's. The shim is in `hermes-lancedb-facts.py` in the data
+folder, and the facts it produced are committed beside the results.
+
+<!-- lab:data-table -->
+
+| Cell | Setup | at 1 | at 5 | at 10 |
+| --- | --- | --- | --- | --- |
+| B1 | Turns only, vector (round 1) | 47.1 | 68.6 | 75.4 |
+| B3 | Extracted facts, vector, as shipped | 0.0 | 0.0 | 0.0 |
+| B6 | Extracted facts, vector, shim | 70.4 | 89.4 | 92.2 |
+| B7 | Extracted facts, hybrid, shim | 40.1 | 84.3 | 91.5 |
+| B8 | Facts and turns, vector, shim | 72.9 | 90.1 | 93.8 |
+
+Recall at k, mean of three seeds, percent. B6's seeds: 90.0, 92.1,
+86.2.
+
+<!-- /lab:data-table -->
+
+**With the shim, the plugin's own path lands on the bar.** Searching
+the extracted facts in the plugin's default vector mode found the
+right day in the top five for 89.4 percent of questions, 20.8 points
+above the turn rows; H5 asked for ten. Facts and turns together came
+in at 90.1. Hybrid trailed again, at 84.3. The gain is not a
+reshuffle: of the 720 question-and-seed pairs, 188 went from miss to
+hit and 38 the other way. When it hit, it mostly hit first, 70.4
+percent at rank one against 47.1 for the turns. And where facts and
+turns competed, the facts won: in B8 the first hit was a fact row 551
+times out of 649.
+
+The facts themselves are what you would hope for. The model turned
+each session's twenty paragraphs into seven or eight one-line facts,
+686 in all, such as "The user considers beans on toast to be a
+reliable fallback meal." Most of the filler was dropped; some of it
+survived as habits. A question about one ingredient of a paragraph
+is now a question about a sentence that holds only that ingredient.
+It cost about 100 seconds of model time per session on an M5 Max,
+once, at session end; one session in 90 came back with no facts at
+all.
+
+**Verdict on round 3, at the bar it preregistered.** As shipped, the
+plugin's own path scores zero: a fail, and a bug report. With the
+shim, B6 at 89.4 is above 70 and below 90, which the decision rule
+calls inconclusive, half a point short of a go. B8 clears 90 but is
+not the cell the rule named, and the three-seed interval on B6 runs
+82 to 97. The plain reading: with extraction working, this is the
+memory I asked for, give or take a question in twenty, and the 11
+questions missed in every seed are the same stubborn ones as before:
+the beeping detector, the fireplace vent, the compost bin.
+
+One correction in the data. Seed 1's first session was extracted
+while six containers left over from a bad launch shared the model;
+it timed out after 15 minutes and got no facts. It was extracted
+again on its own, and seed 1's three shim cells were rerun from the
+saved facts. `data.md` has the numbers before and after; the means
+moved by about a point.
 
 ## Round 4: OpenClaw without the cut, undated
 
@@ -363,9 +455,11 @@ was a name and a sentence, which `SOUL.md` could carry on its own.
   should hold; the absolute numbers are this corpus's.
 - **It is one embedder,** `bge-m3`, one quantisation, one size. A
   different embedder changes every cell except the FTS5 ones.
-- **Raw turns, no extraction.** The LanceDB numbers are for the plugin
-  with its model-based extraction off. That is a floor for the plugin,
-  not its default behaviour.
+- **Extraction is a model's output.** The B1 and B2 numbers are the
+  plugin with its extraction off, a floor. Round 3's facts came from
+  one model, sampled once per seed; a different model, or the same one
+  on another day, extracts different facts, and B6 to B8 move with
+  them. The as-shipped zeros do not.
 - **OpenClaw at its defaults.** A `minScore` tuned for `bge-m3` is a
   one-line change; the recency decay is not a setting. Neither was
   tuned here, because tuning after seeing the data is how a number
@@ -386,13 +480,17 @@ was a name and a sentence, which `SOUL.md` could carry on its own.
 
 ## What I take from it
 
-The objection was right, and the plugin half-answers it. A local
-Hermes with LanceDB and `bge-m3` turns "that time we talked about X"
-from a coin toss into two hits in three, with the right day usually
-first when it hits. That is a real memory and not the one I asked for.
-The honest next step is the plugin's own path, extraction on, under a
-new preregistration, and a second look at OpenClaw with a score cut
-that fits its embedder. Personality is not a substitute: on this
+The objection was right, and the plugin answers it in two steps. Fed
+raw turns, a local Hermes with LanceDB and `bge-m3` turns "that time
+we talked about X" from a coin toss into two hits in three. Fed its
+own extracted facts, which is how it is meant to run, it reaches nine
+in ten, with the right day first for seven in ten. The catch is that
+on this Hermes it does not run that way out of the box: extraction
+fails silently, and the user gets the two-in-three memory with no
+sign anything is wrong. That is a bug report, not a design flaw.
+OpenClaw's built-in search stays at chance with dated notes, and
+reaches 39 percent with its decay and its cut both out of the way.
+Personality is not a substitute: on this
 model the presets barely changed a word, and the one change that was
 wanted, using my name, needs no preset.
 
