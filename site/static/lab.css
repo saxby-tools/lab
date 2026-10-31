@@ -57,7 +57,8 @@
         --series-7: #6f604f;
         --series-8: #4a3b30;
         --on-series: #17110e;
-        --lap-top-scroll-shadow-rgba: rgba(0, 0, 0, 0);
+        --lap-top-scroll-shadow-rgba: rgba(59, 45, 35, 1);
+        --lap-top-scroll-shadow-spread: 0px 1px;
     }
 }
 
@@ -227,7 +228,7 @@ code {
     position: sticky;
     top: env(safe-area-inset-top, 0px);
     z-index: 2;
-    background: var(--panel);
+    background: var(--ground);
     animation-name: lap-top-scroll-shadow;
     animation-timeline: scroll(root);
     animation-duration: 200ms;
