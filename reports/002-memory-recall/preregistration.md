@@ -176,3 +176,48 @@ the verdict cell or the bar.
 - **Acknowledgement rows, B cells.** A post hoc rescoring of the same
   ranked lists with the assistant's acknowledgement rows removed, to
   see whether storing them cost recall.
+
+##  Round 3: the plugin's own path, extraction on
+
+Written on Oct. 31, 2026, before any extraction ran, for lab issue 10.
+
+The LanceDB plugin's default is to extract durable facts from a
+session with a model and to search those facts first. Report 002's B
+cells turned that off. This round turns it on, with everything else
+held: the same three corpora, the same 240 queries, the same `bge-m3`,
+the same recall code.
+
+- **Extraction.** For each note, the plugin's own `extract()` runs
+  over the session's messages (user paragraph, assistant
+  acknowledgement, in order) through Hermes's auxiliary model chain,
+  which resolves to the main chat model, `gemma4:31b-128k` through
+  Saxby. The facts it returns are stored as `fact` rows with the
+  plugin's own `build_fact_row` shape, `session_id` set to the note.
+  Extraction that times out or returns no JSON leaves a note with no
+  facts; that note's queries then count as misses in the fact cells,
+  and the number of such notes is reported.
+- **Cells.** B3: `recall(kind="fact")`, vector mode, the plugin's
+  default retrieval over its default store. B4: the same, hybrid. B5:
+  `kind="any"`, vector, facts and turns together.
+- **H5.** B3 beats B1 (68.6) by ten points or more.
+- **Verdict.** Read from B3 at the same bar: 90 go, 70 fail.
+- **Facts are model output and vary between runs.** Each seed extracts
+  once; the facts are committed with the results so the recall can be
+  rerun without a model.
+
+##  Round 4: OpenClaw without the score cut on undated notes
+
+Written on Oct. 31, 2026, before the run, for lab issue 11.
+
+Report 002 showed the score cut was not the lever with dated notes
+(C3) and the recency decay was not the only problem with undated ones
+(C4, 16.2). One cell is missing from that matrix.
+
+- **C5.** The undated indexes from C4, searched with `--min-score 0`,
+  `--max-results 10`.
+- **H6.** C5 stays within ten points of chance (16.7). If it does, the
+  cut is not what holds OpenClaw back; its chunking (400 tokens with
+  80-token overlap, not a documented setting) and the weight of its
+  keyword leg are, and issue 11 closes with that finding. If C5 reaches
+  50 or more, the issue's premise stands and a tuned cut is worth a
+  further round.
