@@ -59,8 +59,11 @@ A and B, which mixed both models, so it carries no meaning.
   preferred its tighter code.
 - **query-string:** docked Qwen's homemade decoder, as Judge 2 did.
 
-Judge 1's full write-up is in a chat that isn't copied here yet
-([#2](https://github.com/saxby-tools/lab/issues/2)).
+Judge 1's full write-up was given in a claude.ai chat that was never
+exported, and no copy of it exists on disk. The per-task winners above
+and the four reasons the report quoted are all that survives. Issue
+[#2](https://github.com/saxby-tools/lab/issues/2) is closed on that
+basis; it reopens if the chat turns up.
 
 ##  Style round
 
