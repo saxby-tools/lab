@@ -11,6 +11,7 @@ every change made since it was recorded.
 | Open resume, what-day control, repeat floor | 3 seeds, 100 more rows per arm | same files, `variant` field |
 | Round 2: five arms, 44 fixtures, all variants | 3 seeds, 230 rows per arm | `timenotes/results/round-2/seed-N/<arm>.jsonl` |
 | Embedding probe | 4 conditions, 3 seeds of drawn times | `timenotes/results/embed-probe/summary.json` |
+| Round 3: four arms, 40 zoned fixtures, all variants | 3 seeds, 210 rows per arm | `timenotes/results/round-3/seed-N/<arm>.jsonl` |
 
 Everything ran on one machine: an Apple M5 Max with 128 GiB of unified
 memory, macOS 26, Ollama 0.40.13 with Saxby's patches, between 1:33
@@ -227,6 +228,45 @@ the note the model often answers "It's Sunday at noon" or "Wednesday
 night," outside the four daypart words; the wrong-weekday count is
 the number to read there, 0 of 132 for every arm but DIG, 11 for DIG.
 
+##  Round 3
+
+Preregistered in `preregistration.md` under "Round 3" at 3:37 p.m.
+on Nov. 1, before any round 3 fixture, renderer change or run; the
+header's hour was misstated in that commit and corrected two minutes
+later. The run went from 3:46 p.m. to 5:31 p.m. the same day on the
+same build, digest and runner process. Nothing else used the model.
+
+`timenotes/fixtures-round-3.json` holds 40 fixtures and inherits
+round 1's settings without its fixtures. The file names the host zone,
+America/New_York, and four sender zones; each fixture names its
+sender's zone and a family, and its message times, window and resumes
+are in the sender's local clock. `timenotes/zones.py` computes, for
+each resume, the answer in each of the five candidate zones; the key
+is the sender-zone answer, or UNKNOWN for an "unknown" fixture when
+the candidates disagree. `check.py` applies the usual margins in the
+sender's zone and prints every key; all 40 pass, with 21 resumes
+keyed UNKNOWN. Arm ZS, whose note is in the sender's zone, is keyed
+to the sender-zone answer throughout.
+
+The renderer converts each message's first-seen moment and the resume
+into the arm's note zone before rendering; ZN adds the zone's
+abbreviation from the zone database (`EST`), ZO the offset. Rounds 1
+and 2 still render byte for byte (2,000 rows rebuilt and compared),
+and their summaries are byte-identical under the extended scorer.
+
+Rows carry four more fields: `zone`, `family`, `note_zone` and
+`zone_matters`. The what-day control is scored against the weekday
+and daypart in the arm's note zone, since that is what the note says.
+A reply "asks" when it contains a question mark and a place or zone
+word; the regular expression is in `score.py`.
+
+What was checked after the run: 210 rows in each of the 12 files,
+2,520 in all, every `done_reason` `stop`; every forced reply opened
+with one of the three words; every arm reported a nonzero cached
+count on all 240 forced resumes; no reply in any arm asked where the
+user was, by the regular expression or by reading every reply that
+mentions a zone, a city or "where you".
+
 ##  Embedding probe
 
 `timenotes/embed-probe.py`, run at 2:56 p.m. on Nov. 1 with `bge-m3`
@@ -256,3 +296,6 @@ the result, not the levels.
   to the report as their own sections, two bars joined the chart,
   and the deck, the limits and the take gained a paragraph each.
   Round 1's rows, summary and verdict are untouched.
+- **Nov. 1, evening.** Round 3 was added as its own section, one bar
+  joined the chart, and the deck, the limits and the take gained a
+  paragraph each. Rounds 1 and 2 are untouched.
