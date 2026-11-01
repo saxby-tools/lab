@@ -359,11 +359,13 @@ stays a later round.
 
 ##  Round 3: the travel case
 
-Written on Nov. 1, 2026, between 4 and 4:30 p.m., after round 2 was
-published and before any round 3 fixture, renderer change or run
-existed. Committed before the first round 3 run; the commit time is
-the record. Code drafted the design and the bar in the notes dropbox
-at 4 p.m.; Niko confirmed the bar in the chat ("That's my bar") and
+Written on Nov. 1, 2026, between 3:30 and 3:40 p.m., after round 2
+was published and before any round 3 fixture, renderer change or run
+existed. Committed at 3:37 p.m., before the first round 3 run; the
+commit time is the record, and the first commit of this section
+misstated the hour as 4 to 4:30, corrected two minutes later. Code
+drafted the design and the bar in the notes dropbox at 3:30 p.m.;
+Niko confirmed the bar in the chat ("That's my bar") and
 left the verdict arm and the zones as proposed. Rounds 1 and 2 are
 not touched; round 3 has its own cells under `results/round-3/`.
 
