@@ -8,6 +8,8 @@
     python3 tables.py extras            what-day control and callbacks
     python3 tables.py arms --round 2    the same from round 2's summary
     python3 tables.py splits --round 2  round 2's subsets
+    python3 tables.py zones --round 3   round 3's families and asking
+    python3 tables.py by-zone --round 3 round 3's travel rows by zone
 
 Licence: AGPL-3.0-or-later.
 """
@@ -22,19 +24,22 @@ RESULTS = Path(__file__).parent / "results"
 SUMMARIES = {
     1: RESULTS / "summary" / "summary.json",
     2: RESULTS / "round-2" / "summary" / "summary.json",
+    3: RESULTS / "round-3" / "summary" / "summary.json",
 }
 
 ARMS = {
     1: ["A", "B", "B2", "E", "D", "E2"],
     2: ["DC", "DCG", "DWG", "DIG", "EC"],
+    3: ["ZS", "ZH", "ZN", "ZO"],
 }
 
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument("table", nargs="?", default="arms",
-                        choices=["arms", "cost", "extras", "splits"])
-    parser.add_argument("--round", type=int, choices=[1, 2], default=1)
+                        choices=["arms", "cost", "extras", "splits",
+                                 "zones", "by-zone"])
+    parser.add_argument("--round", type=int, choices=[1, 2, 3], default=1)
     return parser.parse_args()
 
 
@@ -99,11 +104,32 @@ def splits(summary, arm_list):
               f"{pct(sp['long_gap']['right'])} |")
 
 
+def zone_splits(summary, arm_list):
+    for arm in arm_list:
+        cell = summary["cells"][arm]
+        zs = cell["zone_splits"]
+        print(f"| {arm} | {cell['label']} | {pct(zs['travel']['right'])} | "
+              f"{pct(zs['unknown']['right'])} | "
+              f"{pct(zs['zone_matters']['right'])} | "
+              f"{pct(zs['zone_does_not_matter']['right'])} | "
+              f"{pct(zs['asks_when_it_matters']['rate'])} | "
+              f"{pct(zs['pestering']['rate'])} |")
+
+
+def by_zone(summary, arm_list):
+    for arm in arm_list:
+        cell = summary["cells"][arm]
+        cells = cell["zone_splits"]["travel_by_zone"].values()
+        print(f"| {arm} | {cell['label']} | "
+              + " | ".join(pct(c["right"]) for c in cells) + " |")
+
+
 def main():
     args = parse_args()
     summary = json.loads(SUMMARIES[args.round].read_text(encoding="utf-8"))
     table = {"arms": arms, "cost": cost, "extras": extras,
-             "splits": splits}[args.table]
+             "splits": splits, "zones": zone_splits,
+             "by-zone": by_zone}[args.table]
     table(summary, ARMS[args.round])
 
 
