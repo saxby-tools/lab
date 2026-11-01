@@ -2,6 +2,7 @@
 """Refuse a fixture whose times are close, and print the answer key.
 
     python3 check.py fixtures.json
+    python3 check.py fixtures-round-2.json
 
 For every fixture: the turns are in time order; the "before" resume
 is at least MIN_AFTER_LAST hours after the last message and at least
@@ -14,18 +15,22 @@ and is never typed by hand.
 Licence: AGPL-3.0-or-later.
 """
 
-import json
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+import render  # noqa: E402
 
 MIN_AFTER_LAST = timedelta(hours=3)
 MIN_MARGIN = timedelta(hours=2)
 
 
 def load(path):
-    return json.loads(Path(path).read_text(encoding="utf-8"))
+    """The file, with an included base file's fixtures first."""
+    return render.load_fixtures(path)
 
 
 def when(text, zone):
