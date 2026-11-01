@@ -142,6 +142,17 @@ the summary.
 - `summary.json` was regenerated once after the run, for a heading
   change in `score.py` (below), and compared byte for byte with the
   first: identical.
+- The morning after, the cache rule was probed again: the same
+  `llama-server` process on its own port with `/completion` and
+  `cache_prompt` on, a 238-token prompt in five shapes, reading
+  `timings.cache_n`; then `granite4:micro-h` and `voxtral-mini-3b:32k`
+  through `/api/chat` in the same shapes. Gemma 4 and Granite 4
+  reported zero on any change inside the prompt; Voxtral reused the
+  common prefix. The runner's log names the cause: a forced full
+  reprocess "due to lack of cache data (likely due to SWA or
+  hybrid/recurrent memory)", with `is_swa_any = 1` for gemma4 and
+  checkpoints spaced 8,192 tokens apart. The tables are on
+  [#14][gap-cache].
 
 ##  Known limits of the setup
 
@@ -164,8 +175,10 @@ the summary.
   date, so 1:30 a.m. Monday reads "night on Monday". Three fixtures
   resume in those hours and the note arms did badly on them; the split
   by daypart was not preregistered. [#13][gap-night] tracks it.
-- Whether the all-or-nothing cache reuse is the runner's rule or this
-  build's is open: [#14][gap-cache].
+- The all-or-nothing cache reuse is llama.cpp's behaviour for
+  sliding-window and hybrid models, not this build's; a full-attention
+  model reuses the common prefix. Closed on [#14][gap-cache] with the
+  probe tables.
 
 [gap-night]: https://github.com/saxby-tools/lab/issues/13
 [gap-cache]: https://github.com/saxby-tools/lab/issues/14
@@ -177,3 +190,7 @@ the summary.
   before the open resume, the what-day control and the repeat floor
   ran on every seed. The heading now says "Extras, all seeds". No
   number changed; `summary.json` is byte-identical before and after.
+- **Nov. 1, late morning.** The report's cache section gained the
+  reason for the all-or-nothing reuse, from the morning probe above,
+  and its limits bullet on the runner was reworded to match. No row
+  and no number changed.
