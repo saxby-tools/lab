@@ -330,7 +330,7 @@ def write_markdown(summary, path):
         lines.append(f"| {arm} | {num(cell['uncached_when_system_changed'])}"
                      f" | {num(cell['uncached_when_system_same'])} |")
 
-    lines += ["", "## Seed 1 extras", "",
+    lines += ["", "## Extras, all seeds", "",
               "| Arm | What-day right | Says start time | Callback | "
               "Repeat floor |", "| --- | --- | --- | --- | --- |"]
 
