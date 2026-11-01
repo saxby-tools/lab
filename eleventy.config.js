@@ -48,6 +48,7 @@ const PASSTHROUGH = [
 ];
 
 const IGNORES = [
+  "AGENTS.md",
   "site/**",
   "reports/*/bakeoff/**",
   "reports/*/checks/**",
