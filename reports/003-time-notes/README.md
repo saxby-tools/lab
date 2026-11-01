@@ -51,9 +51,13 @@ timenotes/           the harness
   run.py             drives Ollama and records replies and counts
   score.py           accuracy, honesty, echo, callbacks, cost, verdict
   tables.py          prints the report's table rows from the summary
+  survey.py          builds the blind packet below; the key goes
+                     outside the repo
   run.sh             reruns everything from a clean checkout
   results/seed-N/    one JSON line per resume request, per arm
   results/summary/   the tables the report quotes
+survey/              a blind packet: 30 pairs of open-resume replies,
+                     arm A against arm E, for a human rater
 ```
 
 ##  Rerun it
@@ -91,6 +95,15 @@ from the repository's root after `npm ci`:
 ```bash
 npm test
 ```
+
+##  Blind survey
+
+`survey/packet.md` shows 30 open resumes on the "after" side, seed 1,
+with the replies from arm A and arm E as X and Y in an order drawn at
+random per pair. The rater answers one question per pair, which reply
+reads as though the writer knows the named time has passed, in
+`survey/ratings.md`. The key stays outside the repo until the ratings
+are in, then both are added here with a dated note.
 
 ##  Corrections
 
