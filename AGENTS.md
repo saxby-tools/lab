@@ -109,6 +109,32 @@ commit goes under a "Decided after the plan" heading, dated. A
 follow-up round gets its own dated section there, a lab issue, and its
 own cells; it never edits the verdict the first round read.
 
+**Name it for the red box, with the preregistration.** The label is
+a red box: `number` in the corner, `top` above a rule, `word` in the
+big type, and `bottom`, always "Test with great care". It is the
+first thing a reader sees and the last thing that should move, so
+the title is chosen when the plan is, not when the write-up is.
+Report 002 was named "the memory recall test" late; the box could
+not hold it, and the site work drifted around a title that was never
+going to fit. The rules are in `site/README.md`: `word` is one short
+word, at most eight letters, set as large as the box allows and never
+wrapped ("Bake-off" is the widest that has fit); `top` is a short
+phrase of about sixteen letters at most, in small capitals; the title
+never contains "test"; keep it light. Propose three in the box's
+shape and let Niko pick. He approves every title, the one thing in
+this repo not on autopilot. Shapes that have worked:
+
+| Top | Word | Report |
+| --- | --- | --- |
+| The MacBook | Bake-off | 001 |
+| Memory | Recall | 002 |
+| A sense of | Time | 003 |
+
+A technical or loaded phrase goes in the heading under the box, not
+on it. "Time perception" names a field of psychology, and a model
+reading a note perceives nothing, so the box says "A sense of time"
+and the heading says what was done.
+
 **Run it so it can be checked.** Each cell builds its index or
 environment from empty. Every record names what answered it: model
 tag, model digest, server version. Every setup also gets a control
