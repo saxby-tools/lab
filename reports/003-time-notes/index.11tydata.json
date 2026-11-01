@@ -1,0 +1,4 @@
+{
+  "layout": "report.ejs",
+  "description": "When a chat resumes after a gap, does a time note on the latest message let a local model act as if time has passed, and what does it cost the prompt cache? Six ways of telling a model the time, 30 resumed conversations, three seeds."
+}

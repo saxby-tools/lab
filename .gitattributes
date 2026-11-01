@@ -6,3 +6,6 @@ reports/001-macbook-bake-off/bakeoff/round2/results/** linguist-generated
 reports/001-macbook-bake-off/bakeoff/review/** linguist-generated
 reports/001-macbook-bake-off/bakeoff/round2/review-style/** linguist-generated
 reports/001-macbook-bake-off/bakeoff/logs/** linguist-generated
+
+# Replies and counts written by the time notes harness.
+reports/003-time-notes/timenotes/results/** linguist-generated

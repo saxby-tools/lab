@@ -1,0 +1,17 @@
+{
+  "palette": {
+    "Note on the latest message": 2,
+    "Note on the latest message, plus the gap": 2,
+    "E": 2,
+    "E2": 2,
+    "Note on every message": 3,
+    "D": 3,
+    "Date fresh, system prompt": 4,
+    "B2": 4,
+    "Date once, system prompt": 1,
+    "B": 1,
+    "Nothing": 1,
+    "A": 1,
+    "Chance": 7
+  }
+}
