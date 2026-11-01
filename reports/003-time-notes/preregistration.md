@@ -181,4 +181,20 @@ zone is unknown, which is a later round.
 
 ##  Decided after the plan
 
-Nothing yet.
+- **Nov. 1, 2026, 1:55 a.m., before the first run:** the warm request
+  is not the history ending with a scripted assistant reply. A probe
+  against the runner showed it takes a prefix back from its cache
+  only when the new prompt extends what the cache holds, and a prompt
+  that ends on an assistant message cannot be extended, because the
+  model continues it. So the warm request is the turns up to the last
+  user message, answered by the model for real, and the resume sends
+  those turns as the arm renders them now, the model's own reply, and
+  the resume message. That is what a real client sends. The scripted
+  final assistant lines were removed from the fixtures. In arms E and
+  E2 the note moves off the previous user message at the resume, and
+  in B2 the system prompt changes, so those prompts differ inside the
+  cached span; whether the runner then reuses anything is part of
+  what the cost column measures, and H5 stands as written.
+- **Same time:** the open resume, the what-day control and the repeat
+  floor run on all three seeds, not seed 1 only; the smoke test put
+  the night at under three hours with them in.
