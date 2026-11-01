@@ -1,0 +1,5 @@
+{
+ "ollama_version": "0.40.13+saxby.ad4b55d8",
+ "model": "gemma4:31b-128k",
+ "model_digest": "d0e8710a4e62152ad73c32a84f8b025d2b7fe044d405d8ed1b38cb3e9d066d32"
+}
