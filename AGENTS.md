@@ -135,6 +135,22 @@ on it. "Time perception" names a field of psychology, and a model
 reading a note perceives nothing, so the box says "A sense of time"
 and the heading says what was done.
 
+**The bar is 90, and the metric moves, not the bar.** Niko's bars
+come from grade school: 90 and up is an A. The decision rule's three
+bands are the grades: 90 or better is a go, between 70 and 90 is
+inconclusive, 70 or worse is a fail. Every report uses the same
+bands, so a reader can compare reports and a bar is never read as a
+grade of the research. When a case looks too hard for 90, such as a
+question the model cannot answer from what it is given, do not curve
+the bar. Ask what the decision needs and score that instead: for a
+sender whose time zone is unknown, the score is how often the model
+asks, and 90 applies to it. Claude proposes the bar and the metric
+with the resolution the design has (30 fixtures over three seeds
+resolve about five points either way, so a bar within five of the
+expected result needs more fixtures), and Niko confirms in his own
+words; those words go in the preregistration. Thinking stays off
+unless the decision is about thinking: the fast path is what ships.
+
 **Run it so it can be checked.** Each cell builds its index or
 environment from empty. Every record names what answered it: model
 tag, model digest, server version. Every setup also gets a control
