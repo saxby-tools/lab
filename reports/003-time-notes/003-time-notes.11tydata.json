@@ -18,6 +18,11 @@
     "DCG": 3,
     "DWG": 3,
     "DIG": 5,
-    "EC": 2
+    "EC": 2,
+    "ZN. Same note, zone named, sender elsewhere (round 3)": 6,
+    "ZS": 3,
+    "ZH": 6,
+    "ZN": 6,
+    "ZO": 5
   }
 }
