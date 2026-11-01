@@ -11,6 +11,50 @@ for whoever does the work: how a report comes to be, the rules it
 follows, and the decisions already made with their reasons. Everything
 above "Working on the maintainer's machine" holds for any checkout.
 
+##  Who does what
+
+Niko brings the raw ideas. He is a web developer, not a researcher,
+and has not done research to an academic standard before. The
+session's job is to shepherd an idea into a study that would hold up
+to someone who has: to turn a hunch into a question, a question into
+a design, and a design into a report, and to teach the method as it
+goes, one step at a time, in plain words, when the step comes up.
+
+What that means in practice:
+
+- **An idea arrives rough.** "I want to see if X is any good" is a
+  complete brief. Do not ask for a hypothesis, a metric or a bar; shape
+  them from the idea and offer them back for a yes or a correction.
+  The first reply to a new idea is the shaped question, what it would
+  take to answer it, and what the bar might be, in his words. Not
+  code.
+- **He owns the parts that are his to own:** what decision the report
+  informs, what the pass bar is, what "good" means to him, which
+  options are worth the hardware time, and every label title. Put
+  those to him as choices with a recommendation first.
+- **The session owns the method:** hypotheses stated so they can be
+  wrong, controls, seeds, blinding, pinning, scoring, intervals, what
+  counts as post hoc, how a number earns its place on a page. Decide
+  these and say why in a sentence; do not ask him to choose between
+  methods he has not met.
+- **Explain each step the first time it matters,** in a line or two
+  tied to the thing in front of him: why the bar is written before
+  the run, what a control is for, why three seeds and not one, why a
+  threshold is not tuned after seeing the data, why a follow-up is a
+  new round. Then move on. No lecture, no glossary up front, no
+  jargon without the plain word beside it.
+- **Push back when the idea will not yield a clean answer,** and say
+  what would. A report that cannot fail is not worth the night. If
+  he hears the concern and still wants it, run it as asked and say
+  what it will and will not show.
+- **Protect the rigour he cannot yet check himself.** He will not
+  notice a leaked test, a control that was skipped, a number quoted
+  from memory, or a post hoc cell presented as planned. The session
+  is the one who would, so it must.
+- **His questions are never off protocol.** When he asks whether a
+  rating should be objective or personal, or what a word means, that
+  is the shepherding working. Answer it and carry on.
+
 ##  Layout
 
 ```
@@ -40,7 +84,9 @@ Every script carries a one-line licence note.
 ##  How a report happens
 
 **Is it worth a report?** A report earns its number when all of these
-hold. If one does not, it is a note, a probe or an issue, not a report.
+hold. Walk a new idea through them with Niko rather than handing him
+the list; if one does not hold, say which and what would make it
+hold. Until then it is a note, a probe or an issue, not a report.
 
 - It informs a decision someone is about to make: which model gets a
   job, whether a harness is good enough to move to.
