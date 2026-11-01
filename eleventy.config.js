@@ -49,6 +49,8 @@ const PASSTHROUGH = [
 
 const IGNORES = [
   "AGENTS.md",
+  // Report 003 is unpublished until its label title is approved.
+  "reports/003-time-notes/**",
   "site/**",
   "reports/*/bakeoff/**",
   "reports/*/checks/**",
