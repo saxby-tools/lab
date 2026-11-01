@@ -181,7 +181,7 @@ zone is unknown, which is a later round.
 
 ##  Decided after the plan
 
-- **Nov. 1, 2026, 1:55 a.m., before the first run:** the warm request
+- **Nov. 1, 2026, 1:30 a.m., before the first run:** the warm request
   is not the history ending with a scripted assistant reply. A probe
   against the runner showed it takes a prefix back from its cache
   only when the new prompt extends what the cache holds, and a prompt
