@@ -334,3 +334,25 @@ Ollama 0.40.13+saxby.ad4b55d8, `gemma4:31b-128k` digest
 Whether the clock note reads well to a person over a long session;
 anything about a model other than Gemma 4; the travel case, which
 stays a later round.
+
+###  Decided after the plan, round 2
+
+- **Nov. 1, 2026, 12:40 p.m., before the first round 2 run.** Niko
+  added, in the chat, that he has met this problem most across
+  planning, client approval, revision and implementation chats that
+  span weeks and months, where "one thing to think it's last night,
+  another to think it's last month," and that his own workaround is
+  to resume a long-paused chat with a hand-typed ISO 8601 timestamp
+  carrying the zone offset. Three changes follow, none touching the
+  verdict. The gap sentence in the round 2 arms counts hours under
+  two days, then days, weeks and months, rounded, since "720 hours
+  away" is not how anyone says a month; round 1's E2 keeps hours as
+  it ran. A fifth arm, **DIG**, stamps every message with the ISO
+  form and the offset, `[It is 2026-10-26T01:30-04:00.]`, plus the
+  gap, so the round says whether a local model reads Niko's own
+  format. And four fixtures, F41 to F44, resume three to seven weeks
+  after the named window, in the register of a plan handed off and
+  picked up again; they are reported beside the verdict, which stays
+  on the 40 fixtures named above, and DIG is reported beside DCG, not
+  in its place. The ISO offset also carries the sender's zone, which
+  is the travel round's question; nothing here scores that.
