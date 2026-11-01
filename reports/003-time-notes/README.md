@@ -98,15 +98,19 @@ None yet.
 
 ##  Known gaps
 
-Two, both found while scoring and both open:
+One open, found while scoring:
 
 - [#13](https://github.com/saxby-tools/lab/issues/13): a note between
   midnight and 5 a.m. says "night on Monday" for 1:30 a.m. Monday, and
   the model reads that as the end of Monday. Three fixtures hit it.
-- [#14](https://github.com/saxby-tools/lab/issues/14): the runner
-  reported cache reuse only when the new prompt extended the old one.
-  Whether that is the runner's rule or this build's decides how far
-  the cost column travels.
+  The fix is in the next round's renderer, not a change to this one.
+
+[#14](https://github.com/saxby-tools/lab/issues/14) asked whether the
+all-or-nothing cache reuse was the runner's rule or this build's. It
+closed the morning after: it is llama.cpp's rule for sliding-window
+and hybrid models such as Gemma 4 and Granite 4, confirmed against the
+runner directly and in its log; a full-attention model reuses the
+common prefix. The report's cache section carries the numbers.
 
 The next round, every-message notes with the night fixed, is
 [#15](https://github.com/saxby-tools/lab/issues/15).
