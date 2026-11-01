@@ -2,7 +2,7 @@
   "number": "Saxby lab report No. 003",
   "top": "A sense of",
   "word": "Time",
-  "bottom": "Tested with great care"
+  "bottom": "Test with great care"
 } -->
 
 # Time notes on resumed conversations
@@ -255,12 +255,23 @@ milliseconds for A and 753 for E, with D at 501. On a three-turn
 conversation that is a third of a second; on a long agent session the
 whole prompt is the whole session.
 
-Whether the all-or-nothing rule is the runner's or this build's is
-open, and it matters: llama.cpp's server normally reuses the longest
-common prefix, and a runner that does would charge E only the tail
-from the previous message on. That check is [#14][gap-cache]. Until it
-is done, the cost column says what this runner charged and nothing
-wider.
+Why it is all or nothing turned out to be the model, not Ollama. The
+morning after, I hit the same runner process directly, with no Ollama
+in the loop, and it gave the same answer for Gemma 4: zero on any
+change inside the prompt, even one word in the last sentence. Its log
+says why. It forces a full reprocess "due to lack of cache data
+(likely due to SWA or hybrid/recurrent memory)." Gemma 4 uses
+sliding-window attention, which keeps no full history to roll back
+to, so llama.cpp can only resume from a checkpoint, and it spaces
+those 8,192 tokens apart. A short conversation never has one. Granite
+4, whose layers are partly recurrent, behaved the same way through
+Ollama. Voxtral Mini, a plain full-attention model, reused the common
+prefix on the same probe, 156 of 192 tokens after a change in the
+first user message. So the cost finding holds for Gemma 4 and models
+built like it on llama.cpp as Ollama runs it. On a full-attention
+model E would cost only the tail from the changed message on, and D's
+advantage would shrink to nothing. That check was [#14][gap-cache],
+closed with the numbers.
 
 [gap-cache]: https://github.com/saxby-tools/lab/issues/14
 
@@ -333,9 +344,10 @@ runner charges for a resend it has seen before.
 - **The clock is simulated.** Dates and dayparts come from the
   fixtures' times. The model and the runner's cache are real.
 - **One model, one runner.** `gemma4:31b-128k` at Q4_K_M on Ollama
-  0.40.13's llama.cpp runner. The cache rule found here is that
-  runner's; another runner or a later version may reuse prefixes
-  differently, and a different model may read the notes differently.
+  0.40.13's llama.cpp runner. The cache rule found here is llama.cpp's
+  for a sliding-window or hybrid model; a full-attention model reuses
+  the common prefix, and a different model may read the notes
+  differently.
 - **Thinking off.** A thinking pass might get more right, at a cost in
   time this night did not budget for.
 - **The opener is an instruction.** The forced one-word answer makes
