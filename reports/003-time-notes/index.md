@@ -22,7 +22,9 @@ the same turn. The note on the latest message got 82 percent right,
 under the 90 I set. A date in the system prompt, stale or fresh, got
 the resumed question wrong almost every time. And on this runner the
 note on every message was the only one that cost the cache no more
-than its own words.
+than its own words. A second round the same afternoon, with a clock
+time on every message and a sentence naming the gap, cleared the bar
+at 97.
 
 <!-- /lab:deck -->
 
@@ -43,12 +45,15 @@ than its own words.
 | E | E. Note on latest message | 82.2 | 8.3 | 237 |
 | D | D. Note on every message | 80.0 | 8.3 | 107 |
 | E2 | E2. Latest message plus gap | 85.6 | 9.4 | 247 |
+| DCG | DCG. Every message, clock plus gap (round 2) | 96.7 | 2.5 | 125 |
+| DIG | DIG. Every message, ISO stamp plus gap (round 2) | 91.7 | 0.4 | 126 |
 
 <!-- /lab:bar-chart -->
 
 Chance on a two-way question is 50. For the setup with no time
 information, the right answer is UNKNOWN, and that column is its
-score.
+score. The two round 2 bars are over 40 fixtures, the first 30 of
+them the same.
 
 ## Why I ran it
 
@@ -339,6 +344,168 @@ a finding.
 **The repeat floor** was five tokens in every arm: the least this
 runner charges for a resend it has seen before.
 
+## Round 2: every message, with a clock
+
+Run the same afternoon, preregistered as round 2 before any of it
+existed, with its own cells; the verdict above stands as read. The
+bar, in Niko's words: "On ten resumes with the note, the model gets
+it right nine times. The note costs no more on the cache than its
+own words. And the resumes after midnight are no worse than the
+rest." It reads from one arm, the every-message note with a clock
+time and a gap sentence, over 40 fixtures: round 1's 30, six that
+resume between midnight and 5 a.m., and four whose "after" resume
+falls on the named weekday one week later. Four more fixtures resume
+three to seven weeks after the window, in the register of a plan
+handed off and picked up again; they are reported beside the verdict.
+
+**Five arms.** Every note carries the time the proxy first saw the
+message, which for these fixtures is the message's own time. The
+explainer line gained two sentences: a part of the day counts as a
+time, and speak of time the way a person would.
+
+- **DC. Every message, clock.** `[It is 1:30 a.m. on Monday, October
+  26, 2026.]` on every user message, fixed when first seen.
+- **DCG. DC plus the gap.** The latest note adds "This conversation
+  resumed after 27 hours away," in hours under two days, then days,
+  weeks and months. The verdict arm.
+- **DWG. Every message, daypart word, plus the gap.** Round 1's words
+  with one more, "early morning" from midnight to 5 a.m.
+- **DIG. Every message, ISO stamp, plus the gap.** Niko's own
+  workaround for a long-paused chat: `[It is 2026-10-26T01:30-04:00.]`.
+- **EC. Latest message only, clock.** Round 1's E with the clock.
+
+<!-- lab:data-table -->
+
+| Arm | What | Right | After | Before | UNKNOWN | Uncached tokens | 95 percent interval |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| DC | Every message, clock time | 88.8 | 80.8 | 96.7 | 5.0 | 115 | 85.6 to 91.9 |
+| DCG | Every message, clock time, plus the gap | 96.7 | 95.8 | 97.5 | 2.5 | 125 | 94.9 to 98.5 |
+| DWG | Every message, daypart word, plus the gap | 81.2 | 81.7 | 80.8 | 7.5 | 117 | 78.1 to 84.4 |
+| DIG | Every message, ISO 8601 with offset, plus the gap | 91.7 | 92.5 | 90.8 | 0.4 | 126 | 89.9 to 93.5 |
+| EC | Latest message only, clock time | 76.2 | 56.7 | 95.8 | 1.2 | 279 | 70.9 to 81.6 |
+
+As the table above, over the 40 verdict fixtures, three seeds.
+
+<!-- /lab:data-table -->
+
+**Verdict at the preregistered bar, round 2: **go**.** The
+every-message note with the clock and the gap scored 96.7 percent,
+seeds 96.2, 97.5 and 96.2, with the interval clear of 90. The other
+two parts of the bar held too: its resume cost 125 uncached tokens,
+against 107 for round 1's every-message note and 89 for no note,
+with the cache taken on every one of 264 resumes; and the resumes
+between midnight and 5 a.m. scored 100 against 96 on the rest.
+
+Three things moved it, and they pull apart cleanly in the arms.
+
+**The clock instead of the word.** On round 1's own 30 fixtures the
+every-message note went from 80.0 to 90.0 with nothing else changed
+but the note's shape and the explainer, and the after-midnight
+resumes went from none right to all right. The daypart word with
+"early morning" did not get there: 81.2 overall, 74.4 after midnight.
+The model read "early morning" as not being told the time: "I don't
+have the exact time right now, only that it's early morning," and
+said UNKNOWN. A word that names a span is read as a span; a clock is
+read as a fact.
+
+**The gap sentence.** It is the larger lever. The clock alone scored
+88.8; with the sentence, 96.7, and on the resumes after the window
+80.8 became 95.8. On the four fixtures whose resume lands on the
+named weekday a week later it was the whole difference: one in four
+right without the sentence, eleven in twelve with it. Asked on a
+Tuesday about a demo "at Tuesday's standup" named twelve days before,
+the clock arm said it did not know when the standup was; the same arm
+with "This conversation resumed after 12 days away" said:
+
+> PASSED. You mentioned it was for the standup on Tuesday, but today
+> is already Tuesday, November 3rd. How did it go?
+
+A clock tells the model what time it is. The gap tells it how much
+time has passed. For this model those are two facts, not one, and
+the second is the one resuming needs.
+
+**Niko's format.** The ISO stamp with the offset scored 91.7, above
+the bar on its own, and almost never hedged: UNKNOWN on one reply in
+240. On the long-gap fixtures it scored 87.5 and on the week-on ones
+100. It paid in one place. On the what-day control it named the wrong
+weekday on 11 of 132 replies, where every clock arm, whose note
+carries the weekday, named a wrong one on none. A model can read
+`2026-10-25` and still call it Monday. The note that says "Sunday"
+never has that problem, and what day it is happens to be the one fact
+a friend never gets wrong.
+
+**The latest-message note did not improve with a clock.** EC scored
+76.2, under round 1's E, and 62.5 on the long-gap fixtures: three
+weeks after "the migration dry run is tomorrow afternoon," it said
+"You're still set for tomorrow afternoon at 2:00," and seven weeks
+after a lease due "this weekend," "You've still got a few days before
+the weekend." That is the last-night-versus-last-month failure in
+its purest form, and it is a property of where the note sits, not
+what it says. The cost finding held again too: zero cached tokens on
+all 264 of its resumes, 279 uncached, against 125 for the arm that
+never edits a message.
+
+The one fixture the verdict arm missed in every seed is round 1's
+"I'll reply to Brian tomorrow afternoon with some times": asked on
+that afternoon's evening, it still opened with UNKNOWN because "you
+hadn't picked specific times yet." The explainer's new sentence
+cleared most of those; not this one.
+
+<!-- lab:data-table -->
+
+| Arm | What | Midnight to 5 a.m. | The rest | Round 1's 30 | Week on, after | Long gap |
+| --- | --- | --- | --- | --- | --- | --- |
+| DC | Every message, clock time | 100.0 | 86.6 | 90.0 | 25.0 | 100.0 |
+| DCG | Every message, clock time, plus the gap | 100.0 | 96.0 | 96.1 | 91.7 | 100.0 |
+| DWG | Every message, daypart word, plus the gap | 74.4 | 82.6 | 81.7 | 58.3 | 100.0 |
+| DIG | Every message, ISO 8601 with offset, plus the gap | 100.0 | 90.0 | 91.7 | 100.0 | 87.5 |
+| EC | Latest message only, clock time | 87.2 | 74.1 | 76.1 | 25.0 | 62.5 |
+
+Right answers, percent, pooled over three seeds. "Midnight to 5 a.m."
+is 39 resumes and "the rest" 201, both within the 40 verdict
+fixtures; "week on, after" is the four fixtures resumed on the named
+weekday a week later, after side only; "long gap" is the four
+fixtures resumed three to seven weeks on, both sides.
+
+<!-- /lab:data-table -->
+
+**The smaller counts** ran again. Callbacks on the open resume sat
+between 76 and 82 percent in every arm, where round 1 had 72 with no
+note. The what-day control is a string match for the weekday and one
+of my daypart words, and with a clock in the note the model often
+answered in its own words instead: "It's Sunday at noon," "It's
+Wednesday night" at 8:30 p.m. Those count as misses in the table and
+are not; the number that matters from that control is the wrong
+weekday count above, zero for every arm but the ISO one.
+
+**Does a note in stored text hurt memory?** Niko asked whether a time
+note would move the embeddings a memory plugin searches. Saxby's
+notes never reach that store, because a client saves what was typed
+before the proxy sees it, but the question stands for any client that
+stamps before saving. A probe with report 002's 120 invented facts
+and their 240 paraphrased queries, each fact embedded with bge-m3 as
+is and with each note shape in front, says no:
+
+<!-- lab:data-table -->
+
+| Condition | What | At 1 | At 5 | At 10 |
+| --- | --- | --- | --- | --- |
+| plain | Fact text as is | 81.2 | 98.8 | 100.0 |
+| word | Daypart word note in front | 84.9 | 100.0 | 100.0 |
+| clock | Clock time note in front | 86.4 | 99.7 | 100.0 |
+| iso | ISO 8601 note in front | 85.7 | 99.4 | 100.0 |
+
+Recall at k over 120 rows, percent, mean of three seeds of drawn
+times. Easier than report 002's chunked diary, since each row is one
+fact, so read the differences, not the levels.
+
+<!-- /lab:data-table -->
+
+A note in front pulls the rows closer together, as a shared prefix
+must, but the gap between the right row and the best wrong one does
+not move, and recall at one goes up a few points rather than down.
+The scripts and counts are with the round 2 data.
+
 ## What this does and does not show
 
 - **The clock is simulated.** Dates and dayparts come from the
@@ -356,8 +523,13 @@ runner charges for a resend it has seen before.
 - **Short conversations.** Three turns and one resume. Whether a model
   keeps using the notes across a long agent session is a different
   test.
-- **Three fixtures resume after midnight.** The night vocabulary
-  finding rests on nine rows per arm and was not preregistered.
+- **Three fixtures resume after midnight** in round 1; the night
+  vocabulary finding there rests on nine rows per arm and was not
+  preregistered. Round 2 added six and scored them in advance.
+- **Round 2's fixtures were written knowing round 1's misses.** The
+  ten added to the verdict set target the small hours and the
+  weekday-a-week-on trap on purpose. On round 1's untouched 30 alone
+  the verdict arm scored 96.1, so the verdict does not ride on them.
 - **No travel.** Every time is in one zone. The case where the sender's
   zone is unknown is the next round, and its design is already
   written up in the lab's notes.
@@ -386,17 +558,27 @@ UNKNOWN 8 percent of the time and were wrong on roughly another ten.
 
 For the storyline I actually want, a sense of time is a precondition,
 not the feature. The callback count moved ten points with a note, on
-three-turn conversations and a string match. The next round is the
-every-message note with the night fixed and the gap sentence kept,
-against the same bar, with thinking on as its own arm; it is
-[#15][next]. The travel case, where the sender's zone is unknown,
-waits behind it.
+three-turn conversations and a string match.
 
-[next]: https://github.com/saxby-tools/lab/issues/15
+**Round 2 turned that into a build order.** The every-message note
+with a clock time, the weekday, and a sentence naming the gap cleared
+the bar with room, kept the cache, and held after midnight and across
+a seven-week pause. So Saxby's `message_prefix` is: every user
+message, stamped with the time the proxy first saw it, as a clock
+with the weekday, and on the latest message a sentence saying how long
+it has been, in the unit a person would use. Niko's hand-typed ISO
+stamp works nearly as well and is what to type until that exists; put
+the weekday in it. What the round did not settle is the travel case,
+where the sender's zone is unknown, which is the next round ([#15]
+closed this one). The verdict of round 1 stands as read: the
+latest-message note, in either shape, is the wrong design.
+
+[#15]: https://github.com/saxby-tools/lab/issues/15
 
 <!-- lab:footer -->
 
-Saxby · From the lab · Report No. 003 · Nov. 2026
+Saxby · From the lab · Report No. 003 · Nov. 2026 · Round 2 added
+the same day
 
 Data: the fixtures, every reply with its cache counts and the scripts
 that rebuild the tables are in [saxby-tools/lab][lab]; `npm test` there

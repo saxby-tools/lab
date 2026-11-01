@@ -11,6 +11,13 @@
     "B. Date once": 1,
     "B": 1,
     "A. Nothing": 1,
-    "A": 1
+    "A": 1,
+    "DCG. Every message, clock plus gap (round 2)": 3,
+    "DIG. Every message, ISO stamp plus gap (round 2)": 5,
+    "DC": 3,
+    "DCG": 3,
+    "DWG": 3,
+    "DIG": 5,
+    "EC": 2
   }
 }
