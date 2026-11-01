@@ -19,6 +19,7 @@ const RESULTS = join(REPORT, "timenotes", "results");
 const SUMMARIES = {
   1: join(RESULTS, "summary", "summary.json"),
   2: join(RESULTS, "round-2", "summary", "summary.json"),
+  3: join(RESULTS, "round-3", "summary", "summary.json"),
 };
 const PROBE = join(RESULTS, "embed-probe", "summary.json");
 const PAGES = ["index.md", "README.md"].map((name) => join(REPORT, name));
@@ -26,15 +27,17 @@ const PAGES = ["index.md", "README.md"].map((name) => join(REPORT, name));
 const ROUND_OF = {
   A: 1, B: 1, B2: 1, E: 1, D: 1, E2: 1,
   DC: 2, DCG: 2, DWG: 2, DIG: 2, EC: 2,
+  ZS: 3, ZH: 3, ZN: 3, ZO: 3,
 };
-const ARM_ROW = /^\| (A|B|B2|E|D|E2|DC|DCG|DWG|DIG|EC) \|/;
+const ARM_ROW = /^\| (A|B|B2|E|D|E2|DC|DCG|DWG|DIG|EC|ZS|ZH|ZN|ZO) \|/;
 const PROBE_ROW = /^\| (plain|word|clock|iso) \|/;
 
-const VERDICTS = { 1: "inconclusive", 2: "go" };
+const VERDICTS = { 1: "inconclusive", 2: "go", 3: "fail" };
 
 const summaries = {
   1: JSON.parse(readFileSync(SUMMARIES[1], "utf8")),
   2: JSON.parse(readFileSync(SUMMARIES[2], "utf8")),
+  3: JSON.parse(readFileSync(SUMMARIES[3], "utf8")),
 };
 const probe = JSON.parse(readFileSync(PROBE, "utf8"));
 
@@ -143,6 +146,37 @@ function expectedSplits(arm) {
   ];
 }
 
+// Round 3's zone table: travel, unknown, matters, does not matter,
+// asks when it matters, pestering. Round 3 arms only.
+function expectedZones(arm) {
+  const zones = cellOf(arm).zone_splits;
+
+  if (!zones) {
+    return null;
+  }
+
+  return [
+    pct(zones.travel.right),
+    pct(zones.unknown.right),
+    pct(zones.zone_matters.right),
+    pct(zones.zone_does_not_matter.right),
+    pct(zones.asks_when_it_matters.rate),
+    pct(zones.pestering.rate),
+  ];
+}
+
+// Round 3's travel rows by sender zone, in the summary's own order:
+// Los Angeles, Tokyo, Berlin, Lisbon.
+function expectedByZone(arm) {
+  const zones = cellOf(arm).zone_splits;
+
+  if (!zones) {
+    return null;
+  }
+
+  return Object.values(zones.travel_by_zone).map((cell) => pct(cell.right));
+}
+
 function expectedProbe(condition) {
   const cell = probe.cells[condition];
   return [pct(cell.mean_at_1), pct(cell.mean_at_5), pct(cell.mean_at_10)];
@@ -155,7 +189,7 @@ function startsWith(got, expected) {
 
 function matchesAny(got, arm) {
   const shapes = [expectedMain, expectedChart, expectedCost,
-    expectedExtras, expectedSplits];
+    expectedExtras, expectedSplits, expectedZones, expectedByZone];
   return shapes.some((shape) => startsWith(got, shape(arm)));
 }
 
@@ -170,7 +204,7 @@ for (const page of PAGES) {
         `${arm}: ${numbers} matches no table shape; main is ` +
         `${expectedMain(arm)}, chart ${expectedChart(arm)}, cost ` +
         `${expectedCost(arm)}, extras ${expectedExtras(arm)}, splits ` +
-        `${expectedSplits(arm)}`);
+        `${expectedSplits(arm)}, zones ${expectedZones(arm)}`);
     }
   });
 }
@@ -190,7 +224,7 @@ test("probe rows in index.md match the probe summary", () => {
 test("the verdicts in the report match the summaries", () => {
   const index = readFileSync(join(REPORT, "index.md"), "utf8");
 
-  for (const round of [1, 2]) {
+  for (const round of [1, 2, 3]) {
     const verdict = summaries[round].verdict;
     assert.equal(verdict, VERDICTS[round],
       `round ${round} summary should say ${VERDICTS[round]}`);
