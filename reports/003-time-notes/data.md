@@ -9,6 +9,8 @@ every change made since it was recorded.
 | --- | --- | --- |
 | Six arms, forced-choice resume | 3 seeds, 60 resumes each per arm | `timenotes/results/seed-N/<arm>.jsonl` |
 | Open resume, what-day control, repeat floor | 3 seeds, 100 more rows per arm | same files, `variant` field |
+| Round 2: five arms, 44 fixtures, all variants | 3 seeds, 230 rows per arm | `timenotes/results/round-2/seed-N/<arm>.jsonl` |
+| Embedding probe | 4 conditions, 3 seeds of drawn times | `timenotes/results/embed-probe/summary.json` |
 
 Everything ran on one machine: an Apple M5 Max with 128 GiB of unified
 memory, macOS 26, Ollama 0.40.13 with Saxby's patches, between 1:33
@@ -183,6 +185,62 @@ the summary.
 [gap-night]: https://github.com/saxby-tools/lab/issues/13
 [gap-cache]: https://github.com/saxby-tools/lab/issues/14
 
+##  Round 2
+
+Preregistered in `preregistration.md` under "Round 2" at noon on
+Nov. 1, amended at 12:40 p.m., both before the first round 2 run,
+which went from 12:25 p.m. to 2:54 p.m. the same day. Same Ollama
+build and model digest, checked before the run; the same runner
+process that served the morning probes. Nothing else used the model.
+
+`timenotes/fixtures-round-2.json` holds 14 fixtures and includes
+`fixtures.json` by reference, so the 30 are never copied: F31 to F36
+resume between midnight and 5 a.m., F37 to F40 name a weekday and
+resume on that weekday a week later, F41 to F44 resume three to seven
+weeks after the window. `check.py` accepts the included file; all 44
+pass. The verdict reads from F01 to F40; F41 to F44 are reported
+beside it. The ten added to the verdict set were written after round
+1's misses were known and target them.
+
+Arms DC, DCG, DWG, DIG and EC are rendered by the same `render.py`,
+which still renders round 1's six arms byte for byte: every round 1
+row's `system_sent` and `resume_sent` were rebuilt from the fixtures
+and compared, 900 rows, none differed. Round 2 notes carry the time a
+proxy would first have seen the message (`first_seen()` in the
+renderer), which for these fixtures equals the message's own time.
+The gap sentence counts hours under two days, then days, weeks and
+months; round 1's E2 keeps hours.
+
+Per arm and seed: 88 forced resumes, 88 open, 44 controls, 10 floor
+rows. `score.py --round 2` adds, per arm, the accuracy on the
+after-midnight resumes against the rest, on round 1's 30 fixtures
+alone, on the week-on "after" resumes, and on the long-gap fixtures.
+Round 1's summary is reproduced byte for byte by the same scorer.
+
+What was checked after the run: 230 rows in each of the 15 files,
+3,450 in all, every `done_reason` `stop`; every forced reply opened
+with one of the three words; no reply opened a bracket with "It is";
+the every-message arms reported a nonzero cached count on all 264
+forced resumes each, and EC reported zero on all 264. The what-day
+control's string match undercounts the clock arms: with a clock in
+the note the model often answers "It's Sunday at noon" or "Wednesday
+night," outside the four daypart words; the wrong-weekday count is
+the number to read there, 0 of 132 for every arm but DIG, 11 for DIG.
+
+##  Embedding probe
+
+`timenotes/embed-probe.py`, run at 2:56 p.m. on Nov. 1 with `bge-m3`
+through Ollama's `/api/embed`. Rows are report 002's 120 invented
+facts from `reports/002-memory-recall/recall/facts.json`; queries are
+their 240 held-out paraphrases, embedded once, plain. Each fact is
+embedded four ways: as is, and with a daypart, clock or ISO note in
+front, the time drawn per fact over six weeks from the seed. Recall
+at 1, 5 and 10 over the 120 rows, the mean cosine gap between the
+right row and the best wrong row, and the mean cosine between any two
+rows. Each row is one sentence, so recall runs far higher than
+report 002's chunked diary; the differences between conditions are
+the result, not the levels.
+
 ##  Changes since recording
 
 - **Nov. 1, 2:50 a.m.** `score.py` wrote the extras section of
@@ -194,3 +252,7 @@ the summary.
   reason for the all-or-nothing reuse, from the morning probe above,
   and its limits bullet on the runner was reworded to match. No row
   and no number changed.
+- **Nov. 1, afternoon.** Round 2 and the embedding probe were added
+  to the report as their own sections, two bars joined the chart,
+  and the deck, the limits and the take gained a paragraph each.
+  Round 1's rows, summary and verdict are untouched.
