@@ -54,6 +54,7 @@ const IGNORES = [
   "reports/*/checks/**",
   "reports/*/recall/**",
   "reports/*/timenotes/**",
+  "reports/*/survey/**",
   "reports/*/personality/replies/**",
   ".scratch/**",
   ".claude/**",
