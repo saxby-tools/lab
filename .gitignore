@@ -8,3 +8,7 @@ _site/
 # macOS
 .DS_Store
 __pycache__/
+
+# Throwaway homes, logs and keys per report; sessions' worktrees
+.scratch/
+.claude/
