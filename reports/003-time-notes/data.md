@@ -296,6 +296,12 @@ the result, not the levels.
   to the report as their own sections, two bars joined the chart,
   and the deck, the limits and the take gained a paragraph each.
   Round 1's rows, summary and verdict are untouched.
+- **Nov. 1, evening.** Niko's blind ratings of the 30 open-resume
+  pairs went into `survey/ratings.md` as he wrote them in the chat,
+  the key moved from outside the repo into `survey/key.json`, and the
+  counts in `survey/scored.json` were added to the report's callbacks
+  section. The scoring reads the first word of each rating line; his
+  one comment, on P03, is kept and not scored.
 - **Nov. 1, evening.** Round 3 was added as its own section, one bar
   joined the chart, and the deck, the limits and the take gained a
   paragraph each. Rounds 1 and 2 are untouched.
