@@ -10,6 +10,12 @@
 #   run.sh seed N           all 12 cells for seed N; results/seed-N/
 #   run.sh score            summary under results/summary/
 #
+#   run.sh round2 check     the same, for round 2's files and arms:
+#   run.sh round2 render F31 P3-NC
+#   run.sh round2 smoke     into .scratch/report-0004/smoke-r2/
+#   run.sh round2 seed N    results/round-2/seed-N/
+#   run.sh round2 score     results/round-2/summary/
+#
 # Needs Ollama on 127.0.0.1:11434 with gemma4:31b-128k pulled, and
 # Python 3.9 or later for zoneinfo. Nothing else should use the model
 # while a seed runs. The runner overwrites nothing: a rerun of a seed
@@ -43,11 +49,26 @@ score() {
     python3 "$HERE/score.py" --results "$HERE/results"
 }
 
+round2() {
+    case "${1:-}" in
+        check) python3 "$HERE/check.py" --round 2 ;;
+        render) python3 "$HERE/render.py" "$2" "$3" --round 2 --scripts ;;
+        smoke) python3 "$HERE/run.py" --round 2 --out "$SCRATCH/smoke-r2" \
+                   --seed 1 --limit 1 ;;
+        seed) python3 "$HERE/run.py" --round 2 \
+                  --out "$HERE/results/round-2/seed-$2" --seed "$2" ;;
+        score) python3 "$HERE/score.py" --round 2 \
+                   --results "$HERE/results/round-2" ;;
+        *) sed -n '2,23p' "$0"; exit 1 ;;
+    esac
+}
+
 case "${1:-}" in
     check) check ;;
     render) render "$2" "$3" ;;
     smoke) smoke ;;
     seed) seed "$2" ;;
     score) score ;;
-    *) sed -n '2,17p' "$0"; exit 1 ;;
+    round2) shift; round2 "$@" ;;
+    *) sed -n '2,23p' "$0"; exit 1 ;;
 esac
