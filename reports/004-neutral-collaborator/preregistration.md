@@ -575,3 +575,8 @@ the red box, the folder and the address do not move.
   not part of the record. The pace prices the grid at 4.5 hours; round
   1's smoke said the same and the night took 5.6, so the estimate
   stays at about six hours and no cut from "Runs" is needed.
+- **Nov. 2, 2026, 6:34 p.m., the go:** Niko gave the night the go in
+  his own words, "Go ahead with whatever you need." Seeds 1, 2 and 3
+  start now in that order, one request at a time, with nothing else
+  using the model. No plan, prompt, fixture or script changed between
+  the smoke test and this start.
