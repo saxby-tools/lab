@@ -288,3 +288,14 @@ thinking off.
   (a snapshot, an idempotency key, a signature check) rather than
   swapping a word, because the flaw in each is an omission. The rest
   swap one thing.
+- **Nov. 1, 2026, 10:45 p.m., before any run:** Niko reviewed the
+  three profane voices and edited nearly every wrapper, mostly where a
+  word sat ("swear words as infix vs using as a noun"), and noted
+  that in neutral and friendly mode he frames the work as "us, we,
+  our," while "barking happens from a fixed ego." His lines replaced
+  Code's in `voices.json` as written. The clean voices were rewritten
+  to be his lines with the list words taken out and nothing else
+  changed, so a clean cell and its profane twin still differ by the
+  words alone. The turn-2 scripts were not edited. His suggestion to
+  merge both drafts for variety was not taken: the wrapper count is
+  fixed at five by the `n mod 5` rule.
