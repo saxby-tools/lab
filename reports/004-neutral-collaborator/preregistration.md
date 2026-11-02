@@ -238,7 +238,10 @@ time. Results live under `collaborator/results/seed-N/`.
 
 The folder is `004-neutral-collaborator` and does not change. The
 red box is chosen by Niko from three shapes proposed with the plan,
-before the write-up:
+before the write-up. Niko chose "Agree to / Disagree" on the morning
+of Nov. 2, 2026, after the run, from the two that fit the box;
+"Backbone" overran it at every width in a local preview and was
+dropped.
 
 | Top | Word |
 | --- | --- |
