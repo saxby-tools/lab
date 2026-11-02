@@ -2,7 +2,8 @@
 """Build the blind packet for the delivery rating, and score the ratings.
 
     python3 survey.py build --key <scratch>/survey-key.json
-    python3 survey.py score --key ../survey/key.json --ratings ../survey/ratings.md
+    python3 survey.py score --key ../survey/key.json \
+        --ratings ../survey/ratings.md
 
 The packet holds the seed 1, flawed-twin, turn-1 replies from P0-NC,
 P1-NC, P1-FC and P1-BC: 120 replies, shuffled with a fixed seed, each
