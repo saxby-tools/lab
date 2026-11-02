@@ -22,6 +22,7 @@ const SUMMARIES = {
   3: join(RESULTS, "round-3", "summary", "summary.json"),
 };
 const PROBE = join(RESULTS, "embed-probe", "summary.json");
+const SURVEY = join(REPORT, "survey", "scored.json");
 const PAGES = ["index.md", "README.md"].map((name) => join(REPORT, name));
 
 const ROUND_OF = {
@@ -31,6 +32,14 @@ const ROUND_OF = {
 };
 const ARM_ROW = /^\| (A|B|B2|E|D|E2|DC|DCG|DWG|DIG|EC|ZS|ZH|ZN|ZO) \|/;
 const PROBE_ROW = /^\| (plain|word|clock|iso) \|/;
+const SURVEY_ROW =
+  /^\| (Both|Only the noted reply|Only the bare reply|Neither) \|/;
+const SURVEY_KEYS = {
+  "Both": "both",
+  "Only the noted reply": "note_only",
+  "Only the bare reply": "bare_only",
+  "Neither": "neither",
+};
 
 const VERDICTS = { 1: "inconclusive", 2: "go", 3: "fail" };
 
@@ -40,6 +49,7 @@ const summaries = {
   3: JSON.parse(readFileSync(SUMMARIES[3], "utf8")),
 };
 const probe = JSON.parse(readFileSync(PROBE, "utf8"));
+const survey = JSON.parse(readFileSync(SURVEY, "utf8"));
 
 // One decimal of a percentage, rounding a half to the even neighbour
 // the way Python's formatting does.
@@ -218,6 +228,19 @@ test("probe rows in index.md match the probe summary", () => {
     const [condition, , ...numbers] = row;
     assert.ok(startsWith(numbers, expectedProbe(condition)),
       `${condition}: ${numbers} is not ${expectedProbe(condition)}`);
+  }
+});
+
+test("survey rows in index.md match the scored ratings", () => {
+  const rows = rowsMatching(readFileSync(join(REPORT, "index.md"), "utf8"),
+    SURVEY_ROW);
+  assert.equal(rows.length, 4, "four survey rows expected");
+
+  for (const [label, niko, string] of rows) {
+    const field = SURVEY_KEYS[label];
+    assert.equal(niko, String(survey.counts[field]), `${label}: Niko`);
+    assert.equal(string, String(survey.string_match[field]),
+      `${label}: string match`);
   }
 });
 

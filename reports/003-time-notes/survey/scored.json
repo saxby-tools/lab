@@ -1,0 +1,320 @@
+{
+ "ratings": {
+  "P01": "both",
+  "P02": "x",
+  "P03": "both",
+  "P04": "both",
+  "P05": "x",
+  "P06": "neither",
+  "P07": "both",
+  "P08": "x",
+  "P09": "both",
+  "P10": "y",
+  "P11": "both",
+  "P12": "y",
+  "P13": "both",
+  "P14": "neither",
+  "P15": "both",
+  "P16": "y",
+  "P17": "x",
+  "P18": "x",
+  "P19": "x",
+  "P20": "both",
+  "P21": "both",
+  "P22": "both",
+  "P23": "x",
+  "P24": "x",
+  "P25": "both",
+  "P26": "both",
+  "P27": "both",
+  "P28": "both",
+  "P29": "y",
+  "P30": "both"
+ },
+ "counts": {
+  "note_only": 9,
+  "bare_only": 3,
+  "both": 16,
+  "neither": 2
+ },
+ "string_match": {
+  "both": 14,
+  "note_only": 9,
+  "bare_only": 5,
+  "neither": 2
+ },
+ "single_picks": 12,
+ "string_agrees_on_single_picks": 3,
+ "detail": [
+  {
+   "pair": "P01",
+   "fixture": "F01",
+   "rating": "both",
+   "X": "E",
+   "Y": "A",
+   "string_hit_A": false,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P02",
+   "fixture": "F02",
+   "rating": "x",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": true,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P03",
+   "fixture": "F03",
+   "rating": "both",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": false,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P04",
+   "fixture": "F04",
+   "rating": "both",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": true,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P05",
+   "fixture": "F05",
+   "rating": "x",
+   "X": "E",
+   "Y": "A",
+   "string_hit_A": true,
+   "string_hit_E": false
+  },
+  {
+   "pair": "P06",
+   "fixture": "F06",
+   "rating": "neither",
+   "X": "E",
+   "Y": "A",
+   "string_hit_A": false,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P07",
+   "fixture": "F07",
+   "rating": "both",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": true,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P08",
+   "fixture": "F08",
+   "rating": "x",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": false,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P09",
+   "fixture": "F09",
+   "rating": "both",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": true,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P10",
+   "fixture": "F10",
+   "rating": "y",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": true,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P11",
+   "fixture": "F11",
+   "rating": "both",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": true,
+   "string_hit_E": false
+  },
+  {
+   "pair": "P12",
+   "fixture": "F12",
+   "rating": "y",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": false,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P13",
+   "fixture": "F13",
+   "rating": "both",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": false,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P14",
+   "fixture": "F14",
+   "rating": "neither",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": false,
+   "string_hit_E": false
+  },
+  {
+   "pair": "P15",
+   "fixture": "F15",
+   "rating": "both",
+   "X": "E",
+   "Y": "A",
+   "string_hit_A": true,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P16",
+   "fixture": "F16",
+   "rating": "y",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": true,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P17",
+   "fixture": "F17",
+   "rating": "x",
+   "X": "E",
+   "Y": "A",
+   "string_hit_A": true,
+   "string_hit_E": false
+  },
+  {
+   "pair": "P18",
+   "fixture": "F18",
+   "rating": "x",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": false,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P19",
+   "fixture": "F19",
+   "rating": "x",
+   "X": "E",
+   "Y": "A",
+   "string_hit_A": false,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P20",
+   "fixture": "F20",
+   "rating": "both",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": true,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P21",
+   "fixture": "F21",
+   "rating": "both",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": true,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P22",
+   "fixture": "F22",
+   "rating": "both",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": true,
+   "string_hit_E": false
+  },
+  {
+   "pair": "P23",
+   "fixture": "F23",
+   "rating": "x",
+   "X": "E",
+   "Y": "A",
+   "string_hit_A": true,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P24",
+   "fixture": "F24",
+   "rating": "x",
+   "X": "E",
+   "Y": "A",
+   "string_hit_A": false,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P25",
+   "fixture": "F25",
+   "rating": "both",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": true,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P26",
+   "fixture": "F26",
+   "rating": "both",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": true,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P27",
+   "fixture": "F27",
+   "rating": "both",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": true,
+   "string_hit_E": false
+  },
+  {
+   "pair": "P28",
+   "fixture": "F28",
+   "rating": "both",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": false,
+   "string_hit_E": false
+  },
+  {
+   "pair": "P29",
+   "fixture": "F29",
+   "rating": "y",
+   "X": "A",
+   "Y": "E",
+   "string_hit_A": true,
+   "string_hit_E": true
+  },
+  {
+   "pair": "P30",
+   "fixture": "F30",
+   "rating": "both",
+   "X": "E",
+   "Y": "A",
+   "string_hit_A": true,
+   "string_hit_E": true
+  }
+ ]
+}
