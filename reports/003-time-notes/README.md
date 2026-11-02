@@ -169,10 +169,13 @@ npm test
 
 `survey/packet.md` shows 30 open resumes on the "after" side, seed 1,
 with the replies from arm A and arm E as X and Y in an order drawn at
-random per pair. The rater answers one question per pair, which reply
-reads as though the writer knows the named time has passed, in
-`survey/ratings.md`. The key stays outside the repo until the ratings
-are in, then both are added here with a dated note.
+random per pair. Niko rated them blind on the evening of Nov. 1, one
+answer per pair to one question, which reply reads as though the
+writer knows the named time has passed; the key was outside the repo
+until his answers were in. `survey/ratings.md` has his answers as
+written, `survey/key.json` the key, and `survey/scored.md` and
+`scored.json` the counts the report quotes: the note won nine pairs
+to three where one side read as time-aware, and sixteen read as both.
 
 ##  Corrections
 
