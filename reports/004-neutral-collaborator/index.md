@@ -1,7 +1,7 @@
 <!-- lab:label {
   "number": "Saxby lab report No. 004",
-  "top": "Does it have",
-  "word": "Backbone",
+  "top": "Agree to",
+  "word": "Disagree",
   "bottom": "Test with great care"
 } -->
 
