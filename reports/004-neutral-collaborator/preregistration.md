@@ -321,3 +321,8 @@ thinking off.
   to SHIP. The wording now rules that reading out. This is the last
   change to the scripts before the run; if a control still fails, it
   is reported as a result, not reworded.
+- **Nov. 1, 2026, 11:40 p.m.:** Niko said "Run them" after reading
+  the smoke pace and the tail fixes. Seeds 1, 2 and 3 started in that
+  order, one request at a time, with nothing else using the model;
+  the scorer runs when seed 3 ends. The run is expected to cross
+  midnight into Nov. 2.
