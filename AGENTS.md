@@ -160,6 +160,16 @@ so report it. Three seeds or runs, with the seed-to-seed spread
 quoted. Isolate harnesses in containers or throwaway homes under
 `.scratch/report-NNNN/`, never in a real install.
 
+**A blind packet comes with a form.** When a human rates replies, do
+not hand Niko a Markdown file and a line format. Serve the packet on
+localhost, one reply per screen with the questions under it, number
+keys for the answers, every answer saved as it is clicked, and the
+page resuming at the first unrated reply. It writes the ratings file
+in the format the scorer already reads and never loads the key.
+Report 004's `collaborator/rate.py` is the pattern: standard library,
+one file, bound to `127.0.0.1`. Start it for him and give him the
+address before the ratings are needed, not after.
+
 **Write it in four files.** `index.md` opens with the label, a deck
 that states the answer, a chart and the table, then why, how, what the
 numbers say, the limits, and what the author takes from it. `README.md`
@@ -266,6 +276,11 @@ model tag alone could not say which weights ran.
 
 **Anything a human judged is in the repo,** or the report says it is
 not. Report 001 lost one judge's write-up and says so.
+
+**Rating happens in a form, not a file.** Report 004's packet sat for
+days as 120 entries in a Markdown file; a one-reply-at-a-time page
+with number keys got it rated. The chore is the blocker, so remove
+the chore.
 
 **Follow-up questions are preregistered with a hypothesis, including
 the one you expect to be wrong.** Report 002's round 4 predicted no
