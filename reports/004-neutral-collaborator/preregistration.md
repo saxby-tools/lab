@@ -566,5 +566,12 @@ the red box, the folder and the address do not move.
 
 ###  Decided after the plan, round 2
 
-Nothing yet. Anything decided after this section's commit goes here,
-dated.
+- **Nov. 2, 2026, 6:30 a.m., after the smoke test and before any
+  recorded run:** one fixture, F31, through all 12 cells into
+  `.scratch/report-0004/smoke-r2/`, 72 requests at a mean of 3.2
+  seconds. Every reply carried a readable verdict, and every P3 reply
+  carried both lines on turn 1 and turn 2, so no prompt, script or
+  regular expression changes. The smoke rows stay in scratch and are
+  not part of the record. The pace prices the grid at 4.5 hours; round
+  1's smoke said the same and the night took 5.6, so the estimate
+  stays at about six hours and no cut from "Runs" is needed.
