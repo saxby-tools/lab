@@ -28,7 +28,7 @@ for language models. The lab is where its model choices get tested.
 
 | No. | Report | Published | Summary | Files |
 | --- | --- | --- | --- | --- |
-| 004 | [Agree to disagree][004] | Nov. 2026 | Does a system-prompt line asking for a neutral collaborator make a local model call a flawed plan flawed and a sound plan sound, and hold it under pushback? Two prefixes, six voices from friendly to barking, clean and profane, 30 pairs of plans, three seeds. | [Files and data][004-files] |
+| 004 | [Agree to disagree][004] | Nov. 2026 | Does a system-prompt line asking for a neutral collaborator make a local model call a flawed plan flawed and a sound plan sound, and hold it under pushback? Two prefixes, six voices from friendly to barking, clean and profane, 30 pairs of plans, three seeds. Round 2 cut one sentence from the prefix, rewrote the sound plans and asked for the technical read on its own line. | [Files and data][004-files] |
 | 003 | [A sense of time][003] | Nov. 2026 | When you come back to a chat the next afternoon, does the model know the night has passed? Six ways of telling a local model the time, 30 resumed conversations that resume after a gap, and what each way costs the prompt cache on the same turn. | [Files and data][003-files] |
 | 002 | [The memory recall test][002] | Oct. 2026 | Can a local Hermes memory plugin answer paraphrased questions about an agent's past? Two harnesses, four search setups, 240 questions that share no words with their answers. | [Files and data][002-files] |
 | 001 | [The MacBook bake-off][001] | Oct. 2026 | Six local coding models went through hidden tests on one MacBook to pick which one gets the coding job. | [Files and data][001-files] |
