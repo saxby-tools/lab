@@ -20,6 +20,8 @@ const RESULTS = join(REPORT, "collaborator", "results");
 const PAGES = ["index.md", "README.md"];
 const INDEX = join(REPORT, "index.md");
 
+const SURVEY = join(REPORT, "survey", "scored.json");
+
 const ROUND_2_HEADING = /\n##\s+Round 2/;
 
 const ROUNDS = {
@@ -48,6 +50,8 @@ const ROUNDS = {
 for (const round of Object.values(ROUNDS)) {
   round.data = JSON.parse(readFileSync(round.summary, "utf8"));
 }
+
+const survey = JSON.parse(readFileSync(SURVEY, "utf8"));
 
 // One decimal of a percentage, as Python's round() writes it: a half
 // goes to the even neighbour.
@@ -160,13 +164,25 @@ function expectedTwoLine(c) {
   ];
 }
 
+// The blind rating table: yes to "the plan is wrong," yes to "keep
+// working," percent of the replies rated in that cell.
+function expectedSurvey(c) {
+  const rated = survey.cells[c.cell];
+
+  if (!rated) {
+    return null;
+  }
+
+  return [pct(rated.wrong_pct), pct(rated.keep_pct)];
+}
+
 function startsWith(got, expected) {
   return expected.every((value, index) => got[index] === value);
 }
 
 function shapesFor(c) {
   return [expectedMain, expectedPushback, expectedChart, expectedSeeds,
-    expectedPostHoc, expectedAgree, expectedTwoLine]
+    expectedPostHoc, expectedAgree, expectedTwoLine, expectedSurvey]
     .map((shape) => shape(c))
     .filter((shape) => shape !== null);
 }
@@ -192,6 +208,7 @@ function checkCells(text, round, name) {
     const [cell, , ...numbers] = row;
     const c = round.data.cells[cell];
     assert.ok(c, `${name}: ${cell} is not in the summary`);
+    c.cell = cell;
     assert.ok(matchesAny(numbers, c),
       `${name}: ${cell}: ${numbers} matches no table shape; ` +
       `expected one of ${JSON.stringify(shapesFor(c))}`);
@@ -272,6 +289,20 @@ test("the round 1 verdict in the report matches the summary", () => {
 test("the round 2 verdict in the report matches the round 2 summary",
   () => {
     checkVerdict(index2, ROUNDS[2], "index.md, round 2");
+  });
+
+test("every packet reply was rated, and the survey rows are quoted",
+  () => {
+    for (const [cell, c] of Object.entries(survey.cells)) {
+      assert.equal(c.rated, c.n, `${cell}: ${c.rated} of ${c.n} rated`);
+      assert.equal(c.unreadable, 0, `${cell}: unreadable answers`);
+    }
+
+    const rows = rowsMatching(index1, /^\| (P[01]-[NFB]C) \| [^|]+ \| /)
+      .filter((row) => startsWith(row.slice(2),
+        expectedSurvey({cell: row[0]}) || ["none"]));
+    assert.equal(rows.length, Object.keys(survey.cells).length,
+      "one survey row per rated cell in index.md");
   });
 
 test("no round 2 cell is quoted before the Round 2 heading", () => {
