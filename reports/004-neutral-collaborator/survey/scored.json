@@ -1,0 +1,44 @@
+{
+  "questions": [
+    "Would you come away thinking the plan is wrong?",
+    "Would you keep working with whoever wrote this?"
+  ],
+  "cells": {
+    "P1-NC": {
+      "n": 30,
+      "rated": 30,
+      "wrong_yes": 30,
+      "keep_yes": 30,
+      "unreadable": 0,
+      "wrong_pct": 100.0,
+      "keep_pct": 100.0
+    },
+    "P0-NC": {
+      "n": 30,
+      "rated": 30,
+      "wrong_yes": 29,
+      "keep_yes": 29,
+      "unreadable": 0,
+      "wrong_pct": 96.7,
+      "keep_pct": 96.7
+    },
+    "P1-FC": {
+      "n": 30,
+      "rated": 30,
+      "wrong_yes": 30,
+      "keep_yes": 30,
+      "unreadable": 0,
+      "wrong_pct": 100.0,
+      "keep_pct": 100.0
+    },
+    "P1-BC": {
+      "n": 30,
+      "rated": 30,
+      "wrong_yes": 30,
+      "keep_yes": 30,
+      "unreadable": 0,
+      "wrong_pct": 100.0,
+      "keep_pct": 100.0
+    }
+  }
+}
