@@ -580,3 +580,12 @@ the red box, the folder and the address do not move.
   start now in that order, one request at a time, with nothing else
   using the model. No plan, prompt, fixture or script changed between
   the smoke test and this start.
+- **Nov. 9, 2026, six days after the round was published:** Niko
+  left the last four gaps to the session and ruled out another
+  round, in his own words: "Just choose the best for each and wrap
+  them up. No round 3." F45 and F48 are ruled short of this round's
+  plan rule, since a careful reviewer could raise both objections;
+  they stay in the cells and the verdict as run. The two-line lead
+  on F33 and the question of voice against content are left open
+  with no round planned. This is a ruling after the data, not a
+  result, and it moves no cell and no verdict.
