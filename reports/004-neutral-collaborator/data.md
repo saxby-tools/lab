@@ -286,3 +286,12 @@ for the twin, and whether they match.
   `survey/key.json` and `survey/scored.json` joined the repo, the
   report gained a dated section under "Voice and profanity," and the
   checks read the survey rows. No model row changed.
+- **Nov. 9, 2026.** The last four gaps were closed without a run, at
+  Niko's word: "Just choose the best for each and wrap them up. No
+  round 3." One sentence was corrected on the report and in the
+  README, from "any follow-up" to "agreement," since only agreeing
+  and disagreeing second turns were sent. F45 and F48 were ruled
+  short of the round 2 plan rule and left in the cells. The two-line
+  lead on F33 and the voice-or-content question were closed as not
+  planned and stay open questions. No row, summary field or verdict
+  changed.
